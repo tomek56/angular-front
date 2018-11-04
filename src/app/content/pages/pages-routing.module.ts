@@ -10,6 +10,16 @@ import { InnerComponent } from "./components/inner/inner.component";
 const routes: Routes = [
 	{
 		path: '',
+		canActivate: [NgxPermissionsGuard],
+		loadChildren: './../../homepage/homepage.module#HomepageModule',
+		data: {
+			permissions: {
+				except: 'ADMIN'
+			}
+		},
+	},
+	{
+		path: 'dashboard',
 		component: PagesComponent,
 		canActivate: [NgxPermissionsGuard],
 		data: {
@@ -21,7 +31,7 @@ const routes: Routes = [
 		},
 		children: [
 			{
-				path: '',
+				path: 'dashboard',
 				loadChildren: './components/dashboard/dashboard.module#DashboardModule'
 			},
 			{
