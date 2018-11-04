@@ -8,18 +8,18 @@ import { ErrorPageComponent } from './snippets/error-page/error-page.component';
 import { InnerComponent } from "./components/inner/inner.component";
 
 const routes: Routes = [
+	// {
+	// 	path: '',
+	// 	canActivate: [NgxPermissionsGuard],
+	// 	loadChildren: './../../homepage/homepage.module#HomepageModule',
+	// 	data: {
+	// 		permissions: {
+	// 			except: 'ADMIN'
+	// 		}
+	// 	},
+	// },
 	{
 		path: '',
-		canActivate: [NgxPermissionsGuard],
-		loadChildren: './../../homepage/homepage.module#HomepageModule',
-		data: {
-			permissions: {
-				except: 'ADMIN'
-			}
-		},
-	},
-	{
-		path: 'dashboard',
 		component: PagesComponent,
 		canActivate: [NgxPermissionsGuard],
 		data: {
@@ -31,7 +31,7 @@ const routes: Routes = [
 		},
 		children: [
 			{
-				path: 'dashboard',
+				path: '',
 				loadChildren: './components/dashboard/dashboard.module#DashboardModule'
 			},
 			{
@@ -52,24 +52,7 @@ const routes: Routes = [
 			},
 		]
 	},
-	{
-		path: 'login',
-		canActivate: [NgxPermissionsGuard],
-		loadChildren: './auth/auth.module#AuthModule',
-		data: {
-			permissions: {
-				except: 'ADMIN'
-			}
-		},
-	},
-	{
-		path: '404',
-		component: ErrorPageComponent
-	},
-	{
-		path: 'error/:type',
-		component: ErrorPageComponent
-	},
+
 ];
 
 @NgModule({

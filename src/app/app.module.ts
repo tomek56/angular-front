@@ -47,13 +47,22 @@ import { LayoutRefService } from './core/services/layout/layout-ref.service';
 import { SplashScreenService } from './core/services/splash-screen.service';
 import { DataTableService } from './core/services/datatable.service';
 import { HomepageModule } from './homepage/homepage.module';
+import { InnerComponent } from './content/pages/components/inner/inner.component';
+import { ErrorPageComponent } from './content/pages/snippets/error-page/error-page.component';
+import { ProfileComponent } from './content/pages/header/profile/profile.component';
+import { ActionComponent } from './content/pages/header/action/action.component';
+import { PagesComponent } from './content/pages/pages.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 	// suppressScrollX: true
 };
 
+
+
 @NgModule({
-	declarations: [AppComponent],
+	declarations: [
+		AppComponent,
+	],
 	imports: [
 		BrowserAnimationsModule,
 		BrowserModule,
@@ -70,6 +79,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 		NgbModule.forRoot(),
 		TranslateModule.forRoot(),
 		MatProgressSpinnerModule,
+		HomepageModule
 	],
 	providers: [
 		AclService,
