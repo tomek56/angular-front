@@ -6936,7 +6936,7 @@ p.ceb-single {
     margin-bottom: 15px;
   }
 }
- .login-content .remember {
+ .overlay .remember {
   display: -webkit-flex;
   display: -moz-box;
   display: -ms-flexbox;
