@@ -1,21 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './components/homepage/homepage.component';
-import { AuthComponent } from 'src/auth/auth/auth.component';
+import { AuthpageComponent } from './components/authpage/authpage.component';
 
 const routes: Routes = [
   {
     path: '',
 		component: HomepageComponent
   },
-  {
-    path: 'login',
-		component: AuthComponent
-  }
   // {
   //   path: 'login',
-	// 	loadChildren: 'src/auth/auth.module#AuthModule'
-  // },
+	// 	component: AuthComponent
+  // }
+  {
+    path: 'login',
+		component: AuthpageComponent
+  },
 	// {
 	// 	path: '',
 	// 	loadChildren: 'app/app.module#AppModule'

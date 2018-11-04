@@ -4,16 +4,16 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { AppRoutingModule } from './app-routing.module';
-import { AuthModule } from 'src/auth/auth.module';
+import { AuthpageComponent } from './components/authpage/authpage.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomepageComponent
+    HomepageComponent,
+    AuthpageComponent
   ],
   imports: [
     AppRoutingModule,
-    AuthModule,
     BrowserModule
   ],
   providers: [],
