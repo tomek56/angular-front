@@ -36,6 +36,7 @@ export class AppComponent implements AfterViewInit, OnInit {
 	splashScreen: ElementRef;
 	splashScreenImage: string;
 
+
 	constructor(
 		private layoutConfigService: LayoutConfigService,
 		private classInitService: ClassInitService,
@@ -47,25 +48,25 @@ export class AppComponent implements AfterViewInit, OnInit {
 		private aclService: AclService
 	) {
 		// subscribe to class update event
-		// this.classInitService.onClassesUpdated$.subscribe(classes => {
-		// 	// get body class array, join as string classes and pass to host binding class
-		// 	setTimeout(() => this.classes = classes.body.join(' '));
-		// });
+		this.classInitService.onClassesUpdated$.subscribe(classes => {
+			// get body class array, join as string classes and pass to host binding class
+			setTimeout(() => this.classes = classes.body.join(' '));
+		});
 
-		// this.layoutConfigService.onLayoutConfigUpdated$.subscribe(model => {
-		// 	this.classInitService.setConfig(model);
+		this.layoutConfigService.onLayoutConfigUpdated$.subscribe(model => {
+			this.classInitService.setConfig(model);
 
-		// 	this.style = '';
-		// 	if (objectPath.get(model.config, 'self.layout') === 'boxed') {
-		// 		const backgroundImage = objectPath.get(model.config, 'self.background');
-		// 		if (backgroundImage) {
-		// 			this.style = this.sanitizer.bypassSecurityTrustStyle('background-image: url(' + objectPath.get(model.config, 'self.background') + ')');
-		// 		}
-		// 	}
+			this.style = '';
+			if (objectPath.get(model.config, 'self.layout') === 'boxed') {
+				const backgroundImage = objectPath.get(model.config, 'self.background');
+				if (backgroundImage) {
+					this.style = this.sanitizer.bypassSecurityTrustStyle('background-image: url(' + objectPath.get(model.config, 'self.background') + ')');
+				}
+			}
 
-		// 	// splash screen image
-		// 	this.splashScreenImage = objectPath.get(model.config, 'loader.image');
-		// });
+			// splash screen image
+			this.splashScreenImage = objectPath.get(model.config, 'loader.image');
+		});
 
 		// register translations
 		this.translationService.loadTranslations(enLang, chLang, esLang, jpLang, deLang, frLang);
@@ -74,7 +75,7 @@ export class AppComponent implements AfterViewInit, OnInit {
 		this.router.events
 			.pipe(filter(event => event instanceof NavigationEnd))
 			.subscribe(event => {
-			//	this.layoutConfigService.setModel({page: objectPath.get(this.pageConfigService.getCurrentPageConfig(), 'config')}, true);
+				this.layoutConfigService.setModel({page: objectPath.get(this.pageConfigService.getCurrentPageConfig(), 'config')}, true);
 			});
 	}
 
