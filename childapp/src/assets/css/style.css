@@ -6915,6 +6915,8 @@ p.ceb-single {
   border: 1px solid #e1e1e1;
   height: auto;
   background-color: #ffffff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 @media (max-width: 767px) {
    .login-custom  {
@@ -6936,7 +6938,7 @@ p.ceb-single {
     margin-bottom: 15px;
   }
 }
- .overlay .remember {
+  .remember {
   display: -webkit-flex;
   display: -moz-box;
   display: -ms-flexbox;
