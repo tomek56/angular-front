@@ -5711,23 +5711,34 @@ ul {
   background-color: rgba(0, 0, 0, 0.4);
 }
 .landing-hero {
-  /* background-image: url('../bg-4.jpg'); */
-  /* box-shadow: inset 0 0 1000px rgba(0, 0, 0, 0.5); */
+    background-image: url('../header.png');
+   box-shadow: inset 0 0 1000px rgba(0, 0, 0, 0.2);
   text-align: center;
   padding: 110px 0;
+  background-position: center;
 }
 .landing-hero .landing-hero-text {
   margin: 120px 0;
   display: block;
 }
+
 .landing-hero h2 {
-  color: #fff;
+  color: #181818;
   font-family: 'Dosis', sans-serif;
-  font-size: 48px;
+  font-size: 56px;
   line-height: 56px;
 }
+
+.landing-hero h3 {
+  color: #5c5c5c;
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
+  line-height: 26px;
+}
+
 .landing-hero h2.text-yellow {
-  color: #d2eb33;
+  color: #dd003f;
+  font-size: 38px;
 }
 .landing-hero h2:not(.text-yellow) {
   font-weight: 300;
@@ -5738,6 +5749,9 @@ ul {
   -webkit-border-radius: 25px;
   -moz-border-radius: 25px;
   border-radius: 25px;
+  margin-top: -140px;
+  margin-bottom: 90px;
+
 }
 .landing-hero .redbtn:hover {
   color: #fff;
@@ -5756,7 +5770,7 @@ ul {
   border-radius: 25px;
   display: inline-block;
   width: 170px;
-  margin: 15px 0;
+  margin: -15px 0;
 }
 .landing-version .redbtn:hover {
   color: #fff;
@@ -7078,7 +7092,7 @@ p.ceb-single {
   margin-right: 15px;
 }
 .slider .movie-item .title-in {
-  margin-bottom: 45px;
+  margin-bottom: 200px;
 }
 .slider .movie-item .title-in h6 a {
   font-size: 18px;
@@ -7145,13 +7159,13 @@ p.ceb-single {
   text-align: right;
 }
 .sliderv2 {
-  background: url('../images/uploads/slider-bg2.jpg') no-repeat;
+  background: url('../header.png') no-repeat;
   padding-bottom: 0;
-  padding-top: 180px;
+  padding-top: 0px;
   overflow: hidden;
 }
 .sliderv2 .movie-item .title-in {
-  text-align: left;
+  text-align: center;
 }
 @media (max-width: 991px) {
   .sliderv2 .movie-item .title-in {
@@ -7161,7 +7175,7 @@ p.ceb-single {
 .sliderv2 .movie-item .title-in h1 a {
   font-family: 'Dosis', sans-serif;
   font-size: 60px;
-  color: #ffffff;
+  color: #e23030;
   font-weight: 700;
   text-transform: uppercase;
   line-height: 60px;
@@ -7272,8 +7286,9 @@ p.ceb-single {
   font-family: "Ionicons";
   font-size: 40px;
 }
+
 .sliderv3 {
-  padding-top: 300px;
+  padding-top: 200px;
   padding-bottom: 0;
 }
 @media (max-width: 991px) {
@@ -7800,6 +7815,7 @@ p.ceb-single {
 .buster-light .user-pro .user {
   border-color: #d0dae4;
 }
+
 header {
   position: absolute;
   z-index: 100;
