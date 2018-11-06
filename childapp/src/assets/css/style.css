@@ -7073,13 +7073,14 @@ p.ceb-single {
  .login-content .social-btn-2 .tw {
   background-color: #00b9ef;
 }
+
 .slider {
   background: url('../images/uploads/slider-bg.jpg') no-repeat;
   background-position: center;
   text-align: center;
   background-size: cover;
   position: relative;
-  padding-top: 200px;
+  padding-top: 20px;
   padding-bottom: 50px;
   display: -webkit-flex;
   display: -moz-box;
@@ -7088,11 +7089,12 @@ p.ceb-single {
   align-items: center;
   justify-content: center;
 }
+
 .slider .movie-item {
   margin-right: 15px;
 }
 .slider .movie-item .title-in {
-  margin-bottom: 200px;
+  margin-bottom: 45px;
 }
 .slider .movie-item .title-in h6 a {
   font-size: 18px;
