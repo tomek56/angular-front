@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthpageComponent } from './components/authpage/authpage.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { SpyInterceptor } from './services/interceptor';
 
 @NgModule({
   declarations: [
@@ -14,9 +16,14 @@ import { AuthpageComponent } from './components/authpage/authpage.component';
   ],
   imports: [
     AppRoutingModule,
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: SpyInterceptor,
+    multi: true,
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
