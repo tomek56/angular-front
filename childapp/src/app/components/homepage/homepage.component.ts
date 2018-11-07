@@ -18,7 +18,9 @@ export class HomepageComponent implements OnInit {
   getCourses() {
     this.httpService.getHomePageCourses().subscribe(data => {
       console.log('z neta');
+      console.log(data.featured_course[0].title);
       console.log(data);
+
     });
   }
 }

@@ -4201,8 +4201,45 @@ ul {
 .movie-items .movie-item:hover h6 a {
   color: #dcf836;
 }
-.cate {
+
+.catehp {
   margin-bottom: 15px;
+  margin-top: 25px;
+
+}
+.catehp span {
+  padding: 12px 12px;
+  padding-top: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  margin-right: 15px;
+
+}
+.catehp span a {
+  font-family: 'Dosis', sans-serif;
+  font-size: 15px;
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.catehp .blue {
+  background-color: #1692bb;
+}
+.catehp .yell {
+  background-color: #f5b50a;
+}
+.catehp .green {
+  background-color: #a6bb16;
+}
+.catehp .orange {
+  background-color: #ec5a1a;
+}
+
+
+.cate {
+  margin-bottom: 5px;
 }
 .cate span {
   padding: 3px 5px;
@@ -5707,41 +5744,57 @@ ul {
     text-align: center;
   }
 }
+
 .user-hero:before {
   background-color: rgba(0, 0, 0, 0.4);
 }
+
 .landing-hero {
-    background-image: url('../header.png');
-   box-shadow: inset 0 0 1000px rgba(0, 0, 0, 0.2);
-  text-align: center;
+  box-shadow: inset 0 0 1000px rgba(0, 0, 0, 0.1);
   padding: 110px 0;
   background-position: center;
 }
+
+.home-page{
+  background-image: url('../header.png');
+  text-align: left;
+  padding: 50px 0;
+
+}
+
+
 .landing-hero .landing-hero-text {
-  margin: 120px 0;
+  margin: 150px 0px;
   display: block;
+  height: 170px;
 }
 
 .landing-hero h2 {
   color: #181818;
   font-family: 'Dosis', sans-serif;
   font-size: 56px;
-  line-height: 56px;
+  line-height: 36px;
 }
 
 .landing-hero h3 {
   color: #5c5c5c;
   font-family: 'Dosis', sans-serif;
   font-size: 18px;
-  line-height: 26px;
+  line-height: 18px;
+}
+
+.subheaderhp{
+  margin-right: 300px;
+  font-weight: 300;
+
 }
 
 .landing-hero h2.text-yellow {
-  color: #dd003f;
-  font-size: 38px;
+  color: #444;
+  font-size: 28px;
 }
 .landing-hero h2:not(.text-yellow) {
-  font-weight: 300;
+  font-weight: 500;
 }
 .landing-hero .redbtn {
   display: inline-block;
@@ -5749,8 +5802,8 @@ ul {
   -webkit-border-radius: 25px;
   -moz-border-radius: 25px;
   border-radius: 25px;
-  margin-top: -140px;
-  margin-bottom: 90px;
+  /* margin-top: -140px;*/
+  margin-bottom: 10px;
 
 }
 .landing-hero .redbtn:hover {
