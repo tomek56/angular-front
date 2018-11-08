@@ -150,16 +150,16 @@
 
 
 
-<div class="slider movie-items">
+<div class="slider movie-items darkbg">
 	<div class="container">
-		<div class="row">
-			<div class="social-link">
+		<div class="row ipad-width">
+			<!-- <div class="social-link">
 				<p>Follow us: </p>
 				<a href="#"><i class="ion-social-facebook"></i></a>
 				<a href="#"><i class="ion-social-twitter"></i></a>
 				<a href="#"><i class="ion-social-googleplus"></i></a>
 				<a href="#"><i class="ion-social-youtube"></i></a>
-      </div>
+      </div> -->
 
 
       <div class="title-hd">
@@ -170,7 +170,24 @@
 
 
 	    	<div  class="slick-multiItemSlider">
-	    		<div class="movie-item">
+
+            <div class="movie-item" *ngFor="let item of featured_course">
+
+                <div class="mv-img">
+                    <a href="#"><img src="../../../assets/slider1.jpg" alt="" width="285" height="737"></a>
+                  </div>
+                  <div class="title-in">
+                    <div class="cate">
+                      <span class="blue"><a href="#">Sci-fi</a></span>
+                    </div>
+                    <h6><a href="#"> {{item.title}}</a></h6>
+                    <p><i class="ion-android-star"></i><span>7.4</span> /10</p>
+                  </div>
+                </div>
+
+              </div>
+
+	    		<!-- <div class="movie-item">
 	    			<div class="mv-img">
 	    				<a href="#"><img src="images/uploads/slider1.jpg" alt="" width="285" height="737"></a>
 	    			</div>
@@ -277,8 +294,11 @@
 	    				<h6><a href="#">Die hard</a></h6>
 	    				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
 	    			</div>
-	    		</div>
-	    	</div>
+          </div>
+
+
+
+	    	</div> -->
 	    </div>
 	</div>
 </div>

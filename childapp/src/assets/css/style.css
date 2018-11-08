@@ -4065,6 +4065,11 @@ ul {
     padding: 0 30px;
   }
 }
+
+.darkbg {
+  background: #07101a;
+}
+
 .movie-items .slide-it {
   display: flex;
   flex-direction: column;
@@ -7128,7 +7133,7 @@ p.ceb-single {
 }
 
 .slider {
-  background: url('../images/uploads/slider-bg.jpg') no-repeat;
+  background: url('../bg/header-movies.png');
   background-position: center;
   text-align: center;
   background-size: cover;
