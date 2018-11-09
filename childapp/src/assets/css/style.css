@@ -4111,6 +4111,13 @@ ul {
   -o-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
 }
+
+.title-slider-hp{
+  text-align: left;
+  height: 80px;
+  margin-bottom: 40px;
+
+}
 .movie-items .movie-item .title-in {
   display: flex;
   flex-direction: column;
@@ -4242,6 +4249,10 @@ ul {
   background-color: #ec5a1a;
 }
 
+.cateslider {
+  margin-top: 5px;
+
+}
 
 .cate {
   margin-bottom: 5px;
@@ -4688,6 +4699,11 @@ ul {
 .topbar-filter.user p {
   padding-right: 300px;
 }
+
+.title-hdhp {
+  padding-top: 10px;
+  padding-left: 13px;
+}
 .title-hd {
   display: -webkit-flex;
   display: -moz-box;
@@ -4699,7 +4715,7 @@ ul {
 }
 .title-hd h2 {
   font-family: 'Dosis', sans-serif;
-  font-size: 24px;
+  font-size: 28px;
   color: #ffffff;
   font-weight: bold;
   text-transform: uppercase;
