@@ -121,10 +121,13 @@
       <h2 class="text-yellow subheaderhp">MIEJSCE GDZIE NAUCZYSZ SIĘ PROGRAMOWAĆ W PRZYJEMNY SPOSÓB BARDZO PRZYJEMNY</h2>
       <!-- <h3>MIEJSCE DLA OSÓB W KAŻDYM WIEKU</h3> -->
       <div class="catehp">
-        <span class="blue"><a href="#">Aplikacje Mobilne</a></span>
-         <span class="orange"><a href="#">Strony WWW</a></span>
+        <span  [ngStyle]="{'background-color' : item.color}" *ngFor="let item of categories">
+          <a href="#">{{item.name}}</a>
+        </span>
+
+         <!-- <span class="orange"><a href="#">Strony WWW</a></span>
          <span class="green"><a href="#">Podstawy programowania</a></span>
-        <span class="yell"><a href="#">Algorytmy</a></span>
+        <span class="yell"><a href="#">Algorytmy</a></span> -->
       </div>
     </div>
     <a href="" class="redbtn" id="discover-now">ZAŁÓŻ DARMOWE KONTO</a>
@@ -177,126 +180,22 @@
                   </div>
                   <div class="title-in title-slider-hp">
                     <h6><a href="#"> {{item.title}}</a></h6>
+                    <!-- <div class="cate cateslider" *ngFor="let tag of item.tags">
+                        <span [ngClass]="getTagColor()"><a href="#">Sci-fi</a></span>
+                    </div> -->
+
                     <div class="cate cateslider">
-                        <span class="blue"><a href="#">Sci-fi</a></span>
-                    </div>
+                      <span [ngStyle]="{'background-color' : getTagColor(item)}">
+                        <a href="#">{{ item.category.name }}</a>
+                      </span>
+
+                  </div>
                   </div>
                 </div>
 
               </div>
 
-	    		<!-- <div class="movie-item">
-	    			<div class="mv-img">
-	    				<a href="#"><img src="images/uploads/slider1.jpg" alt="" width="285" height="737"></a>
-	    			</div>
-	    			<div class="title-in">
-	    				<div class="cate">
-	    					<span class="blue"><a href="#">Sci-fi</a></span>
-	    				</div>
-	    				<h6><a href="#">Interstellar</a></h6>
-	    				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-	    			</div>
-	    		</div>
-				<div class="movie-item">
-	    			<div class="mv-img">
-	    				<a href="#"><img src="images/uploads/slider2.jpg" alt="" width="285" height="737"></a>
-	    			</div>
-	    			<div class="title-in">
-	    				<div class="cate">
-	    					<span class="yell"><a href="#">action</a></span>
-	    				</div>
-	    				<h6><a href="#">The revenant</a></h6>
-	    				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-	    			</div>
-	    		</div>
-	    		<div class="movie-item">
-	    			<div class="mv-img">
-	    				<a href="#"><img src="../../../assets/images/uploads/slider1.jpg" alt="" width="285" height="737"></a>
-	    			</div>
-	    			<div class="title-in">
-	    				<div class="cate">
-	    					<span class="green"><a href="#">comedy</a></span>
-	    				</div>
-	    				<h6><a href="#">Die hard</a></h6>
-	    				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-	    			</div>
-	    		</div>
-	    		<div class="movie-item">
-	    			<div class="mv-img">
-	    				<a href="#"><img src="images/uploads/slider4.jpg" alt="" width="285" height="737"></a>
-	    			</div>
-	    			<div class="title-in">
-	    				<div class="cate">
-	    					<span class="blue"><a href="#">Sci-fi</a></span> <span class="orange"><a href="#">advanture</a></span>
-	    				</div>
-	    				<h6><a href="#">The walk</a></h6>
-	    				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-	    			</div>
-	    		</div>
-	    		<div class="movie-item">
-	    			<div class="mv-img">
-	    				<a href="#"><img src="images/uploads/slider1.jpg" alt="" width="285" height="737"></a>
-	    			</div>
-	    			<div class="title-in">
-	    				<div class="cate">
-	    					<span class="blue"><a href="#">Sci-fi</a></span>
-	    				</div>
-	    				<h6><a href="#">Interstellar</a></h6>
-	    				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-	    			</div>
-	    		</div>
-				<div class="movie-item">
-	    			<div class="mv-img">
-	    				<a href="#"><img src="images/uploads/slider2.jpg" alt="" width="285" height="437"></a>
-	    			</div>
-	    			<div class="title-in">
-	    				<div class="cate">
-	    					<span class="yell"><a href="#">action</a></span>
-	    				</div>
-	    				<h6><a href="#">The revenant</a></h6>
-	    				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-	    			</div>
-	    		</div>
-	    		<div class="movie-item">
-	    			<div class="mv-img">
-	    				<img src="images/uploads/slider3.jpg" alt="" width="285" height="437">
-	    			</div>
-	    			<div class="title-in">
-	    				<div class="cate">
-	    					<span class="green"><a href="#">comedy</a></span>
-	    				</div>
-	    				<h6><a href="#">Die hard</a></h6>
-	    				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-	    			</div>
-	    		</div>
-	    		<div class="movie-item">
-	    			<div class="mv-img">
-	    				<img src="images/uploads/slider4.jpg" alt="" width="285" height="437">
-	    			</div>
-	    			<div class="title-in">
-	    				<div class="cate">
-	    					<span class="blue"><a href="#">Sci-fi</a></span> <span class="orange"><a href="#">advanture</a></span>
-	    				</div>
-	    				<h6><a href="#">The walk</a></h6>
-	    				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-	    			</div>
-	    		</div>
-	    		<div class="movie-item">
-	    			<div class="mv-img">
-	    				<img src="images/uploads/slider3.jpg" alt="" width="285" height="437">
-	    			</div>
-	    			<div class="title-in">
-	    				<div class="cate">
-	    					<span class="green"><a href="#">comedy</a></span>
-	    				</div>
-	    				<h6><a href="#">Die hard</a></h6>
-	    				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
-	    			</div>
-          </div>
 
-
-
-	    	</div> -->
 	    </div>
 	</div>
 </div>
