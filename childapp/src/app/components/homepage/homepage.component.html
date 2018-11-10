@@ -173,7 +173,7 @@
             <div class="movie-item" *ngFor="let item of featured_course">
 
                 <div class="mv-img">
-                    <a href="#"><img src="../../../assets/slider1.jpg" alt="" width="285" height="737"></a>
+                    <a href="#"><img [src]="getUrl(item)" alt="" width="285" height="737"></a>
                   </div>
                   <div class="title-in title-slider-hp">
                     <h6><a href="#"> {{item.title}}</a></h6>
