@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { NbAuthService } from '@nebular/auth';
 
 @Component({
   selector: 'app-authpage',
@@ -10,12 +11,18 @@ export class AuthpageComponent implements OnInit {
   @Input() action = 'login';
   classses: any = 'm-grid m-grid--hor m-grid--root m-page';
 
-  constructor() { }
+  constructor(private auth: NbAuthService) { }
 
   ngOnInit() {
   }
 
+  login() {
+    console.log('asd');
+  //  this.auth.authenticate('tokenauth', {});
+  }
+
   register() {
+ //   this.auth.authenticate()
     this.action = 'register';
   }
 

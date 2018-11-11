@@ -33,18 +33,17 @@ viewBox="0 0 600 480" style="enable-background:new 0 0 600 480;" xml:space="pres
 
     <div class="login-content login-custom center-block">
         <h3>Login</h3>
-        <form method="post" action="login.php">
           <div class="row">
              <label for="username">
                     Username:
-                    <input type="text" name="username" id="username" placeholder="Hugh Jackman" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$" required="required" />
+                    <input type="text" name="username" id="username" placeholder="Hugh Jackman"  required="required" />
                 </label>
           </div>
 
             <div class="row">
               <label for="password">
                     Password:
-                    <input type="password" name="password" id="password" placeholder="******" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required="required" />
+                    <input type="password" name="password" id="password" placeholder="******"  required="required" />
                 </label>
             </div>
             <div class="row">
@@ -56,9 +55,8 @@ viewBox="0 0 600 480" style="enable-background:new 0 0 600 480;" xml:space="pres
               </div>
             </div>
            <div class="row">
-              <button type="submit">Login</button>
+              <button (click)="login()">Login</button>
            </div>
-        </form>
         <div class="row">
           <p>Or via social</p>
             <div class="social-btn-2">

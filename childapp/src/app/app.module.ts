@@ -7,6 +7,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthpageComponent } from './components/authpage/authpage.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SpyInterceptor } from './services/interceptor';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { HttpModule } from '@angular/http';
+
+
 
 @NgModule({
   declarations: [
@@ -17,7 +21,9 @@ import { SpyInterceptor } from './services/interceptor';
   imports: [
     AppRoutingModule,
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    HttpModule,
+    DashboardModule,
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

@@ -4,7 +4,7 @@ import { Tag } from './tag';
 export interface Course {
   id?: number;
   title?: string;
-  category: Array<Category>;
+  category: Category;
   image_thumb?: string;
   image_285x437?: string;
   tags: Array<Tag>;
