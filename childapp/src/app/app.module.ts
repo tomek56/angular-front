@@ -7,7 +7,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthpageComponent } from './components/authpage/authpage.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SpyInterceptor } from './services/interceptor';
-import { DashboardModule } from './dashboard/dashboard.module';
 import { HttpModule } from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
@@ -49,19 +48,26 @@ import {
 } from '@angular/material';
 
   import { CommonModule } from '@angular/common';
+import { NavigationComponent } from './dashboard/components/navigation/navigation.component';
+import { DashboardSkeletonComponent } from './dashboard/components/dashboard-skeleton/dashboard-skeleton.component';
+import { FirstComponent } from './dashboard/components/first/first.component';
+import { SecondComponent } from './dashboard/components/second/second.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
-    AuthpageComponent
+    AuthpageComponent,
+    NavigationComponent,
+    DashboardSkeletonComponent,
+    FirstComponent,
+    SecondComponent
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
     HttpClientModule,
     HttpModule,
-    DashboardModule,
     CommonModule,
     MatButtonModule,
     MatToolbarModule,
