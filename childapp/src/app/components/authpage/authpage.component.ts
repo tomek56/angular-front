@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { NbAuthService } from '@nebular/auth';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 
