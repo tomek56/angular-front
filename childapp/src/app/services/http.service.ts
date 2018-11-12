@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClientModule, HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Course } from '../models/course';
 import { HomePage } from '../models/homepage';
 import { LinkhelperService } from './linkhelper.service';
 import { Category } from '../models/category';
+import { Token } from '../models/token';
 
 @Injectable({
   providedIn: 'root'
@@ -19,5 +20,19 @@ export class HttpService {
 
   getCategories(): Observable<Array<Category>> {
     return this.http.get<Array<Category>> (this.link.getFullLink('/api/get-categories/'), {});
+  }
+
+  getToken(username: string, password: string): Observable<Token> {
+
+      // var params = new HttpParams().set('grant_type', 'password');
+
+
+
+      const params = new HttpParams()
+      .set('grant_type', 'password')
+      .set('username', username)
+      .set('password', password);
+
+      return this.http.post<Token> (this.link.getFullLink('/api/o/token/'), params);
   }
 }
