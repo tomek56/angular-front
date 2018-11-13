@@ -122,6 +122,13 @@
     width: 1170px;
   }
 }
+
+@media (min-width: 1400px) {
+  .container {
+    width: 1250px;
+  }
+}
+
 .container-fluid {
   margin-right: auto;
   margin-left: auto;
@@ -2152,6 +2159,13 @@ tbody.collapse.in {
   min-height: 50px;
   margin-bottom: 20px;
   border: 1px solid transparent;
+}
+
+.navbar .logo{
+  width: 145px;
+  height: 74px;
+  background-image: url('../images/meetideo/logo-full.png');
+  background-size: 145px 74px;
 }
 @media (min-width: 768px) {
   .navbar {
@@ -5777,14 +5791,21 @@ ul {
 }
 
 .home-page{
-  background-image: url('../header.png');
   text-align: left;
   padding: 50px 0;
 
 }
 
+.bg-slider-hp {
+  background-image: url('../bg/header-slider.png');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 360px 400px;
+  background-position-y: 100px;
+}
 
 .landing-hero .landing-hero-text {
+
   margin: 150px 0px;
   display: block;
   height: 170px;
@@ -5805,7 +5826,7 @@ ul {
 }
 
 .subheaderhp{
-  margin-right: 300px;
+  margin-right: 400px;
   font-weight: 300;
 
 }
@@ -7235,7 +7256,8 @@ p.ceb-single {
   text-align: right;
 }
 .sliderv2 {
-  background: url('../header.png') no-repeat;
+  /* background: url('../header.png') no-repeat; */
+
   padding-bottom: 0;
   padding-top: 0px;
   overflow: hidden;
@@ -8134,10 +8156,18 @@ header#header-light .navbar-default .navbar-nav .dropdown.first.open a {
   color: #020d18;
 }
 header#headerv3-light {
-  background-color: #020d18;
+   /* background-color: #f63935; */
+   /* background-image: url('../bg/header-movies.png'); */
+
 }
+
+.sticky .logo{
+  background-image: url('../images/meetideo/logo-full-white.png')
+}
+
 .sticky {
-  background-color: #0f2133;
+  background: url('../bg/header-movies.png');
+
   position: fixed;
   width: 100%;
   z-index: 9999;
