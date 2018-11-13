@@ -6178,8 +6178,9 @@ li.list-group-item:first-child {
   9. NAVBAR
 \*------------------------------------*/
 .navbar {
-  margin-bottom: 0;
-  padding: 0;
+  margin-bottom: 15px;
+  padding: 0px;
+  padding-left: 315px;
   background-color: #fff;
   border-width: 0;
   border-radius: 0;
@@ -6192,23 +6193,36 @@ li.list-group-item:first-child {
   z-index: 999;
 }
 
+.navbar-left-padding{
+  padding-left: 280px;
+}
+
+.navbar-left-padding-clear{
+  padding-left: 15px;
+}
+
 .navbar-fixed {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 999;
+  height: 100px;
+  -webkit-box-shadow: 3 3px 9px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 3 3px 9px rgba(0, 0, 0, 0.3);
+  box-shadow: 3 3px 9px rgba(0, 0, 0, 0.3);
+
 }
 
-@media (min-width: 1200px) {
+/* @media (min-width: 1200px) {
   .navbar {
-      padding-left: 270px;
+      padding-left: 0px;
   }
 
   .sidebar-mini .navbar {
       padding-left: 0;
   }
-}
+} */
 
 /* 9.1. NAVBAR HEADER */
 .navbar--header {
@@ -6438,7 +6452,7 @@ li.list-group-item:first-child {
 \*------------------------------------*/
 .sidebar {
   position: fixed;
-  top: 90px;
+  top: 0px;
   left: 0px;
   bottom: 0;
   width: 270px;

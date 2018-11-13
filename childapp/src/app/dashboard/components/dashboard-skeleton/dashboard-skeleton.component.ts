@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { MatSidenav } from '@angular/material';
 
 @Component({
   selector: 'app-dashboard-skeleton',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardSkeletonComponent implements OnInit {
 
+  private drawerVisible = true;
+  @ViewChild('drawer') sidenav: MatSidenav;
   constructor() { }
 
   ngOnInit() {
+
   }
 
+  toggleDrawer() {
+    this.sidenav.toggle();
+    this.drawerVisible = this.sidenav.opened;
+
+  }
 }
