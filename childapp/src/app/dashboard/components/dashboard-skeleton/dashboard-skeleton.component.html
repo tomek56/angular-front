@@ -71,7 +71,7 @@
       <mat-toolbar-row class="navbar navbar-fixed" [ngClass]="{ 'navbar-left-padding': drawerVisible, 'navbar-left-padding-clear': !drawerVisible}">
 
 
-          <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="toggleDrawer()" color="primary">
+          <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="toggleDrawer()" color="#444444">
               <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
             </button>
 
@@ -80,7 +80,7 @@
              <!-- Navbar Search Start -->
              <div class="navbar--search">
                 <form action="search-results.html">
-                    <input type="search" name="search" class="form-control" placeholder="Search Something..." required>
+                    <input type="search" name="search" class="form-control" placeholder="Szukaj..." required>
                     <button class="btn-link"><i class="fa fa-search"></i></button>
                 </form>
             </div>
@@ -88,7 +88,7 @@
 
             <div class="navbar--nav ml-auto">
                 <ul class="nav">
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="fa fa-bell"></i>
                             <span class="badge text-white bg-blue">7</span>
@@ -100,10 +100,10 @@
                             <i class="fa fa-envelope"></i>
                             <span class="badge text-white bg-blue">4</span>
                         </a>
-                    </li>
+                    </li> -->
 
                     <!-- Nav Language Start -->
-                    <li class="nav-item dropdown nav-language">
+                    <!-- <li class="nav-item dropdown nav-language">
                         <a href="#" class="nav-link" data-toggle="dropdown">
                             <img src="assets/img/flags/us.png" alt="">
                             <span>English</span>
@@ -130,16 +130,16 @@
                                 </a>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
                     <!-- Nav Language End -->
 
                     <!-- Nav User Start -->
-                    <li class="nav-item dropdown nav--user online">
-                        <a href="#" class="nav-link" data-toggle="dropdown">
-                            <img src="assets/img/avatars/01_80x80.png" alt="" class="rounded-circle">
-                            <span>Henry Foster</span>
+                    <li class="nav-item dropdown nav--user ">
+                        <button class="btn btn-rounded btn-dashboard" data-toggle="dropdown">
+                            <!-- <img src="assets/img/avatars/01_80x80.png" alt="" class="rounded-circle"> -->
+                            <span>Ustawienia&nbsp;</span>
                             <i class="fa fa-angle-down"></i>
-                        </a>
+                        </button>
 
                         <ul class="dropdown-menu">
                             <li><a href="profile.html"><i class="far fa-user"></i>Profile</a></li>

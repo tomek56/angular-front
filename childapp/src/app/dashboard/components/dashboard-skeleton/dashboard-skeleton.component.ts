@@ -13,7 +13,6 @@ export class DashboardSkeletonComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-
   }
 
   toggleDrawer() {

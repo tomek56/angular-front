@@ -1214,7 +1214,7 @@ a.star-icon.is-stared:before {
 }
 
 .btn {
-  padding: 8px 20px;
+  padding: 9px 25px;
   border-width: 0;
   border-radius: 25px;
   font-size: 14px;
@@ -1227,6 +1227,17 @@ a.star-icon.is-stared:before {
   -webkit-transition-timing-function: ease-in-out;
           transition-timing-function: ease-in-out;
   cursor: pointer;
+}
+
+.btn-dashboard{
+  border-width: 1px;
+  border-color: #dd003f;
+  background-color: white;
+  height: 44px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+
 }
 
 .btn.active,
@@ -1268,7 +1279,7 @@ a.star-icon.is-stared:before {
 }
 
 .btn-rounded {
-  border-radius: 4px;
+  border-radius: 24px;
 }
 .btn-group.btn-group-vertical > .btn-rounded:first-child {
   border-top-right-radius: 4px;
@@ -6179,8 +6190,11 @@ li.list-group-item:first-child {
 \*------------------------------------*/
 .navbar {
   margin-bottom: 15px;
+
   padding: 0px;
   padding-left: 315px;
+  padding-right: 35px;
+
   background-color: #fff;
   border-width: 0;
   border-radius: 0;
@@ -6293,6 +6307,8 @@ li.list-group-item:first-child {
 }
 
 .navbar--search .form-control {
+  font-family: 'Dosis', sans-serif;
+  font-size: 14px;
   height: auto;
   padding: 10px 65px 10px 25px;
   background-color: #f3f4f4;
@@ -6305,7 +6321,7 @@ li.list-group-item:first-child {
   position: absolute;
   top: 0;
   right: 0;
-  padding: 8px 25px;
+  padding: 4px 20px;
   border-width: 0;
   color: #393939;
   cursor: pointer;
@@ -6347,7 +6363,7 @@ li.list-group-item:first-child {
   min-width: 128px;
   min-width: 8rem;
   margin-top: 0;
-  padding: 10px 0;
+  padding: 10px -30px;
   border-radius: 0 0 5px 5px;
   font-size: 14px;
   line-height: 24px;
