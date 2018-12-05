@@ -1,19 +1,22 @@
 .triangle-img {
 	position: absolute;
-	width: 920px;
-  z-index: 3;
+	width: 800px;
+  z-index: -999;
+  left: 0px;
+  margin-left: 700px;
+  /* right: 700px; */
  }
 
 
-/*
 
+/*
       .triangle-img {
         position: absolute;
-        width: 1920px;
-        z-index: -1; }
+        width: 1620px;
+        z-index: -999; }
         .triangle-img--align-right {
-          top: -850px;
-          right: -700px;
+          top: 0px;
+          left: -700px;
           -webkit-transform: rotate(-16deg);
           transform: rotate(-16deg); }
           @media (max-width: 1660px) {
