@@ -104,7 +104,8 @@
 .container {
   margin-right: auto;
   margin-left: auto;
-
+  padding-left: 100px;
+  padding-right: 100px;
 }
 @media (min-width: 768px) {
   .container {
@@ -124,7 +125,13 @@
 
 @media (min-width: 1400px) {
   .container {
-    width: 1200px;
+    width: 1400px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .container {
+    width: 1550px;
   }
 }
 
@@ -2161,10 +2168,10 @@ tbody.collapse.in {
 }
 
 .navbar .logo{
-  width: 145px;
-  height: 74px;
-  background-image: url('../images/meetideo/logo-full.png');
-  background-size: 145px 74px;
+  width: 180px;
+  height: 90px;
+  background-image: url('../images/meetideo/logo-full-new.png');
+  background-size: 180px 90px;
 }
 @media (min-width: 768px) {
   .navbar {
@@ -5785,7 +5792,7 @@ ul {
 
 .landing-hero {
   /* box-shadow: inset 0 0 1000px rgba(0, 0, 0, 0.1); */
-  padding: 110px 0;
+  padding: 0px 0;
   background-position: center;
 }
 
@@ -5796,11 +5803,12 @@ ul {
 }
 
 .bg-slider-hp {
-  background-image: url('../bg/phone.png');
+  background-image: url('../bg/homepage_header.png');
   background-repeat: no-repeat;
   background-position: right;
-  background-size: 400px 500px;
+  background-size: 700px 507px;
   background-position-y: 100px;
+
 }
 
 .landing-hero .landing-hero-text {
@@ -5808,26 +5816,28 @@ ul {
   margin: 150px 0px;
   display: block;
   height: 270px;
+  width: 500px;
 }
 
 .landing-hero h2 {
-  color: #181818;
+  color: #000000;
   font-family: 'Dosis', sans-serif;
-  font-size: 56px;
-  line-height: 36px;
+  font-size: 60px;
+  font-weight: bold;
+  line-height: 56px;
 }
 
 .landing-hero h3 {
-  color: #5c5c5c;
+  color: #515151;
   font-family: 'Dosis', sans-serif;
-  font-size: 18px;
-  line-height: 18px;
+  font-size: 24px;
+  line-height: 25px;
+  font-weight: 300;
 }
 
 .subheaderhp{
-  margin-right: 400px;
-  font-weight: 300;
-
+  margin-top: 100px;
+  width: 350px;
 }
 
 .landing-hero h2.text-yellow {
@@ -8161,7 +8171,7 @@ header#headerv3-light {
 }
 
 .sticky .logo{
-  background-image: url('../images/meetideo/logo-full-white.png')
+  /* background-image: url('../images/meetideo/logo-full-new.png') */
 }
 
 .sticky {
