@@ -8462,3 +8462,32 @@ footer.full-width-ft .ft-copyright {
   font-family: 'Dosis', sans-serif;
   font-weight: 700;
 }
+
+
+.home-page-person{
+  height: 700px;
+  background-image: url('../bg/homepage_bg_person.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position-y: 0px;
+}
+
+.homepage-person-bottom-image{
+  margin: auto;
+  width: 500px;
+  margin-top: 30px;
+}
+
+.home-page-person h2{
+  color: #000000;
+  font-family: 'Dosis', sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 56px;
+}
+
+.landing-hero-text-subtext{
+  text-align: center;
+
+}
