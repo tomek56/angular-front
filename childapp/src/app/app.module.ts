@@ -52,6 +52,7 @@ import { NavigationComponent } from './dashboard/components/navigation/navigatio
 import { DashboardSkeletonComponent } from './dashboard/components/dashboard-skeleton/dashboard-skeleton.component';
 import { FirstComponent } from './dashboard/components/first/first.component';
 import { SecondComponent } from './dashboard/components/second/second.component';
+import { PanelComponent } from './dashboard/components/panel/panel/panel.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { SecondComponent } from './dashboard/components/second/second.component'
     NavigationComponent,
     DashboardSkeletonComponent,
     FirstComponent,
-    SecondComponent
+    SecondComponent,
+    PanelComponent
   ],
   imports: [
     AppRoutingModule,

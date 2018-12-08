@@ -13,6 +13,7 @@ export class DashboardSkeletonComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.sidenav.toggle();
   }
 
   toggleDrawer() {
