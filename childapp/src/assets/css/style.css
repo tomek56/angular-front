@@ -1846,25 +1846,28 @@ tbody.collapse.in {
 }
 .dropdown-menu2 {
   position: absolute;
-  top: 100%;
-  left: 0;
+  /* top: 100%; */
   z-index: 1000;
   display: none;
-  float: left;
-  min-width: 160px;
-  padding: 5px 0;
-  margin: 2px 0 0;
+  left: -150px;
+  margin-top: 10px;
+  /* float: right; */
+  min-width: 240px;
+  padding: 20px 0;
+  /* margin: 2px 0 0;  */
+  /* margin-right: 100px; */
   list-style: none;
   font-size: 14px;
   text-align: left;
   background-color: #fff;
   border: 1px solid #ccc;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 0;
-  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-  -moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-  background-clip: padding-box;
+  border-radius: 8px;
+
+  border: 1px solid rgba(182, 182, 182, 0.15);
+  -webkit-box-shadow: 0 0px 4px rgba(0, 0, 0, 0.275);
+  -moz-box-shadow: 0 0px 4px rgba(0, 0, 0, 0.275);
+  box-shadow: 0 0px 4px rgba(0, 0, 0, 0.275);
+  /* background-clip: padding-box; */
 }
 .dropdown-menu.pull-right {
   right: 0;
@@ -5916,8 +5919,10 @@ z-index: 998;
 
 .redbtnstroke:hover{
   background-color: #dd003f;
-
 }
+
+
+
 
 .redbtn i {
   margin-right: 10px;
@@ -8489,5 +8494,16 @@ footer.full-width-ft .ft-copyright {
 
 .landing-hero-text-subtext{
   text-align: center;
+
+}
+
+
+
+
+
+/****new PANEL*/
+
+.clear-btn-panel{
+  background-color: transparent;
 
 }

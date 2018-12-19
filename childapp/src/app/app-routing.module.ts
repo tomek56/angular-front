@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { AuthpageComponent } from './components/authpage/authpage.component';
 import { DashboardSkeletonComponent } from './dashboard/components/dashboard-skeleton/dashboard-skeleton.component';
+import { PanelComponent } from './dashboard/components/panel/panel/panel.component';
+
 
 const routes: Routes = [
   {
@@ -16,6 +18,10 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardSkeletonComponent
+  },
+  {
+    path: 'panel',
+    component: PanelComponent
   }
 	// {
 	// 	path: '',
