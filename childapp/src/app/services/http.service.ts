@@ -22,6 +22,10 @@ export class HttpService {
     return this.http.get<Array<Category>> (this.link.getFullLink('/api/get-categories/'), {});
   }
 
+  getCourses(): Observable<Array<Course>> {
+    return this.http.get<Array<Course>> (this.link.getFullLink('/api/courses/'), {});
+  }
+
   getToken(username: string, password: string): Observable<Token> {
 
       // var params = new HttpParams().set('grant_type', 'password');

@@ -8497,18 +8497,18 @@ footer.full-width-ft .ft-copyright {
 
 }
 
-
-
-
-
 /****new PANEL*/
 
 .clear-btn-panel{
   background-color: transparent;
-
 }
 
 .far-panel{
   padding-right: 12px;
   padding-top: 7px;
+}
+
+
+.panel-container{
+  background-color: #00b9ef;
 }
