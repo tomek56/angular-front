@@ -6,6 +6,7 @@ import { HomePage } from '../models/homepage';
 import { LinkhelperService } from './linkhelper.service';
 import { Category } from '../models/category';
 import { Token } from '../models/token';
+import { CourseList } from '../models/CourseList';
 
 @Injectable({
   providedIn: 'root'
@@ -22,8 +23,8 @@ export class HttpService {
     return this.http.get<Array<Category>> (this.link.getFullLink('/api/get-categories/'), {});
   }
 
-  getCourses(): Observable<Array<Course>> {
-    return this.http.get<Array<Course>> (this.link.getFullLink('/api/courses/'), {});
+  getCourses(): Observable<CourseList> {
+    return this.http.post<CourseList> (this.link.getFullLink('/api/courses/'), {});
   }
 
   getToken(username: string, password: string): Observable<Token> {

@@ -23,7 +23,6 @@ export class HomepageComponent implements OnInit {
    }
 
   ngOnInit() {
-
   }
 
   getUrl(course: Course): string {
@@ -46,6 +45,5 @@ export class HomepageComponent implements OnInit {
     this.httpService.getHomePageCourses().subscribe(data => {
       this.featured_course = data.featured_course;
     });
-
   }
 }
