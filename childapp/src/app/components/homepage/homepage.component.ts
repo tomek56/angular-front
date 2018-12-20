@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/services/http.service';
-import { HomePage } from 'src/app/models/homepage';
+import { HomePage } from 'src/app/models/Homepage';
 import { Observable } from 'rxjs';
 import { Course } from 'src/app/models/course';
 import { LinkhelperService } from 'src/app/services/linkhelper.service';

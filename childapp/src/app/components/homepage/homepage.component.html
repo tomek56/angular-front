@@ -121,52 +121,28 @@ viewBox="0 0 600 480" style="enable-background:new 0 0 600 480;" xml:space="pres
 <div class="slider movie-items darkbg">
 	<div class="container">
 		<div class="row ipad-width">
-			<!-- <div class="social-link">
-				<p>Follow us: </p>
-				<a href="#"><i class="ion-social-facebook"></i></a>
-				<a href="#"><i class="ion-social-twitter"></i></a>
-				<a href="#"><i class="ion-social-googleplus"></i></a>
-				<a href="#"><i class="ion-social-youtube"></i></a>
-      </div> -->
-
 
       <div class="title-hd title-hdhp">
         <h2>Ostatnio dodane kursy</h2>
       </div>
 
-
-
 	    	<div  class="slick-multiItemSlider">
 
-            <div class="movie-item" *ngFor="let item of featured_course">
-
+            <div class="movie-item homepage-slider" *ngFor="let item of featured_course">
                 <div class="cate cateslider">
                     <span [ngStyle]="{'background-color' : getTagColor(item)}">
                       <a href="#">{{ item.category.name }}</a>
                     </span>
-
-                    </div>
-
+                </div>
                 <div class="mv-img">
                       <a class="" href="#"><img class="mv-img-ahp"[src]="getUrl(item)" alt=""></a>
                   </div>
 
-
-
                   <div class="title-in title-slider-hp">
                     <h6><a href="#"> {{item.title}}</a></h6>
-                    <!-- <div class="cate cateslider" *ngFor="let tag of item.tags">
-                        <span [ngClass]="getTagColor()"><a href="#">Sci-fi</a></span>
-                    </div> -->
                   </div>
-
-
-
-
                 </div>
-
               </div>
-
 
 	    </div>
 	</div>

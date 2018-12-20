@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClientModule, HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Course } from '../models/course';
-import { HomePage } from '../models/homepage';
+import { HomePage } from '../models/Homepage';
 import { LinkhelperService } from './linkhelper.service';
 import { Category } from '../models/category';
 import { Token } from '../models/token';
-import { CourseList } from '../models/CourseList';
+import { CourseList } from '../models/courseList';
 
 @Injectable({
   providedIn: 'root'

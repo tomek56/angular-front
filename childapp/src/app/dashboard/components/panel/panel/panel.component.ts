@@ -24,7 +24,7 @@ export class PanelComponent implements OnInit {
       this.courses = data.courses;
       console.log(this.courses);
     });
-
   }
+
 
 }

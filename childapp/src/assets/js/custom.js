@@ -1,16 +1,16 @@
 //preloading for page
-$(window).on('load', function() { // makes sure the whole site is loaded 
+$(window).on('load', function() { // makes sure the whole site is loaded
 	var status = $('#status');
 	var preloader = $('#preloader');
 	var body = $('body');
-	status.fadeOut(); // will first fade out the loading animation 
-	preloader.delay(0).fadeOut('fast'); // will fade out the white DIV that covers the website. 
+	status.fadeOut(); // will first fade out the loading animation
+	preloader.delay(0).fadeOut('fast'); // will fade out the white DIV that covers the website.
 	body.delay(0).css({'overflow':'visible'});
 	var vidDefer = document.getElementsByTagName('iframe');
 	for (var i=0; i<vidDefer.length; i++) {
 		if(vidDefer[i].getAttribute('data-src')) {
 			vidDefer[i].setAttribute('src',vidDefer[i].getAttribute('data-src'));
-		} 
+		}
 	}
 })
 $(function(){
@@ -26,7 +26,7 @@ $(function(){
 	        function(){
 	            $(this).children('.dropdown-menu').fadeOut(300);
 	        }
-	    );	   
+	    );
 	}else{
 		var dropdownClick = $('.navbar a.dropdown-toggle');
 		dropdownClick.on('click', function(e) {
@@ -42,7 +42,7 @@ $(function(){
 			return false;
 		});
 	}
-	//js for nav icon 
+	//js for nav icon
 	var clickMenubtn = $('#nav-icon1');
 	clickMenubtn.on('click', function(){
 		$(this).toggleClass('open');
@@ -106,17 +106,17 @@ $(function(){
 
 	//js for twitter
 	var tweets = jQuery(".tweet");
-	jQuery(tweets).each( function( t, tweet ) { 
+	jQuery(tweets).each( function( t, tweet ) {
     var id = jQuery(this).attr('id');
     twttr.widgets.createTweet(
-      id, tweet, 
+      id, tweet,
       {
         conversation : 'none',    // or all
-        cards        : 'hidden',  // or visible 
+        cards        : 'hidden',  // or visible
         linkColor    : 'default', // default is blue
         theme        : 'light'    // or dark
       });
-    }); 
+    });
 
 	//slider for movie and tv show home 2
 	multiItem2.slick({
@@ -192,14 +192,15 @@ $(function(){
 	//main slider home 1
 	var multiItemSlider = $('.slick-multiItemSlider');
 	multiItemSlider.slick({
-		infinite: true,
+		infinite: false,
 		slidesToShow: 4,
 		slidesToScroll: 4,
 		arrows: false,
 		draggable:true,
-		autoplay: true,
+		autoplay: false,
 		autoplaySpeed: 2000,
-		dots: true,
+    dots: false,
+    variableWidth: true,
 		responsive: [
 	    {
 	      breakpoint: 1024,
@@ -383,7 +384,7 @@ $(function(){
 		        locked: false
 		    }
 		}
-	});	
+	});
 	//==js for show prev/next button in video lightbox
 	fancyboxmedia
 	    .attr('rel', 'playlist')
@@ -416,7 +417,7 @@ $(function(){
 	});
 	//== js for visibile next/prev fancybox
 	imglightbox.fancybox({
-        // loop: false, // gallery may not be cyclic 
+        // loop: false, // gallery may not be cyclic
         afterShow: function () {
             // initialize some variables
             var gallerySize = this.group.length,
@@ -464,7 +465,7 @@ $(function(){
 				setTimeout( function(){
 					$(target).removeClass("openform");
 				}, 350);
-			}	
+			}
 		});
     });
     //pop up for signup form
@@ -480,7 +481,7 @@ $(function(){
 				setTimeout( function(){
 					$(target).removeClass("openform");
 				}, 350);
-			}	
+			}
 		});
     });
     // close popup for mobile
@@ -489,7 +490,7 @@ $(function(){
 		e.preventDefault();
 		var overlay = $(".overlay");
 		overlay.removeClass("openform");
-	});	
+	});
     //js for multi selected
     var multiselect = $(".ui.fluid.dropdown");
     multiselect.dropdown({
@@ -507,7 +508,7 @@ $(function(){
 		}else{
 			header.removeClass('sticky');
 		}
-	});		
+	});
 	//back to top js
 	var backtotop = $('#back-to-top');
     backtotop.on('click', function (e) {
@@ -530,15 +531,15 @@ $(function(){
 	if(windowWidth > 1200){
 		var stickySidebar = $('.sticky-sb');
 		var mainCt = $('.main-content');
-		if (stickySidebar.length > 0) {	
+		if (stickySidebar.length > 0) {
 			var stickyHeight = stickySidebar.height(),
 			sidebarTop = stickySidebar.offset().top;
 		}
 		// on scroll move the sidebar
 		$(window).scroll(function () {
-		  if (stickySidebar.length > 0) {	
+		  if (stickySidebar.length > 0) {
 		    var scrollTop = $(window).scrollTop();
-		            
+
 		    if (sidebarTop < scrollTop) {
 		      stickySidebar.css('top', scrollTop - sidebarTop+ 80);
 
@@ -552,11 +553,11 @@ $(function(){
 		    }
 		    else {
 		      stickySidebar.css('top', '0');
-		    } 
+		    }
 		  }
 		});
 		$(window).resize(function () {
-		  if (stickySidebar.length > 0) {	
+		  if (stickySidebar.length > 0) {
 		    stickyHeight = stickySidebar.height();
 		  }
 		});

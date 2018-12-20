@@ -53,6 +53,7 @@ import { DashboardSkeletonComponent } from './dashboard/components/dashboard-ske
 import { FirstComponent } from './dashboard/components/first/first.component';
 import { SecondComponent } from './dashboard/components/second/second.component';
 import { PanelComponent } from './dashboard/components/panel/panel/panel.component';
+import { CoursesSliderComponent } from './dashboard/components/panel/components/courses-slider/courses-slider.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { PanelComponent } from './dashboard/components/panel/panel/panel.compone
     DashboardSkeletonComponent,
     FirstComponent,
     SecondComponent,
-    PanelComponent
+    PanelComponent,
+    CoursesSliderComponent
   ],
   imports: [
     AppRoutingModule,

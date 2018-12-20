@@ -1,0 +1,47 @@
+
+
+<!-- <div class="course" *ngFor="let item of courses">
+    <p>
+      {{item}}
+        {{ item.title }}
+        test
+    </p>
+
+
+
+     <div class="">
+        <span [ngStyle]="{'background-color' : getTagColor(item)}">
+          <a href="#">{{ item.title }}</a>
+        </span>
+
+    </div>
+ </div> -->
+
+<div class="slider-courses  movie-items">
+    <div class="container">
+      <div class="row ipad-width">
+
+        <!-- <div class="title-hd title-hdhp">
+          <h2>Ostatnio dodane kursy</h2>
+        </div> -->
+
+          <div  class="slick-multiItemSlider">
+
+              <div class="course-item-slider" *ngFor="let item of courses">
+                  <div class="cate cateslider">
+                      <!-- <span [ngStyle]="{'background-color' : getTagColor(item)}">
+                        <a href="#">{{ item.category.name }}</a>
+                      </span> -->
+                  </div>
+                  <div class="mv-img-panel">
+                        <a class="" href="#"><img class="mv-img-panel-slider" [src]="getUrl(item)" alt=""></a>
+                    </div>
+
+                    <div class="title-in title-slider-panel">
+                      <h6><a href="#"> {{item.title}}</a></h6>
+                    </div>
+                  </div>
+                </div>
+        </div>
+    </div>
+  </div>
