@@ -101,10 +101,15 @@
     border: 1px solid #ddd !important;
   }
 }
+
+.bg-color-wrapper{
+  background-color: #f9fafe;
+}
 .container {
   margin-right: auto;
   margin-left: auto;
   width: 1000px;
+
 }
 @media (min-width: 768px) {
   .container {
@@ -8531,11 +8536,11 @@ footer.full-width-ft .ft-copyright {
 
 
 .panel-container{
-  background-color: #f9fafe;
   height: 100%;
 }
 
 .panel-content{
+
   margin-top: 70px;
   width: 1200px;
   margin-left: auto;
