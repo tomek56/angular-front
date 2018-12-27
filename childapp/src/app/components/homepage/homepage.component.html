@@ -126,7 +126,8 @@ viewBox="0 0 600 480" style="enable-background:new 0 0 600 480;" xml:space="pres
         <h2>Ostatnio dodane kursy</h2>
       </div>
 
-	    	<div  class="slick-multiItemSlider">
+	    	<div  class="slider-container">
+          <div  class="slick-multiItemSlider-homepage">
 
             <div class="movie-item homepage-slider" *ngFor="let item of featured_course">
                 <div class="cate cateslider">
@@ -142,7 +143,8 @@ viewBox="0 0 600 480" style="enable-background:new 0 0 600 480;" xml:space="pres
                     <h6><a href="#"> {{item.title}}</a></h6>
                   </div>
                 </div>
-              </div>
+                </div>
+        </div>
 
 	    </div>
 	</div>
