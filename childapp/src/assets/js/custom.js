@@ -192,7 +192,9 @@ $(function(){
 	//main slider home 1
 	var multiItemSlider = $('.slick-multiItemSlider');
 	multiItemSlider.slick({
-		infinite: false,
+    infinite: false,
+    centerMode: false,
+    padding: '60px',
 		slidesToShow: 4,
 		slidesToScroll: 4,
 		arrows: false,

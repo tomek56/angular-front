@@ -1,5 +1,3 @@
-
-
 <!-- <div class="course" *ngFor="let item of courses">
     <p>
       {{item}}
@@ -18,30 +16,35 @@
  </div> -->
 
 <div class="slider-courses  movie-items">
-    <div class="container">
-      <div class="row ipad-width">
+  <div class="container">
+    <div class="row ipad-width">
 
-        <!-- <div class="title-hd title-hdhp">
+      <!-- <div class="title-hd title-hdhp">
           <h2>Ostatnio dodane kursy</h2>
         </div> -->
+        <div class="slider-container">
+          <div class="slick-multiItemSlider">
+            <div class="slider-padding-left" *ngFor="let item of courses">
+              <div class=" course-item-slider ">
 
-          <div  class="slick-multiItemSlider">
-
-              <div class="course-item-slider" *ngFor="let item of courses">
-                  <div class="cate cateslider">
-                      <!-- <span [ngStyle]="{'background-color' : getTagColor(item)}">
+              <div class="cate cateslider">
+                <!-- <span [ngStyle]="{'background-color' : getTagColor(item)}">
                         <a href="#">{{ item.category.name }}</a>
                       </span> -->
-                  </div>
-                  <div class="mv-img-panel">
-                        <a class="" href="#"><img class="mv-img-panel-slider" [src]="getUrl(item)" alt=""></a>
-                    </div>
+              </div>
+              <div class="mv-img-panel">
+                <a class="" href="#"><img class="mv-img" [src]="getUrl(item)" alt=""></a>
+              </div>
 
-                    <div class="title-in title-slider-panel">
-                      <h6><a href="#"> {{item.title}}</a></h6>
-                    </div>
-                  </div>
-                </div>
+              <div class="title-in title-slider-panel">
+                <h6><a href="#"> {{item.title}}</a></h6>
+              </div>
+            </div>
+          </div>
         </div>
+
+
+      </div>
     </div>
   </div>
+</div>

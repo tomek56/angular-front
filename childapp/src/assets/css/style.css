@@ -7286,13 +7286,15 @@ p.ceb-single {
   color: #dcf836;
 }
 
+
+
 .slick-multiItemSlider-homepage{
   width: 1100px;
   margin: auto;
 }
 
 .slider-container{
-  width: 1100px;
+  width: 1200px;
   margin: auto;
 }
 
@@ -8534,28 +8536,29 @@ footer.full-width-ft .ft-copyright {
 }
 
 .panel-content{
-  margin-top: 60px;
+  margin-top: 70px;
   width: 1200px;
-  margin: auto;
-  background-color: #00b9ef;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .course-item-slider{
-  border: 1px solid rgba(182, 182, 182, 0.15);
-  -webkit-box-shadow: 0 0px 8px rgba(0, 0, 0, 0.275);
-  -moz-box-shadow: 0 0px 8px rgba(0, 0, 0, 0.275);
-  box-shadow: 0 0px 8px rgba(0, 0, 0, 0.275);
+  border: 0px solid rgba(182, 182, 182, 0.1);
+  -webkit-box-shadow: 0 0px 8px rgba(0, 0, 0, 0.175);
+  -moz-box-shadow: 0 0px 8px rgba(0, 0, 0, 0.175);
+  box-shadow: 8 8px 8px rgba(0, 0, 0, 0.175);
   margin-top: 20px;
   margin-bottom: 20px;
-  margin-left: 12px;
-  margin-right: 0px;
+  margin-right: 15px;
+
+  background-color: #ffffff;
+
   position: relative;
-  margin-right: 12px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border-radius: 8px;
-  background-color: #fff;
-  width: 200px;
+  width: 250px;
+
 }
 
 .course-item-slider .title-in h6 a {
@@ -8567,8 +8570,12 @@ footer.full-width-ft .ft-copyright {
 
 .title-slider-panel {
   text-align: left;
-  height: 80px;
+  height: 160px;
   margin-bottom: 0px;
+}
+
+.slider-padding-left{
+  padding-left: 10px;
 }
 
 .slider-courses {
@@ -8579,7 +8586,7 @@ footer.full-width-ft .ft-copyright {
   background-size: cover;
   position: relative;
   padding-top: 20px;
-  padding-bottom: 50px;
+  padding-bottom: 0px;
   display: -webkit-flex;
   display: -moz-box;
   display: -ms-flexbox;
@@ -8590,34 +8597,30 @@ footer.full-width-ft .ft-copyright {
 
 }
 
-.course-item-slider .mv-img {
-  position: relative;
-  height: 200px;
+.course-item-slider .mv-img-panel {
+  height: 120px;
   width: 100%;
+
   overflow: hidden;
 }
 
-
-
-.course-item-slider .mv-img:after {
+.course-item-slider .mv-img-panel:after {
   box-shadow: inset -5px -50px 100px -15px #000000;
   -webkit-box-shadow: inset -5px -50px 100px -15px #000000;
   -moz-box-shadow: inset -5px -50px 100px -15px #000000;
   -o-box-shadow: inset -5px -50px 100px -15px #000000;
   position: absolute;
   top: 0;
-  left: 0;
   width: 100%;
-  height: 200px;
   -webkit-border-radius: 8px 8px 0px 0px;
   -moz-border-radius: 8px 8px 0px 0px;
   border-radius: 8px 8px 0px 0px;
+
   content: "";
 }
 
 .mv-img-panel{
   width: 100%;
-  height: 200px;
   -webkit-border-radius: 8px 8px 0px 0px;
   -moz-border-radius: 8px 8px 0px 0px;
   border-radius: 8px 8px 0px 0px;
