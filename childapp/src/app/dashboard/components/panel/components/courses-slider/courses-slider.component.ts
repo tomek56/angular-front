@@ -20,4 +20,8 @@ export class CoursesSliderComponent implements OnInit {
   getUrl(course: Course): string {
     return this.helperLink.getFullLink(course.image_285x437);
   }
+
+  getTitle(): string {
+    return this.courses[0].category.name;
+  }
 }

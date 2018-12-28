@@ -11,6 +11,7 @@ import { Course } from 'src/app/models/course';
 export class PanelComponent implements OnInit {
 
   courses: Array<Course>;
+  coursesByCategories: Array<Array<Course>>;
 
   constructor(private httpService: HttpService, private helperLink: LinkhelperService) {
     this.getCourses();
@@ -22,8 +23,27 @@ export class PanelComponent implements OnInit {
   getCourses() {
     this.httpService.getCourses().subscribe(data => {
       this.courses = data.courses;
-      console.log(this.courses);
+      this.splitCourses();
     });
+  }
+
+  splitCourses() {
+    this.coursesByCategories = Array();
+    var alreadyAdded:Array<number> = Array();
+    for (const course of this.courses) {
+      const categoryId = course.category.id;
+
+      if (alreadyAdded.filter(c => c === categoryId).length === 0) {
+        alreadyAdded.push(categoryId);
+        const coursesByCategory = this.courses.filter(c => c.category.id === categoryId);
+        this.coursesByCategories.push(coursesByCategory);
+      }
+
+
+
+    }
+//      this.coursesByCategories = this.courses.
+
   }
 
 
