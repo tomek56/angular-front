@@ -15,17 +15,20 @@
     </div>
  </div> -->
 
-<div class="slider-courses  movie-items">
+<div class="slider-courses movie-items">
   <div class="container">
     <div class="row ipad-width">
 
       <!-- <div class="title-hd title-hdhp">
           <h2>Ostatnio dodane kursy</h2>
         </div> -->
-        <div class="slider-container">
-          <div class="slick-multiItemSlider">
-            <div class="slider-padding-left" *ngFor="let item of courses">
-              <div class=" course-item-slider ">
+        <div><h3><i class="far-panel fab fa-apple icon-panel"></i> Programowanie iOS</h3></div>
+
+        <div class="separator"></div>
+      <div class="slider-container">
+        <div class="slick-multiItemSlider">
+          <div class="slider-padding-left" *ngFor="let item of courses">
+            <div class=" course-item-slider ">
 
               <div class="cate cateslider">
                 <!-- <span [ngStyle]="{'background-color' : getTagColor(item)}">
@@ -36,9 +39,24 @@
                 <a class="" href="#"><img class="mv-img" [src]="getUrl(item)" alt=""></a>
               </div>
 
+
+
               <div class="title-in title-slider-panel">
+                  <div class="panel-level">
+                      <p>Łatwy</p>
+                    </div>
+
+
                 <h6><a href="#"> {{item.title}}</a></h6>
+
+                <div class="panel-lesson-numer">
+                  <p><i class="far-panel far fa fa-laptop-code"></i>Liczba lekcji: <span>17</span></p>
+                </div>
+
+
               </div>
+              <!-- <h2>adsasdasd</h2> -->
+
             </div>
           </div>
         </div>

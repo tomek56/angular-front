@@ -104,7 +104,9 @@
 
 .bg-color-wrapper{
   background-color: #f9fafe;
+
 }
+
 .container {
   margin-right: auto;
   margin-left: auto;
@@ -8568,15 +8570,20 @@ footer.full-width-ft .ft-copyright {
 
 .course-item-slider .title-in h6 a {
   font-family: 'Dosis', sans-serif;
-  font-size: 14px;
+  font-size: 19px;
   color: #2b2b2b;
   font-weight: bold;
+
 }
 
 .title-slider-panel {
   text-align: left;
-  height: 160px;
+  height: 140px;
+  position: relative;
   margin-bottom: 0px;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
 }
 
 .slider-padding-left{
@@ -8605,23 +8612,7 @@ footer.full-width-ft .ft-copyright {
 .course-item-slider .mv-img-panel {
   height: 140px;
   width: 100%;
-
   overflow: hidden;
-}
-
-.course-item-slider .mv-img-panel:after {
-  box-shadow: inset -5px -50px 100px -15px #000000;
-  -webkit-box-shadow: inset -5px -50px 100px -15px #000000;
-  -moz-box-shadow: inset -5px -50px 100px -15px #000000;
-  -o-box-shadow: inset -5px -50px 100px -15px #000000;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  -webkit-border-radius: 8px 8px 0px 0px;
-  -moz-border-radius: 8px 8px 0px 0px;
-  border-radius: 8px 8px 0px 0px;
-
-  content: "";
 }
 
 .mv-img-panel{
@@ -8630,4 +8621,70 @@ footer.full-width-ft .ft-copyright {
   -moz-border-radius: 8px 8px 0px 0px;
   border-radius: 8px 8px 0px 0px;
   background-size: cover;
+}
+
+.panel-lesson-numer{
+  margin-top: 5px;
+}
+
+.panel-lesson-numer p{
+  color: #b0b0b0;
+  font-family: 'Dosis', sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.panel-lesson-numer p span{
+  color: #777777;
+  font-family: 'Dosis', sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.panel-level{
+  position: absolute;
+  top: 105px;
+  left: 0px;
+  background: #bc122e;
+  width: 270px;
+  height: 35px;
+  margin-left: -10px;
+  -webkit-border-radius: 0px 0px 8px 8px;
+  -moz-border-radius: 0px 0px 8px 8px;
+  border-radius: 0px 0px 8px 8px;
+}
+
+.panel-level p{
+  color: #ffff;
+  text-align: center;
+  font-family: 'Dosis', sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  padding-top: 4px;
+}
+
+.slider-courses h3{
+  text-align: left;
+  padding-left: 40px;
+  padding-top: 20px;
+  /* text-transform: uppercase; */
+  font-size: 23px;
+  padding-bottom: 12px;
+  color: #2b2b2b;
+  font-weight: bold;
+
+}
+
+.slider-courses .icon-panel{
+  /* color: #009ec7; */
+}
+
+
+.separator{
+  background-color: rgba(0, 0, 0, 0.175);
+  height: 1px;
+  /* width: 100%; */
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 5px;
 }
