@@ -131,13 +131,13 @@
 
 @media (min-width: 1400px) {
   .container {
-    width: 1400px;
+    width: 1200px;
   }
 }
 
 @media (min-width: 1600px) {
   .container {
-    width: 1550px;
+    width: 1200px;
   }
 }
 
@@ -5713,10 +5713,22 @@ z-index: 998;
     flex-direction: column;
   }
 }
+
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: #020d18;
+  /* background: url('../bg/bg-course.png') no-repeat; */
+  height: 670px;
+}
+
+
 .hero {
-  background-position: center;
   text-align: center;
-  background-size: cover;
   position: relative;
   display: -webkit-flex;
   display: -moz-box;
@@ -5724,7 +5736,7 @@ z-index: 998;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 445px;
+  height: 345px;
 }
 .hero .hero-ct {
   padding-top: 170px;
@@ -5756,16 +5768,16 @@ z-index: 998;
   margin-left: 15px;
   margin-right: 15px;
 }
-.hero:before {
+/* .hero:before {
   position: absolute;
   content: '';
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.75);
-}
+} */
 /*movie single hero*/
 .mv-single-hero {
-  background: url('../images/uploads/hero-bg.jpg') no-repeat;
+  /* background: url('../images/uploads/hero-bg.jpg') no-repeat; */
   height: 598px;
 }
 /*series single hero*/

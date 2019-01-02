@@ -194,7 +194,6 @@ $(function(){
 	multiItemSlider.slick({
     infinite: false,
     centerMode: false,
-    padding: '60px',
 		slidesToShow: 4,
 		slidesToScroll: 4,
 		arrows: false,

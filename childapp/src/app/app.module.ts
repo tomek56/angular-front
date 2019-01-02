@@ -54,6 +54,8 @@ import { FirstComponent } from './dashboard/components/first/first.component';
 import { SecondComponent } from './dashboard/components/second/second.component';
 import { PanelComponent } from './dashboard/components/panel/panel/panel.component';
 import { CoursesSliderComponent } from './dashboard/components/panel/components/courses-slider/courses-slider.component';
+import { CourseDetailComponent } from './components/course/course-detail/course-detail.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +67,9 @@ import { CoursesSliderComponent } from './dashboard/components/panel/components/
     FirstComponent,
     SecondComponent,
     PanelComponent,
-    CoursesSliderComponent
+    CoursesSliderComponent,
+    CourseDetailComponent,
+    NavBarComponent
   ],
   imports: [
     AppRoutingModule,
