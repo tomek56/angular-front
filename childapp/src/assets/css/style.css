@@ -5723,7 +5723,7 @@ z-index: 998;
   width: 100%;
   background-color: #020d18;
   /* background: url('../bg/bg-course.png') no-repeat; */
-  height: 670px;
+  height: 520px;
 }
 
 
@@ -5736,7 +5736,6 @@ z-index: 998;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 345px;
 }
 .hero .hero-ct {
   padding-top: 170px;
@@ -5778,7 +5777,7 @@ z-index: 998;
 /*movie single hero*/
 .mv-single-hero {
   /* background: url('../images/uploads/hero-bg.jpg') no-repeat; */
-  height: 598px;
+  height: 450px;
 }
 /*series single hero*/
 .sr-single-hero {
