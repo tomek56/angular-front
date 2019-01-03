@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
+import { Subscription, from } from 'rxjs';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +10,15 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'childapp';
+  subscription: Subscription;
 
   constructor(private router: Router) {}
+
+  ngOnInit() {
+    this.subscription = this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    )
+    .subscribe(() => window.scrollTo(0,0));
+  }
 
 }
