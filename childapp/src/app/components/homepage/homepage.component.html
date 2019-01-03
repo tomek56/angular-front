@@ -132,15 +132,15 @@ viewBox="0 0 600 480" style="enable-background:new 0 0 600 480;" xml:space="pres
             <div class="movie-item homepage-slider" *ngFor="let item of featured_course">
                 <div class="cate cateslider">
                     <span [ngStyle]="{'background-color' : getTagColor(item)}">
-                      <a href="#">{{ item.category.name }}</a>
+                      <a routerLink="/course/{{ item.slug }}">{{ item.category.name }}</a>
                     </span>
                 </div>
                 <div class="mv-img">
-                      <a class="" href="#"><img class="mv-img-ahp"[src]="getUrl(item)" alt=""></a>
+                      <a class="" routerLink="/course/{{ item.slug }}"><img class="mv-img-ahp"[src]="getUrl(item)" alt=""></a>
                   </div>
 
                   <div class="title-in title-slider-hp">
-                    <h6><a href="#"> {{item.title}}</a></h6>
+                    <h6><a routerLink="/course/{{ item.slug }}"> {{item.title}}</a></h6>
                   </div>
                 </div>
                 </div>
@@ -1049,7 +1049,7 @@ viewBox="0 0 600 480" style="enable-background:new 0 0 600 480;" xml:space="pres
     </div>
   </div>
 
-  <div class="trailers">
+  <!-- <div class="trailers">
     <div class="container">
       <div class="row ipad-width">
         <div class="col-md-8 col-sm-12 col-xs-12">
@@ -1174,7 +1174,7 @@ viewBox="0 0 600 480" style="enable-background:new 0 0 600 480;" xml:space="pres
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- latest new v1 section-->
   <div class="latestnew">
     <div class="container">

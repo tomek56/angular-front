@@ -8,5 +8,6 @@ export interface Course {
   image_thumb?: string;
   image_285x437?: string;
   tags: Array<Tag>;
+  slug?: string;
 }
 
