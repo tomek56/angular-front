@@ -27,11 +27,14 @@ export class HttpService {
     return this.http.post<CourseList> (this.link.getFullLink('/api/courses/'), {});
   }
 
+  getCourseDetail(slug: string): Observable<Course> {
+    const params = new HttpParams()
+      .set('slug', slug);
+
+    return this.http.post<Course> (this.link.getFullLink('/api/course-detail/'), params);
+  }
+
   getToken(username: string, password: string): Observable<Token> {
-
-      // var params = new HttpParams().set('grant_type', 'password');
-
-
 
       const params = new HttpParams()
       .set('grant_type', 'password')
