@@ -34,9 +34,24 @@
                 </div>
                 <div class="col-md-8 col-sm-12 col-xs-12">
                   <div class="movie-single-ct main-content">
-                    <h1 class="bd-hd">{{ course.title }} <span>{{ course.category.name }}</span></h1>
-                    <div class="social-btn">
-                      <a href="#" class="parent-btn"><i class="ion-heart"></i> Add to Favorite</a>
+                    <div class="title-container-course-detail">
+                      <h1 class="bd-hd">{{ course.title }} <span>{{ course.category.name }}</span></h1>
+
+
+                      <div class="social-btn">
+                          <div class="catehp" *ngFor="let item of course.tags">
+                              <!-- <span  [ngStyle]="{'background-color' : item.color}" *ngFor="let item of categories">
+                              <a href="#">{{item.name}}</a>
+                              </span> -->
+                              <span class="blue">#{{ item.name }}</span>
+
+                              </div>
+                    </div>
+
+
+
+
+                      <!-- <a href="#" class="parent-btn"><i class="ion-heart"></i> Add to Favorite</a>
                       <div class="hover-bnt">
                         <a href="#" class="parent-btn"><i class="ion-android-share-alt"></i>share</a>
                         <div class="hvr-item">
@@ -45,7 +60,7 @@
                           <a href="#" class="hvr-grow"><i class="ion-social-googleplus"></i></a>
                           <a href="#" class="hvr-grow"><i class="ion-social-youtube"></i></a>
                         </div>
-                      </div>
+                      </div> -->
                     </div>
                     <div class="movie-rate">
                       <div class="rate">

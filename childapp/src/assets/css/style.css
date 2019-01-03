@@ -4059,7 +4059,7 @@ ul {
   color: #ffffff;
   font-weight: 700;
   text-transform: none;
-  margin-bottom: 25px;
+  margin-bottom: 0px;
 }
 .bd-hd span {
   font-family: 'Dosis', sans-serif;
@@ -6025,6 +6025,11 @@ z-index: 998;
   background-color: #020d18;
   padding: 75px 0;
 }
+
+.tags-container-course-detail{
+  height: 45px;
+}
+
 .social-btn {
   margin-bottom: 40px;
   display: -webkit-flex;
@@ -6033,6 +6038,11 @@ z-index: 998;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+}
+
+.social-btn span{
+  color: #ffffff;
+  font-size: 16px;
 }
 @media (max-width: 767px) {
   .social-btn {
@@ -6165,6 +6175,11 @@ z-index: 998;
 .movie-single .mv-ceb .movie-btn .redbtn:hover {
   color: #ffffff;
 }
+
+.title-container-course-detail{
+  height: 280px;
+}
+
 .movie-single .movie-single-ct .movie-rate {
   display: -webkit-flex;
   display: -moz-box;
