@@ -6,6 +6,10 @@ import { Course } from 'src/app/models/course';
 import { LinkhelperService } from 'src/app/services/linkhelper.service';
 import { Category } from 'src/app/models/category';
 
+  //#region Methods from JS file
+  declare function slickSlider(): any;
+  //#endregion
+
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
@@ -13,16 +17,23 @@ import { Category } from 'src/app/models/category';
 })
 export class HomepageComponent implements OnInit {
 
+
+
+
+  show = false;
   featured_course: Array<Course>;
   categories: Array<Category>;
 
   constructor(private httpService: HttpService, private helperLink: LinkhelperService) {
-    this.getCourses();
     this.getCategories();
 
    }
 
   ngOnInit() {
+    //this.show = false;
+
+    this.getCourses();
+
   }
 
   getUrl(course: Course): string {
@@ -36,14 +47,24 @@ export class HomepageComponent implements OnInit {
   }
 
   getCategories() {
-    this.httpService.getCategories().subscribe(data => {
-      this.categories = data;
-    });
+    // this.httpService.getCategories().subscribe(data => {
+    //   this.categories = data;
+    // });
   }
 
   getCourses() {
+
     this.httpService.getHomePageCourses().subscribe(data => {
+      console.log("getCourses");
       this.featured_course = data.featured_course;
+      this.show = true;
+
+      // setTimeout(() => {
+      //   this.show = true;
+      // }, 500);
+
+      slickSlider();
+
     });
   }
 }

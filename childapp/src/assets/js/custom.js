@@ -188,7 +188,10 @@ $(function(){
 	      }
 	    }
 	  ]
-	});
+  });
+
+  slickSlider();
+
 	//main slider home 1
 	var multiItemSlider = $('.slick-multiItemSlider');
 	multiItemSlider.slick({
@@ -230,43 +233,7 @@ $(function(){
   });
 
 
-  var multiItemSlider = $('.slick-multiItemSlider-homepage');
-	multiItemSlider.slick({
-		infinite: false,
-		slidesToShow: 4,
-		slidesToScroll: 4,
-		arrows: false,
-		draggable:true,
-		autoplay: false,
-		autoplaySpeed: 2000,
-    dots: true,
-    variableWidth: false,
-		responsive: [
-	    {
-	      breakpoint: 1024,
-	      settings: {
-	        slidesToShow: 3,
-	        slidesToScroll: 3,
-	        infinite: true,
-	        dots: true
-	      }
-	    },
-	    {
-	      breakpoint: 768,
-	      settings: {
-	        slidesToShow: 2,
-	        slidesToScroll: 2
-	      }
-	    },
-	    {
-	      breakpoint: 480,
-	      settings: {
-	        slidesToShow: 1,
-	        slidesToScroll: 1
-	      }
-	    }
-	  ]
-  });
+
 
 	//slider for home v3 and home v2, twitter slider home 1, 2
 	var singleItem = $('.slider-single-item');
@@ -608,3 +575,56 @@ $(function(){
 	// });
 
 });
+
+
+function slickSlider() {
+
+  setTimeout(
+    function() {
+
+
+  var multiItemSlider = $('.slick-multiItemSlider-homepage');
+	multiItemSlider.slick({
+		// infinite: true,
+		slidesToShow: 4,
+		slidesToScroll: 4,
+		arrows: false,
+		draggable:false,
+		autoplay: false,
+		// autoplaySpeed: 2000,
+    dots: true,
+    variableWidth: false,
+		responsive: [
+	    {
+	      breakpoint: 1024,
+	      settings: {
+	        slidesToShow: 3,
+	        slidesToScroll: 3,
+	        infinite: true,
+	        dots: true
+	      }
+	    },
+	    {
+	      breakpoint: 768,
+	      settings: {
+	        slidesToShow: 2,
+	        slidesToScroll: 2
+	      }
+	    },
+	    {
+	      breakpoint: 480,
+	      settings: {
+	        slidesToShow: 1,
+	        slidesToScroll: 1
+	      }
+	    }
+	  ]
+  });
+
+
+    }, 300);
+
+  console.log("slick slider");
+
+
+}

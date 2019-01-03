@@ -18,7 +18,7 @@ export class AppComponent {
     this.subscription = this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     )
-    .subscribe(() => window.scrollTo(0,0));
+    .subscribe(() => window.scrollTo(0, 0));
   }
 
 }

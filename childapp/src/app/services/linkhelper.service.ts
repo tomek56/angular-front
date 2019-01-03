@@ -5,7 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class LinkhelperService {
 
-  private host = 'http://127.0.0.1:8000';
+  //private host = 'http://127.0.0.1:8000';
+  private host = 'http://217.182.169.127';
 
   constructor() { }
 
