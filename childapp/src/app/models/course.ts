@@ -1,6 +1,7 @@
 import { Category } from './category';
 import { Tag } from './tag';
 import { CourseDescription } from './courseDescription';
+import { CourseSection } from './courseSection';
 
 export interface Course {
   id?: number;
@@ -11,5 +12,6 @@ export interface Course {
   tags: Array<Tag>;
   slug?: string;
   description?: CourseDescription;
+  sections: Array<CourseSection>;
 }
 

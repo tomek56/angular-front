@@ -55,13 +55,8 @@ export class HomepageComponent implements OnInit {
   getCourses() {
 
     this.httpService.getHomePageCourses().subscribe(data => {
-      console.log("getCourses");
       this.featured_course = data.featured_course;
       this.show = true;
-
-      // setTimeout(() => {
-      //   this.show = true;
-      // }, 500);
 
       slickSlider();
 
