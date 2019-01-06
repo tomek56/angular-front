@@ -3,6 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { HttpService } from 'src/app/services/http.service';
 import { LinkhelperService } from 'src/app/services/linkhelper.service';
 import { Course } from 'src/app/models/course';
+import { Lesson } from 'src/app/models/lesson';
 
 @Component({
   selector: 'app-course-detail',
@@ -24,4 +25,17 @@ export class CourseDetailComponent implements OnInit {
     });
   }
 
+  getLessonNumber(lesson: Lesson): number {
+    let index = 1;
+    for (const section of this.course.sections) {
+      for (const l of section.lessons) {
+        if (l.id === lesson.id) {
+          return index;
+        }
+        index = index + 1;
+      }
+    }
+
+    return index;
+  }
 }
