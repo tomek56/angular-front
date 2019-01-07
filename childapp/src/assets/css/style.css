@@ -4318,6 +4318,23 @@ z-index: 998;
   align-items: flex-start;
 }
 
+.free-tag-course{
+  color: #fff;
+  background-color: #dd003f;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  margin-left: 10px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 12px;
+  color:rgba(255, 255, 255, 0.97);
+  /* font-weight: 700; */
+  text-transform: uppercase;
+}
+
 .cate {
   margin-bottom: 5px;
 }
@@ -6179,7 +6196,7 @@ z-index: 998;
 }
 .movie-single .movie-img .movie-btn .btn-transform.red,
 .movie-single .mv-ceb .movie-btn .btn-transform.red {
-  margin-bottom: 15px;
+  margin-bottom: 0px;
 }
 .movie-single .movie-img .movie-btn .redbtn:hover,
 .movie-single .mv-ceb .movie-btn .redbtn:hover {

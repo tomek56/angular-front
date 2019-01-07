@@ -38,4 +38,8 @@ export class CourseDetailComponent implements OnInit {
 
     return index;
   }
+
+  isFreeLesson(lesson: Lesson): boolean {
+    return lesson.free;
+  }
 }

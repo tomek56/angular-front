@@ -26,10 +26,7 @@
                     <div><a href="https://www.youtube.com/embed/o-0hcF97wy0" class="item item-2 redbtn fancybox-media hvr-grow"><i
                           class="ion-play"></i></a></div>
                   </div>
-                  <div class="btn-transform transform-vertical">
-                    <div><a href="#" class="item item-1 yellowbtn"> <i class="ion-card"></i> Buy ticket</a></div>
-                    <div><a href="#" class="item item-2 yellowbtn"><i class="ion-card"></i></a></div>
-                  </div>
+
                 </div>
               </div>
             </div>
@@ -75,8 +72,10 @@
                                     </div>
                                     <div class="col-md-9">
                                         <div class="lesson-title">
-                                          <h3 class="lesson-title-h3">{{ lesson.name }}</h3>
+                                          <h3 class="lesson-title-h3">{{ lesson.name }} <span class="free-tag-course" [hidden]="!isFreeLesson(lesson)">DARMOWY</span></h3>
+
                                         </div>
+
                                     </div>
                                     <div class="col-md-2">
                                       <div class="lesson-time">
