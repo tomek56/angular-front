@@ -39,6 +39,10 @@ export class CourseDetailComponent implements OnInit {
     return index;
   }
 
+  getIntroId(): number {
+    return this.course.sections[0].lessons[0].id
+  }
+
   isFreeLesson(lesson: Lesson): boolean {
     return lesson.free;
   }

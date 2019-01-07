@@ -1,12 +1,38 @@
+.navbar-fixed {
+  position: fixed;
+  top: 0;
+  left: 400;
+  right: 0;
+  z-index: 999;
+  height: 100px;
+  -webkit-box-shadow: 3 3px 9px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 3 3px 9px rgba(0, 0, 0, 0.3);
+  box-shadow: 3 3px 9px rgba(0, 0, 0, 0.3);
+  /* padding-left: 280px; */
 
+}
+
+.navbar-left-padding{
+  padding-left: 280px;
+}
+
+.navbar-left-padding-clear{
+  padding-left: 15px;
+}
 
 .navbar-panel {
+  margin-bottom: 15px;
+
+  /* padding: 0px; */
+  /* padding-left: 315px;
+  padding-right: 35px; */
+  background: url('../../../../assets/bg/nav_bar.png');
+
   margin-bottom: 15px;
 
   padding: 0px;
   padding-left: 315px;
   padding-right: 35px;
-  background: url('../../../../assets/bg/nav_bar.png');
 
   background-color: #fff;
   border-width: 0;
@@ -19,6 +45,7 @@
   transition: padding .25s cubic-bezier(0.99, 0, 0.5, 0.99);
   z-index: 999;
 }
+
 
 .navbar-search-panel {
   display: none;
@@ -368,7 +395,7 @@
   right: 0;
   z-index: 999;
   height: 100px;
-  padding-left: 100px;
+  padding-left: 300px;
   padding-right: 100px;
 
   -webkit-box-shadow: 3 3px 9px rgba(0, 0, 0, 0.3);
@@ -496,7 +523,7 @@
   }
 }
 
-@media (min-width: 992px) {
+/* @media (min-width: 992px) {
   .navbar--nav .nav-link {
       padding-left: 30px;
       padding-right: 30px;
@@ -509,7 +536,7 @@
   .navbar--nav .nav--user:before {
       left: 67px;
   }
-}
+} */
 
 
 .btn-dashboard{

@@ -79,9 +79,7 @@
   h3 {
     page-break-after: avoid;
   }
-  .navbar {
-    display: none;
-  }
+
   .btn > .caret,
   .dropup > .btn > .caret {
     border-top-color: #000 !important;
@@ -1962,6 +1960,9 @@ tbody.collapse.in {
   border-bottom: 4px solid \9;
   content: "";
 }
+
+
+
 .dropup .dropdown-menu2,
 .navbar-fixed-bottom .dropdown .dropdown-menu2 {
   top: auto;
@@ -8779,4 +8780,57 @@ footer.full-width-ft .ft-copyright {
 
 .lesson-title {
 padding-top: 7px;
+}
+
+
+.left-menu-header{
+  /* background-color: #00b9ef; */
+}
+
+.left-menu-panel{
+  /* background-color: #00b9ef; */
+}
+
+mat-accordion
+mat-expansion-panel
+mat-expansion-panel-header
+mat-expanded{
+  font-size: 1.25em;
+  background-color: red;
+  background: orange;
+  color: #00cbdd;
+  font-weight: 500;
+}
+
+
+
+mat-accordion
+mat-expansion-panel
+mat-expansion-panel-header {
+  font-size: 1.25em;
+  background-color: red;
+  background: orange;
+
+  color: #00838f;
+  font-weight: 500;
+}
+
+
+  mat-accordion
+  mat-expansion-panel
+  .mat-expansion-panel-body {
+  background-color: white;
+  padding-top: 5px;
+}
+.mat-expansion-indicator::after {
+  color: #00838f;
+}
+
+.mat-expansion-panel-header.mat-expanded {
+  background: red;
+}
+
+.mat-expansion-panel-header.mat-expanded,
+.mat-expansion-panel-header.mat-expanded:hover {
+  background: red;
 }

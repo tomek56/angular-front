@@ -25,9 +25,15 @@ const routes: Routes = [
     component: PanelComponent
   },
   {
+    path: 'course/:id/:lesson',
+    component: DashboardSkeletonComponent
+  },
+  {
     path: 'course/:id',
-    component: CourseDetailComponent
+    component: CourseDetailComponent,
+
   }
+
 	// {
 	// 	path: '',
 	// 	loadChildren: 'app/app.module#AppModule'

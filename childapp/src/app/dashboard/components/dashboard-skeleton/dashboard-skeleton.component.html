@@ -2,12 +2,66 @@
 
 
 <mat-sidenav-container class="example-container">
-  <mat-sidenav #drawer mode="side" opened role="navigation" class="drawer sidebar"  >
-    <mat-nav-list class="sidebar--nav">
+ <!-- <mat-sidenav #drawer mode="side" opened role="navigation" class="drawer sidebar" >
+
+
+
+       <mat-accordion class="left-menu-header">
+          <mat-expansion-panel class="left-menu-panel">
+            <mat-expansion-panel-header class="left-menu-header">
+                <i class="fa fa-home"></i>
+                <span>Dashboard</span>
+
+
+            </mat-expansion-panel-header>
+            <p>I'm visible because I am open</p>
+
+
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true"
+                               (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Self aware panel
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+        </mat-accordion> -->
+
+
+        <!-- <nav class="navbar navbar-default"> -->
+            <!-- <div class="container-fluid">
+              <div class="navbar-header">
+                <button type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a routerLink="/search" class="navbar-brand">Brand-name</a>
+              </div>
+
+              <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                  <li><a routerLink="/search">Search</a></li>
+                  <li><a routerLink="/edit">Edit</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a routerLink="/signup">Signup</a></li>
+                </ul>
+              </div>
+            </div> -->
+          <!-- </nav> -->
+
+    <!-- <mat-nav-list class="sidebar--nav">
         <ul>
             <li>
                 <ul>
-                    <li class="active">
+                    <li class="active navbar-header">
                         <a href="index.html">
                             <i class="fa fa-home"></i>
                             <span>Dashboard</span>
@@ -64,12 +118,12 @@
 
         </ul>
     </mat-nav-list>
-  </mat-sidenav>
+  </mat-sidenav>-->
   <mat-sidenav-content>
+    <app-nav-bar></app-nav-bar>
 
-    <mat-toolbar>
+     <!-- <mat-toolbar>
       <mat-toolbar-row class="navbar navbar-fixed" [ngClass]="{ 'navbar-left-padding': drawerVisible, 'navbar-left-padding-clear': !drawerVisible}">
-
 
           <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="toggleDrawer()" color="#444444">
               <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
@@ -77,66 +131,18 @@
 
 
 
-             <!-- Navbar Search Start -->
              <div class="navbar--search">
                 <form action="search-results.html">
                     <input type="search" name="search" class="form-control" placeholder="Szukaj..." required>
                     <button class="btn-link"><i class="fa fa-search"></i></button>
                 </form>
             </div>
-            <!-- Navbar Search End -->
 
             <div class="navbar--nav ml-auto">
                 <ul class="nav">
-                    <!-- <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="fa fa-bell"></i>
-                            <span class="badge text-white bg-blue">7</span>
-                        </a>
-                    </li>
 
-                    <li class="nav-item">
-                        <a href="mailbox_inbox.html" class="nav-link">
-                            <i class="fa fa-envelope"></i>
-                            <span class="badge text-white bg-blue">4</span>
-                        </a>
-                    </li> -->
-
-                    <!-- Nav Language Start -->
-                    <!-- <li class="nav-item dropdown nav-language">
-                        <a href="#" class="nav-link" data-toggle="dropdown">
-                            <img src="assets/img/flags/us.png" alt="">
-                            <span>English</span>
-                            <i class="fa fa-angle-down"></i>
-                        </a>
-
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="">
-                                    <img src="assets/img/flags/de.png" alt="">
-                                    <span>German</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img src="assets/img/flags/fr.png" alt="">
-                                    <span>French</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img src="assets/img/flags/us.png" alt="">
-                                    <span>English</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li> -->
-                    <!-- Nav Language End -->
-
-                    <!-- Nav User Start -->
                     <li class="nav-item dropdown nav--user ">
                         <button class="btn btn-rounded btn-dashboard" data-toggle="dropdown">
-                            <!-- <img src="assets/img/avatars/01_80x80.png" alt="" class="rounded-circle"> -->
                             <span>Ustawienia&nbsp;</span>
                             <i class="fa fa-angle-down"></i>
                         </button>
@@ -150,13 +156,12 @@
                             <li><a href="#"><i class="fa fa-power-off"></i>Logout</a></li>
                         </ul>
                     </li>
-                    <!-- Nav User End -->
                 </ul>
             </div>
 
 
       </mat-toolbar-row>
-    </mat-toolbar>
+    </mat-toolbar> -->
 
     <router-outlet></router-outlet>
   </mat-sidenav-content>

@@ -12,6 +12,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MatAutocompleteModule,
   MatBadgeModule,
+  MatFormFieldModule,
   MatBottomSheetModule,
   MatButtonModule,
   MatButtonToggleModule,
@@ -81,8 +82,10 @@ import { NavBarComponent } from './components/nav-bar/nav-bar/nav-bar.component'
     MatToolbarModule,
     MatNativeDateModule,
     MatIconModule,
+    MatExpansionModule,
     MatSidenavModule,
     MatListModule,
+    MatFormFieldModule,
     BrowserAnimationsModule
   ],
   providers: [{
