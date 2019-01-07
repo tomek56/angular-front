@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { MatSidenav } from '@angular/material';
 
 @Component({
   selector: 'app-nav-bar',
@@ -6,17 +7,29 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent implements OnInit {
+  private drawerVisible = true;
 
   @Input()
-  drawer: boolean;
+  drawer: boolean = false;
+
+  @Input()
+  sidenav: MatSidenav;
 
   constructor() { }
 
   ngOnInit() {
+    if (!this.drawer) {
+      this.drawerVisible = false;
+    }
   }
 
   toggleDrawer() {
-
+    this.sidenav.toggle();
+    if (this.drawer) {
+      this.drawerVisible = this.sidenav.opened;
+    } else {
+      this.drawerVisible = false;
+    }
   }
 
 }

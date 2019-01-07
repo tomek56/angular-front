@@ -16,9 +16,9 @@ export class DashboardSkeletonComponent implements OnInit {
     this.sidenav.toggle();
   }
 
-  toggleDrawer() {
-    this.sidenav.toggle();
-    this.drawerVisible = this.sidenav.opened;
+  // toggleDrawer() {
+  //   this.sidenav.toggle();
+  //   this.drawerVisible = this.sidenav.opened;
 
-  }
+  // }
 }

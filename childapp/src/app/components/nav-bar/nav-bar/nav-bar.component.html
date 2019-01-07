@@ -1,6 +1,6 @@
 <mat-toolbar>
-  <mat-toolbar-row class="navbar-panel navbar-fixed" >
-      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="toggleDrawer()" color="#444444">
+  <mat-toolbar-row class="navbar-panel navbar-fixed" [ngClass]="{ 'navbar-left-padding': drawerVisible, 'navbar-left-padding-clear': !drawerVisible}">
+      <button type="button" class="toggle-icon-button"aria-label="Toggle sidenav" *ngIf="drawer" mat-icon-button (click)="toggleDrawer()" color="#444444">
           <!-- <mat-icon aria-label="Side nav toggle icon">menu</mat-icon> -->
           <i class="material-icons toggle-icon">
             menu
