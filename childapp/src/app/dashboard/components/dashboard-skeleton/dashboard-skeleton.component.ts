@@ -1,5 +1,12 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { MatSidenav } from '@angular/material';
+import { Course } from 'src/app/models/course';
+import { ActivatedRoute, Params } from '@angular/router';
+import { HttpService } from 'src/app/services/http.service';
+  // //#region Methods from JS file
+  // declare function dropdownSet(): any;
+  // //#endregion
+
 
 @Component({
   selector: 'app-dashboard-skeleton',
@@ -8,17 +15,33 @@ import { MatSidenav } from '@angular/material';
 })
 export class DashboardSkeletonComponent implements OnInit {
 
-  private drawerVisible = true;
+  private course: Course;
+  private showMenu = false;
+
   @ViewChild('drawer') sidenav: MatSidenav;
-  constructor() { }
+  constructor(private route: ActivatedRoute, private httpService: HttpService) { }
 
   ngOnInit() {
     this.sidenav.toggle();
+
+    this.route.paramMap.subscribe((param: Params) => {
+      console.log(param.get('id'));
+      this.httpService.getCourseDetail(param.get('id')).subscribe(data => {
+        this.course = data;
+        this.showMenu = true
+        this.drawMenu();
+      });
+    });
+
   }
 
-  // toggleDrawer() {
-  //   this.sidenav.toggle();
-  //   this.drawerVisible = this.sidenav.opened;
+  drawMenu() {
 
-  // }
+  }
+
+
+
+  toggleMenu() {
+    console.log("Asd");
+  }
 }

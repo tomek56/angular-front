@@ -28,29 +28,31 @@
             </div> -->
           <!-- </nav> -->
 
-     <mat-nav-list class="sidebar--nav">
+     <mat-nav-list class="sidebar--nav" *ngIf="showMenu">
         <ul>
             <li>
                 <ul>
-                    <li class="active navbar-header">
+                    <li class="active">
                         <a href="index.html">
                             <i class="fa fa-home"></i>
                             <span>Dashboard</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-shopping-cart"></i>
-                            <span>Ecommerce</span>
+                    <li class="active">
+                        <a class="dropdown-btn" (click)="toggleMenu()">
+                          <i class="fa fa-shopping-cart"></i>
+                          <span>Ecommerce</span>
                         </a>
+                        <div class="dropdown-container">
+                            <ul>
+                              <li><a href="ecommerce.html">Dashboard</a></li>
+                              <li><a href="products.html">Products</a></li>
+                              <li><a href="products-edit.html">Edit Products</a></li>
+                              <li><a href="orders.html">Orders</a></li>
+                              <li><a href="order-view.html">Order View</a></li>
+                          </ul>
+                        </div>
 
-                        <ul>
-                            <li><a href="ecommerce.html">Dashboard</a></li>
-                            <li><a href="products.html">Products</a></li>
-                            <li><a href="products-edit.html">Edit Products</a></li>
-                            <li><a href="orders.html">Orders</a></li>
-                            <li><a href="order-view.html">Order View</a></li>
-                        </ul>
                     </li>
                 </ul>
             </li>

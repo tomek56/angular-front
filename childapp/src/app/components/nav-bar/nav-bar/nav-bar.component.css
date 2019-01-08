@@ -129,6 +129,10 @@
 }
 
 
+
+/* 10.2. SIDEBAR NAV */
+
+/*
 .sidebar {
   position: fixed;
   top: 0px;
@@ -165,7 +169,6 @@
 
 
 
-/* 10.2. SIDEBAR NAV */
 .sidebar--nav {
   position: relative;
   padding: 45px 0 21px;
@@ -338,7 +341,7 @@
 .sidebar-light .sidebar--nav .is-dropdown > .active > a:after {
   color: #333;
 }
-
+ */
 
 /* 9.2. NAVBAR SEARCH */
 .navbar-search-panel {
@@ -541,7 +544,6 @@
 width: 100%;
 justify-content: flex-end;
 display: flex;
-
 }
 
 .redbtnstrokepanel{
@@ -553,13 +555,11 @@ display: flex;
   margin-bottom: -15px;
   height: 40px;
   text-transform: uppercase;
-
   padding-left: 15px;
   padding-right: 15px;
   font-family: 'Dosis', sans-serif;
   font-size: 14px;
   border-radius: 25px;
-
 }
 
 .toggle-icon{
