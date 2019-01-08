@@ -40,8 +40,12 @@ export class DashboardSkeletonComponent implements OnInit {
 
   }
 
-  toggleMenu(section: CourseSection) {
+  toggleMenu(section: CourseSection): void {
 
+  }
+
+  isSectionCollapsed(section: CourseSection): boolean {
+    return true;
   }
 
   toggleMenu() {
