@@ -3,6 +3,7 @@ import { MatSidenav } from '@angular/material';
 import { Course } from 'src/app/models/course';
 import { ActivatedRoute, Params } from '@angular/router';
 import { HttpService } from 'src/app/services/http.service';
+import { CourseSection } from 'src/app/models/courseSection';
   // //#region Methods from JS file
   // declare function dropdownSet(): any;
   // //#endregion
@@ -28,7 +29,7 @@ export class DashboardSkeletonComponent implements OnInit {
       console.log(param.get('id'));
       this.httpService.getCourseDetail(param.get('id')).subscribe(data => {
         this.course = data;
-        this.showMenu = true
+        this.showMenu = true;
         this.drawMenu();
       });
     });
@@ -39,7 +40,9 @@ export class DashboardSkeletonComponent implements OnInit {
 
   }
 
+  toggleMenu(section: CourseSection) {
 
+  }
 
   toggleMenu() {
     console.log("Asd");

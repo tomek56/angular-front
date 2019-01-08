@@ -32,7 +32,23 @@
         <ul>
             <li>
                 <ul>
-                    <li class="active">
+                    <li *ngFor="let item of course.sections">
+                        <a class="dropdown-btn" (click)="toggleMenu(item)">
+                            <i class="fa fa-home"></i>
+                            <span>{{ item.name }}</span>
+                        </a>
+                        <div class="dropdown-container" [ngClass]="{ 'navbar-left-padding': drawerVisible, 'navbar-left-padding-clear': !drawerVisible}">
+                            <ul>
+                              <li><a href="ecommerce.html">Dashboard</a></li>
+                              <li><a href="products.html">Products</a></li>
+                              <li><a href="products-edit.html">Edit Products</a></li>
+                              <li><a href="orders.html">Orders</a></li>
+                              <li><a href="order-view.html">Order View</a></li>
+                          </ul>
+                        </div>
+                    </li>
+
+                    <li>
                         <a href="index.html">
                             <i class="fa fa-home"></i>
                             <span>Dashboard</span>
@@ -94,47 +110,6 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <app-nav-bar [drawer]=true [sidenav]="sidenav"></app-nav-bar>
-
-     <!-- <mat-toolbar>
-      <mat-toolbar-row class="navbar navbar-fixed" [ngClass]="{ 'navbar-left-padding': drawerVisible, 'navbar-left-padding-clear': !drawerVisible}">
-
-          <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="toggleDrawer()" color="#444444">
-              <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-            </button>
-
-
-
-             <div class="navbar--search">
-                <form action="search-results.html">
-                    <input type="search" name="search" class="form-control" placeholder="Szukaj..." required>
-                    <button class="btn-link"><i class="fa fa-search"></i></button>
-                </form>
-            </div>
-
-            <div class="navbar--nav ml-auto">
-                <ul class="nav">
-
-                    <li class="nav-item dropdown nav--user ">
-                        <button class="btn btn-rounded btn-dashboard" data-toggle="dropdown">
-                            <span>Ustawienia&nbsp;</span>
-                            <i class="fa fa-angle-down"></i>
-                        </button>
-
-                        <ul class="dropdown-menu2">
-                            <li><a href="profile.html"><i class="far fa-user"></i>Profile</a></li>
-                            <li><a href="mailbox_inbox.html"><i class="far fa-envelope"></i>Inbox</a></li>
-                            <li><a href="#"><i class="fa fa-cog"></i>Settings</a></li>
-                            <li class="dropdown-divider"></li>
-                            <li><a href="lock-screen.html"><i class="fa fa-lock"></i>Lock Screen</a></li>
-                            <li><a href="#"><i class="fa fa-power-off"></i>Logout</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-
-
-      </mat-toolbar-row>
-    </mat-toolbar> -->
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
