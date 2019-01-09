@@ -4,105 +4,40 @@
 <mat-sidenav-container class="example-container">
  <mat-sidenav #drawer mode="side" opened role="navigation" class="drawer sidebar" >
 
-        <!-- <nav class="navbar navbar-default"> -->
-            <!-- <div class="container-fluid">
-              <div class="navbar-header">
-                <button type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
-                <a routerLink="/search" class="navbar-brand">Brand-name</a>
-              </div>
-
-              <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                  <li><a routerLink="/search">Search</a></li>
-                  <li><a routerLink="/edit">Edit</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                  <li><a routerLink="/signup">Signup</a></li>
-                </ul>
-              </div>
-            </div> -->
-          <!-- </nav> -->
 
      <mat-nav-list class="sidebar--nav" *ngIf="showMenu">
+       <a (click)="goToCourse()">
+       <div class="left-menu-title">
+         <h4>Przejdź do kursu</h4>
+
+       </div>
+      </a>
         <ul>
             <li>
                 <ul>
                     <li *ngFor="let item of course.sections">
                         <a class="dropdown-btn" (click)="toggleMenu(item)">
-                            <i class="fa fa-home"></i>
-                            <span>{{ item.name }}</span>
+                          <h4>{{ item.name }}</h4>
+                          <div class="dropdown-btn-lesson-number">
+                            <p>Lekcje: 11</p>
+                          </div>
+                          <div class="left-menu-dropdown-icon">
+                              <i class="fa" [ngClass]="{ 'fa-angle-down': !isSectionCollapsed(item), ' fa-angle-up': isSectionCollapsed(item)}"></i>
+                          </div>
+
                         </a>
                         <div class="dropdown-container" [ngClass]="{ 'sidebar-dropdown-open': isSectionCollapsed(item), 'sidebar-dropdown-hidden': !isSectionCollapsed(item)}">
                             <ul>
-                              <li><a href="ecommerce.html">Dashboard</a></li>
-                              <li><a href="products.html">Products</a></li>
-                              <li><a href="products-edit.html">Edit Products</a></li>
-                              <li><a href="orders.html">Orders</a></li>
-                              <li><a href="order-view.html">Order View</a></li>
+                              <li class="" *ngFor="let lesson of item.lessons">
+                                <a href="ecommerce.html" class="left-menu-lesson-name">{{ lesson.name }}</a>
+                              </li>
                           </ul>
                         </div>
                     </li>
 
-                    <li>
-                        <a href="index.html">
-                            <i class="fa fa-home"></i>
-                            <span>Dashboard</span>
-                        </a>
-                    </li>
-                    <li class="active">
-                        <a class="dropdown-btn" (click)="toggleMenu()">
-                          <i class="fa fa-shopping-cart"></i>
-                          <span>Ecommerce</span>
-                        </a>
-                        <div class="dropdown-container">
-                            <ul>
-                              <li><a href="ecommerce.html">Dashboard</a></li>
-                              <li><a href="products.html">Products</a></li>
-                              <li><a href="products-edit.html">Edit Products</a></li>
-                              <li><a href="orders.html">Orders</a></li>
-                              <li><a href="order-view.html">Order View</a></li>
-                          </ul>
-                        </div>
-
-                    </li>
                 </ul>
             </li>
 
-            <li>
-                <a href="#">Layouts</a>
-
-                <ul>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-th"></i>
-                            <span>Page Layouts</span>
-                        </a>
-
-                        <ul>
-                            <li><a href="blank.html">Blank Page</a></li>
-                            <li><a href="page-light.html">Page Light</a></li>
-                            <li><a href="sidebar-light.html">Sidebar Light</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-th-list"></i>
-                            <span>Footers</span>
-                        </a>
-
-                        <ul>
-                            <li><a href="footer-light.html">Footer Light</a></li>
-                            <li><a href="footer-dark.html">Footer Dark</a></li>
-                            <li><a href="footer-transparent.html">Footer Transparent</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
 
 
         </ul>

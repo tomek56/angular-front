@@ -18,6 +18,7 @@ export class DashboardSkeletonComponent implements OnInit {
 
   private course: Course;
   private showMenu = false;
+  private collapsedSections: Array<number> = Array();
 
   @ViewChild('drawer') sidenav: MatSidenav;
   constructor(private route: ActivatedRoute, private httpService: HttpService) { }
@@ -42,13 +43,25 @@ export class DashboardSkeletonComponent implements OnInit {
 
   toggleMenu(section: CourseSection): void {
 
+    if (this.isSectionCollapsed(section)) {
+      this.collapsedSections = this.collapsedSections.filter(sectionId => sectionId !== section.id);
+    } else {
+      this.collapsedSections = Array();
+
+      this.collapsedSections.push(section.id);
+    }
+
   }
 
   isSectionCollapsed(section: CourseSection): boolean {
-    return true;
+    return !(this.collapsedSections.filter(sectionId => sectionId === section.id).length === 0);
   }
 
-  toggleMenu() {
-    console.log("Asd");
+  goToCourse() {
+    //todo
   }
+
+  // toggleMenu() {
+  //   console.log("Asd");
+  // }
 }
