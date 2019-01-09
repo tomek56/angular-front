@@ -21,7 +21,6 @@ background-color: rgba(0, 0, 0, 0.45)
 .dropdown-container {
   display: none;
   background-color: rgba(255, 255, 255, 0.04);
-  padding-left: 0px;
 }
 
 .wrapper {
@@ -34,7 +33,7 @@ background-color: rgba(0, 0, 0, 0.45)
   top: 0px;
   left: 0px;
   bottom: 0;
-  width: 270px;
+  width: 320px;
   margin-left: 0;
   background-color: #020d18;
   box-shadow: 3px 0 5px rgba(0, 0, 0, 0.05);
@@ -69,7 +68,6 @@ background-color: rgba(0, 0, 0, 0.45)
 
 .sidebar--nav {
   position: relative;
-  padding: 0px 0 21px;
   z-index: 0;
 }
 
@@ -94,7 +92,7 @@ background-color: rgba(0, 0, 0, 0.45)
 }
 
 .left-menu-lesson-name{
-  padding: 20px;
+  padding: 0px 0px 0px 50px;
 }
 .sidebar--nav > ul > li + li {
   margin-top: 38px;
@@ -216,8 +214,8 @@ background-color: rgba(0, 0, 0, 0.45)
 }
 
 .sidebar--nav ul ul ul a {
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .sidebar--nav ul ul ul li {
@@ -249,5 +247,19 @@ background-color: rgba(0, 0, 0, 0.45)
 .left-menu-dropdown-icon{
   position: absolute;
   top: 30px;
-  left: 245px;
+  left: 295px;
+}
+
+.current-lesson{
+  position: absolute;
+  top: 50%;
+  margin-left: 32px;
+  height: 30px;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 30px;
+  border: 1px solid #ffffff;
+  -webkit-border-radius: 15px;
+  -moz-border-radius:15px;
+  border-radius: 15px;
 }

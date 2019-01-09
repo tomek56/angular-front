@@ -17,6 +17,7 @@
                 <ul>
                     <li *ngFor="let item of course.sections">
                         <a class="dropdown-btn" (click)="toggleMenu(item)">
+
                           <h4>{{ item.name }}</h4>
                           <div class="dropdown-btn-lesson-number">
                             <p>Lekcje: 11</p>
@@ -29,7 +30,15 @@
                         <div class="dropdown-container" [ngClass]="{ 'sidebar-dropdown-open': isSectionCollapsed(item), 'sidebar-dropdown-hidden': !isSectionCollapsed(item)}">
                             <ul>
                               <li class="" *ngFor="let lesson of item.lessons">
-                                <a href="ecommerce.html" class="left-menu-lesson-name">{{ lesson.name }}</a>
+                                  <div class="row">
+                                    <div class="col-md-1 current-lesson">
+                                        <i class="fa fa-angle-down"></i>
+                                      </div>
+                                    <div class="col-md-11  left-menu-lesson-name">
+                                        <a href="ecommerce.html" class="">{{ lesson.name }}</a>
+
+                                    </div>
+                                  </div>
                               </li>
                           </ul>
                         </div>
