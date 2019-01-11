@@ -94,4 +94,18 @@ export class DashboardSkeletonComponent implements OnInit {
   //   console.log("Asd");
   // }
   }
+
+  getLessonNumber(lesson: Lesson): number {
+    let index = 1;
+    for (const section of this.course.sections) {
+      for (const l of section.lessons) {
+        if (l.id === lesson.id) {
+          return index;
+        }
+        index = index + 1;
+      }
+    }
+
+    return index;
+  }
 }

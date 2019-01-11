@@ -57,6 +57,7 @@ import { PanelComponent } from './dashboard/components/panel/panel/panel.compone
 import { CoursesSliderComponent } from './dashboard/components/panel/components/courses-slider/courses-slider.component';
 import { CourseDetailComponent } from './components/course/course-detail/course-detail.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar/nav-bar.component';
+import { VideoComponent } from './dashboard/components/video/video.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { NavBarComponent } from './components/nav-bar/nav-bar/nav-bar.component'
     PanelComponent,
     CoursesSliderComponent,
     CourseDetailComponent,
-    NavBarComponent
+    NavBarComponent,
+    VideoComponent
   ],
   imports: [
     AppRoutingModule,

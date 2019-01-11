@@ -94,6 +94,13 @@ background-color: rgba(0, 0, 0, 0.45)
 .left-menu-lesson-name{
   padding: 0px 0px 0px 50px;
 }
+
+.left-menu-lesson-name span{
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'Dosis', sans-serif;
+  font-size: 17px;
+  font-weight: lighter;
+}
 .sidebar--nav > ul > li + li {
   margin-top: 38px;
 }

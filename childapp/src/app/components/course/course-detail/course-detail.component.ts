@@ -25,6 +25,10 @@ export class CourseDetailComponent implements OnInit {
     });
   }
 
+  goToLesson(lesson: Lesson){
+
+  }
+
   getLessonNumber(lesson: Lesson): number {
     let index = 1;
     for (const section of this.course.sections) {
