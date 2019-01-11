@@ -38,7 +38,7 @@ export class DashboardSkeletonComponent implements OnInit {
 
         for (const section of this.course.sections) {
           for (const lesson of section.lessons) {
-            if (lesson.id === this.currentLesson) {
+            if (lesson.id == this.currentLesson) {
               this.collapsedSections.push(section.id);
             }
           }

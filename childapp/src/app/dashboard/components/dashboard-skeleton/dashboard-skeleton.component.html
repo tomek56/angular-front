@@ -30,6 +30,8 @@
                         <div class="dropdown-container" [ngClass]="{ 'sidebar-dropdown-open': isSectionCollapsed(item), 'sidebar-dropdown-hidden': !isSectionCollapsed(item)}">
                             <ul>
                               <li class="" *ngFor="let lesson of item.lessons">
+                                  <a>
+
                                   <div class="row">
                                       <div class="col-md-1 current-lesson-container">
                                         <div class="current-lesson" [ngClass]="getLessonClass(lesson)">
@@ -39,9 +41,11 @@
                                         </div>
                                       </div>
                                       <div class="col-md-11  left-menu-lesson-name">
-                                          <a href="ecommerce.html" class="">{{ lesson.name }}</a>
+                                          {{ lesson.name }}
                                       </div>
                                   </div>
+                                </a>
+
                               </li>
                           </ul>
                         </div>
