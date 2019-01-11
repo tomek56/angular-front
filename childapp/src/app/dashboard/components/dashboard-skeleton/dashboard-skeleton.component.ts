@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { MatSidenav } from '@angular/material';
 import { Course } from 'src/app/models/course';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { HttpService } from 'src/app/services/http.service';
 import { CourseSection } from 'src/app/models/courseSection';
 import { Lesson } from 'src/app/models/lesson';
@@ -23,7 +23,7 @@ export class DashboardSkeletonComponent implements OnInit {
   private currentLesson: number;
 
   @ViewChild('drawer') sidenav: MatSidenav;
-  constructor(private route: ActivatedRoute, private httpService: HttpService) { }
+  constructor(private route: ActivatedRoute, private httpService: HttpService, private router: Router) { }
 
   ngOnInit() {
     this.sidenav.toggle();
@@ -87,10 +87,11 @@ export class DashboardSkeletonComponent implements OnInit {
   }
 
   goToCourse() {
-    //todo
-  }
+    console.log("Asd");
 
+    this.router.navigate(['/course/', this.course.slug]);
   // toggleMenu() {
   //   console.log("Asd");
   // }
+  }
 }

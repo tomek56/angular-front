@@ -22,9 +22,8 @@
                 <img src="../../../../assets/images/movie-single.png" alt="">
                 <div class="movie-btn">
                   <div class="btn-transform transform-vertical red">
-                    <div><a href="#" class="item item-1 redbtn"> <i class="ion-play"></i>Zacznij oglądać</a></div>
-                    <div><a routerLink="{{ getIntroId() }}" class="item item-2 redbtn fancybox-media hvr-grow"><i
-                          class="ion-play"></i></a></div>
+                    <div><a routerLink="{{ getIntroId() }}" class="item item-1 redbtn"> <i class="ion-play"></i>Zacznij oglądać</a></div>
+                    <div><a routerLink="{{ getIntroId() }}" class="item item-2 redbtn fancybox-media hvr-grow"><i class="ion-play"></i></a></div>
                   </div>
 
                 </div>
@@ -48,7 +47,7 @@
                     <ul class="tab-links tabs-mv">
                       <li class="active"><a href="#overview">Treść kursu</a></li>
                       <li><a href="#reviews">Materiały do kursu</a></li>
-                       <!-- <li><a href="#cast"> Cast & Crew </a></li>
+                      <!-- <li><a href="#cast"> Cast & Crew </a></li>
                       <li><a href="#media"> Media</a></li>
                       <li><a href="#moviesrelated"> Related Movies</a></li> -->
                     </ul>
@@ -64,29 +63,32 @@
                               </div>
                               <!-- movie user review -->
                               <div class="mv-user-review-item" *ngFor="let lesson of item.lessons">
+                                <a routerLink="{{ lesson.id }}">
                                   <div class="row lesson-title-container">
                                     <div class="col-md-1">
-                                        <div class="lesson-number">
-                                          <h4>{{ getLessonNumber(lesson) }}</h4>
-                                        </div>
+                                      <div class="lesson-number">
+                                        <h4>{{ getLessonNumber(lesson) }}</h4>
+                                      </div>
                                     </div>
                                     <div class="col-md-9">
-                                        <div class="lesson-title">
-                                          <h3 class="lesson-title-h3">{{ lesson.name }} <span class="free-tag-course" [hidden]="!isFreeLesson(lesson)">DARMOWY</span></h3>
+                                      <div class="lesson-title">
+                                        <h3 class="lesson-title-h3">{{ lesson.name }} <span class="free-tag-course"
+                                            [hidden]="!isFreeLesson(lesson)">DARMOWY</span></h3>
 
-                                        </div>
+                                      </div>
 
                                     </div>
                                     <div class="col-md-2">
                                       <div class="lesson-time">
-                                          <p class="">12:12</p>
+                                        <p class="">12:12</p>
 
                                       </div>
                                     </div>
 
                                     <!-- <div class="separator"></div> -->
 
-                                </div>
+                                  </div>
+                                </a>
 
                                 <!-- <p class="time">
                                   17 December 2016 by <a href="#"> hawaiipierson</a>
