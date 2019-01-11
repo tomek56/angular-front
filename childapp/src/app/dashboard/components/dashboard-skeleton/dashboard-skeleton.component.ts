@@ -4,6 +4,7 @@ import { Course } from 'src/app/models/course';
 import { ActivatedRoute, Params } from '@angular/router';
 import { HttpService } from 'src/app/services/http.service';
 import { CourseSection } from 'src/app/models/courseSection';
+import { Lesson } from 'src/app/models/lesson';
   // //#region Methods from JS file
   // declare function dropdownSet(): any;
   // //#endregion
@@ -19,6 +20,7 @@ export class DashboardSkeletonComponent implements OnInit {
   private course: Course;
   private showMenu = false;
   private collapsedSections: Array<number> = Array();
+  private currentLesson: number;
 
   @ViewChild('drawer') sidenav: MatSidenav;
   constructor(private route: ActivatedRoute, private httpService: HttpService) { }
@@ -27,14 +29,42 @@ export class DashboardSkeletonComponent implements OnInit {
     this.sidenav.toggle();
 
     this.route.paramMap.subscribe((param: Params) => {
-      console.log(param.get('id'));
+
+      this.currentLesson = param.get('lesson');
+
       this.httpService.getCourseDetail(param.get('id')).subscribe(data => {
+
         this.course = data;
+
+        for (const section of this.course.sections) {
+          for (const lesson of section.lessons) {
+            if (lesson.id === this.currentLesson) {
+              this.collapsedSections.push(section.id);
+            }
+          }
+        }
+
         this.showMenu = true;
         this.drawMenu();
+
       });
     });
 
+  }
+
+  isCurrentLesson(lesson: Lesson): boolean {
+    // tslint:disable-next-line:triple-equals
+    return (lesson.id == this.currentLesson);
+  }
+
+  getLessonClass(lesson: Lesson): string {
+
+
+    if (this.isCurrentLesson(lesson)) {
+      console.log('dobry styl');
+      return 'current-played';
+    }
+    return 'to-watch-played';
   }
 
   drawMenu() {
@@ -47,7 +77,6 @@ export class DashboardSkeletonComponent implements OnInit {
       this.collapsedSections = this.collapsedSections.filter(sectionId => sectionId !== section.id);
     } else {
       this.collapsedSections = Array();
-
       this.collapsedSections.push(section.id);
     }
 
