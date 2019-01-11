@@ -51,8 +51,6 @@ import {
   import { CommonModule } from '@angular/common';
 import { NavigationComponent } from './dashboard/components/navigation/navigation.component';
 import { DashboardSkeletonComponent } from './dashboard/components/dashboard-skeleton/dashboard-skeleton.component';
-import { FirstComponent } from './dashboard/components/first/first.component';
-import { SecondComponent } from './dashboard/components/second/second.component';
 import { PanelComponent } from './dashboard/components/panel/panel/panel.component';
 import { CoursesSliderComponent } from './dashboard/components/panel/components/courses-slider/courses-slider.component';
 import { CourseDetailComponent } from './components/course/course-detail/course-detail.component';
@@ -66,8 +64,6 @@ import { VideoComponent } from './dashboard/components/video/video.component';
     AuthpageComponent,
     NavigationComponent,
     DashboardSkeletonComponent,
-    FirstComponent,
-    SecondComponent,
     PanelComponent,
     CoursesSliderComponent,
     CourseDetailComponent,

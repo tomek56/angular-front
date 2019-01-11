@@ -25,7 +25,7 @@ export class CourseDetailComponent implements OnInit {
     });
   }
 
-  goToLesson(lesson: Lesson){
+  goToLesson(lesson: Lesson) {
 
   }
 
@@ -44,7 +44,7 @@ export class CourseDetailComponent implements OnInit {
   }
 
   getIntroId(): number {
-    return this.course.sections[0].lessons[0].id
+    return this.course.sections[0].lessons[0].id;
   }
 
   isFreeLesson(lesson: Lesson): boolean {

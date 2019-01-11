@@ -1,70 +1,75 @@
 <div class="wrapper">
 
 
-<mat-sidenav-container class="example-container">
- <mat-sidenav #drawer mode="side" opened role="navigation" class="drawer sidebar" >
+  <mat-sidenav-container class="side-nav-container">
+    <mat-sidenav #drawer mode="side" opened role="navigation" class="drawer sidebar">
 
 
-     <mat-nav-list class="sidebar--nav" *ngIf="showMenu">
-       <a (click)="goToCourse()">
-       <div class="left-menu-title">
-         <h4>Przejdź do kursu</h4>
+      <mat-nav-list class="sidebar--nav" *ngIf="showMenu">
+        <a (click)="goToCourse()">
+          <div class="left-menu-title">
+            <h4>Przejdź do kursu</h4>
 
-       </div>
-      </a>
+          </div>
+        </a>
         <ul>
-            <li>
-                <ul>
-                    <li *ngFor="let item of course.sections">
-                        <a class="dropdown-btn" (click)="toggleMenu(item)">
+          <li>
+            <ul>
+              <li *ngFor="let item of course.sections">
+                <a class="dropdown-btn" (click)="toggleMenu(item)">
 
-                          <h4>{{ item.name }}</h4>
-                          <div class="dropdown-btn-lesson-number">
-                            <p>Lekcje: 11</p>
+                  <h4>{{ item.name }}</h4>
+                  <div class="dropdown-btn-lesson-number">
+                    <p>Lekcje: 11</p>
+                  </div>
+                  <div class="left-menu-dropdown-icon">
+                    <i class="fa" [ngClass]="{ 'fa-angle-down': !isSectionCollapsed(item), ' fa-angle-up': isSectionCollapsed(item)}"></i>
+                  </div>
+
+                </a>
+                <div class="dropdown-container" [ngClass]="{ 'sidebar-dropdown-open': isSectionCollapsed(item), 'sidebar-dropdown-hidden': !isSectionCollapsed(item)}">
+                  <ul>
+                    <li class="" *ngFor="let lesson of item.lessons">
+                      <a>
+
+                        <div class="row">
+                          <div class="col-md-1 current-lesson-container">
+                            <div class="current-lesson" [ngClass]="getLessonClass(lesson)">
+                              <span style="font-size: 9px;" class="icon-curent-played-lesson" [hidden]="!isCurrentLesson(lesson)">
+                                <i class="fa fa-play"></i>
+                              </span>
+                            </div>
                           </div>
-                          <div class="left-menu-dropdown-icon">
-                              <i class="fa" [ngClass]="{ 'fa-angle-down': !isSectionCollapsed(item), ' fa-angle-up': isSectionCollapsed(item)}"></i>
+                          <div class="col-md-11 left-menu-lesson-name">
+                            {{ getLessonNumber(lesson) }}. {{ lesson.name }}&nbsp;&nbsp;<span>3:12</span>
                           </div>
-
-                        </a>
-                        <div class="dropdown-container" [ngClass]="{ 'sidebar-dropdown-open': isSectionCollapsed(item), 'sidebar-dropdown-hidden': !isSectionCollapsed(item)}">
-                            <ul>
-                              <li class="" *ngFor="let lesson of item.lessons">
-                                  <a>
-
-                                  <div class="row">
-                                      <div class="col-md-1 current-lesson-container">
-                                        <div class="current-lesson" [ngClass]="getLessonClass(lesson)">
-                                            <span style="font-size: 9px;" class="icon-curent-played-lesson" [hidden]="!isCurrentLesson(lesson)">
-                                              <i class="fa fa-play"></i>
-                                              </span>
-                                        </div>
-                                      </div>
-                                      <div class="col-md-11 left-menu-lesson-name">
-                                          {{ getLessonNumber(lesson) }}. {{ lesson.name }}&nbsp;&nbsp;<span>3:12</span>
-                                      </div>
-                                  </div>
-                                </a>
-
-                              </li>
-                          </ul>
                         </div>
-                    </li>
+                      </a>
 
-                </ul>
-            </li>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+            </ul>
+          </li>
 
 
 
         </ul>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <app-nav-bar [drawer]=true [sidenav]="sidenav"></app-nav-bar>
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <app-nav-bar [drawer]=true [sidenav]="sidenav"></app-nav-bar>
+      <app-video></app-video>
+
+      <!-- <router-outlet></router-outlet> -->
+
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+
+
 </div>
 
-
-
+<!--  -->

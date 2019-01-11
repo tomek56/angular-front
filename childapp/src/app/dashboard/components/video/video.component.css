@@ -1,0 +1,8 @@
+.video-container{
+  background-color: aqua;
+   height: 400px;
+  /*width: 100%; */
+
+  padding: 0px;
+  position: relative;
+}

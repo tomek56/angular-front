@@ -32,20 +32,6 @@ const routes: Routes = [
     path: 'course/:id',
     component: CourseDetailComponent,
   }
-
-	// {
-	// 	path: '',
-	// 	loadChildren: 'app/app.module#AppModule'
-  // },
-  // {
-	// 	path: 'login',
-	// 	loadChildren: 'auth/auth.module#AuthModule'
-	// },
-	// {
-	// 	path: '**',
-	// 	redirectTo: '404',
-	// 	pathMatch: 'full'
-	// }
 ];
 
 

@@ -1,3 +1,7 @@
+.side-nav-container{
+  height: 100%;
+}
+
 .left-menu-title{
   height: 100px;
   border-bottom-color: #ffff !important;
