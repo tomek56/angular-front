@@ -21,9 +21,27 @@ export class DashboardSkeletonComponent implements OnInit {
   private showMenu = false;
   private collapsedSections: Array<number> = Array();
   private currentLesson: number;
+  private currentLessonObj: Lesson;
 
   @ViewChild('drawer') sidenav: MatSidenav;
   constructor(private route: ActivatedRoute, private httpService: HttpService, private router: Router) { }
+
+  getCurrentLesson(): Lesson {
+    console.log('get current lesson');
+    console.log(this.currentLesson);
+
+    let lesson: Lesson;
+    for (const section of this.course.sections) {
+      for (const l of section.lessons) {
+        if (l.id == this.currentLesson) {
+          lesson =  l;
+        }
+      }
+    }
+    console.log(lesson);
+
+    return lesson;
+  }
 
   ngOnInit() {
     this.sidenav.toggle();
@@ -43,9 +61,9 @@ export class DashboardSkeletonComponent implements OnInit {
             }
           }
         }
+        this.currentLessonObj = this.getCurrentLesson();
 
         this.showMenu = true;
-        this.drawMenu();
 
       });
     });
@@ -58,17 +76,10 @@ export class DashboardSkeletonComponent implements OnInit {
   }
 
   getLessonClass(lesson: Lesson): string {
-
-
     if (this.isCurrentLesson(lesson)) {
-      console.log('dobry styl');
       return 'current-played';
     }
     return 'to-watch-played';
-  }
-
-  drawMenu() {
-
   }
 
   toggleMenu(section: CourseSection): void {

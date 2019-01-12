@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Lesson } from 'src/app/models/lesson';
 
 @Component({
   selector: 'app-video',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VideoComponent implements OnInit {
 
+  @Input()
+  lesson: Lesson;
+
   constructor() { }
 
   ngOnInit() {
+    console.log('lekcja');
+    console.log(this.lesson);
   }
-
 }
