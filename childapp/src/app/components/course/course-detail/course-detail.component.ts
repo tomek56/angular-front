@@ -19,7 +19,7 @@ export class CourseDetailComponent implements OnInit {
     this.route.paramMap.subscribe((param: Params) => {
       console.log(param.get('id'));
       this.httpService.getCourseDetail(param.get('id')).subscribe(data => {
-        //this.categories = data;
+        // this.categories = data;
         this.course = data;
       });
     });
