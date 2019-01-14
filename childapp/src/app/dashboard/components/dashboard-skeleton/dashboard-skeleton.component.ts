@@ -23,6 +23,7 @@ export class DashboardSkeletonComponent implements OnInit {
   private currentLesson: number;
   private currentLessonObj: Lesson;
 
+  @ViewChild('dataContainer') dataContainer: ElementRef;
   @ViewChild('drawer') sidenav: MatSidenav;
   constructor(private route: ActivatedRoute, private httpService: HttpService, private router: Router) { }
 
@@ -62,7 +63,9 @@ export class DashboardSkeletonComponent implements OnInit {
           }
         }
         this.currentLessonObj = this.getCurrentLesson();
+        //dataContainer
 
+        this.dataContainer.nativeElement.innerHTML = this.currentLessonObj.description;
         this.showMenu = true;
 
       });
