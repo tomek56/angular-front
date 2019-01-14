@@ -11,23 +11,6 @@
   position: relative;
 }
 
-/* @media (max-height: 568px) {
-  .video-container {
-    height: 300px;
-  }
-}
-
-@media (max-height: 668px) {
-  .video-container {
-    height: 500px;
-  }
-}
-
-@media (max-height: 768px) {
-  .video-container {
-    height: 500px;
-  }
-} */
 
 
 .video-player{

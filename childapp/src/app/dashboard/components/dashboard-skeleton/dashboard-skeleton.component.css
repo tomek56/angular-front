@@ -178,23 +178,6 @@ background-color: rgba(0, 0, 0, 0.45)
    padding-bottom: 7px;
 }
 
-/* .sidebar--nav .is-dropdown > a:before {
-  content: "\f146";
-}
-
-.sidebar--nav .is-dropdown > a:after {
-  content: "\f0fe";
-} */
-
-/* .sidebar--nav .is-dropdown.open > a:before,
-.sidebar--nav .is-dropdown > a:after {
-  display: none;
-} */
-
-/* .sidebar--nav .is-dropdown > a:before,
-.sidebar--nav .is-dropdown.open > a:after {
-  display: block;
-} */
 
 .sidebar--nav > ul > .is-dropdown > a:before {
   font-weight: 400;
@@ -212,13 +195,7 @@ background-color: rgba(0, 0, 0, 0.45)
   cursor: pointer;
 }
 
-/* .sidebar--nav ul ul ul a:hover,
-.sidebar--nav ul ul ul .open > a,
-.sidebar--nav ul ul ul .active > a,
-.sidebar--nav ul ul ul .active > a:before,
-.sidebar--nav ul ul ul .active > a:before {
-  background-color: transparent;
-} */
+
 
 .sidebar--nav ul ul ul {
 
@@ -292,8 +269,15 @@ background-color: rgba(0, 0, 0, 0.45)
   height: 26px;
 
   width: 26px;
-  /* border: 1px solid #ffffff; */
   -webkit-border-radius: 13px;
   -moz-border-radius:13px;
   border-radius: 13px;
+}
+
+.description-lesson-html{
+  margin-left: 50px;
+  margin-right: 50px;
+  padding: 50px 30px 50px 30px;
+  background-color: #fff;
+  margin-bottom: 50px;
 }
