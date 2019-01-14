@@ -569,5 +569,22 @@ display: flex;
 .toggle-icon-button{
   margin-right: 20px;
   margin-left: 10px;
+}
+
+.navbar-title{
+  color: rgba(255, 255, 255, 0.95);
+  text-align: center;
+  width: 100%;
+  padding-right: 120px;
+
+}
+
+.navbar-title h4{
+  font-family: 'Dosis', sans-serif;
+  font-size: 22px;
+  white-space: normal;
+  font-weight: bold;
+
+  /* max-width: 100px; */
 
 }

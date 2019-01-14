@@ -15,9 +15,15 @@ export class NavBarComponent implements OnInit {
   @Input()
   sidenav: MatSidenav;
 
+  @Input()
+  title: string;
+
   constructor() { }
 
   ngOnInit() {
+    console.log("title");
+
+    console.log(this.title);
     if (!this.drawer) {
       this.drawerVisible = false;
     }
