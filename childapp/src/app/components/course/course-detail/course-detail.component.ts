@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { HttpService } from 'src/app/services/http.service';
 import { LinkhelperService } from 'src/app/services/linkhelper.service';
@@ -15,12 +15,15 @@ export class CourseDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute, private httpService: HttpService) { }
   course: Course;
 
+  @ViewChild('descriptionContainer') dataContainer: ElementRef;
+
   ngOnInit() {
     this.route.paramMap.subscribe((param: Params) => {
       console.log(param.get('id'));
       this.httpService.getCourseDetail(param.get('id')).subscribe(data => {
         // this.categories = data;
         this.course = data;
+        this.dataContainer.nativeElement.innerHTML = this.course.description.description
       });
     });
   }
