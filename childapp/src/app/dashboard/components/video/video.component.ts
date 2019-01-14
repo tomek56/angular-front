@@ -14,7 +14,7 @@ export class VideoComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log('lekcja juz w komponencie');
+    console.log('lekcja juz w');
     console.log(this.lesson.movie.url);
   }
 }

@@ -5,4 +5,5 @@ export interface Lesson {
   name?: string;
   free?: boolean;
   movie: LessonMovie;
+  description: string;
 }
