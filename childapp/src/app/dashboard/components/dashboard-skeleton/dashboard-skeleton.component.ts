@@ -45,8 +45,25 @@ export class DashboardSkeletonComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    console.log("changeLink");
+
     this.sidenav.toggle();
 
+    this.loadLesson();
+
+
+  }
+
+  goToLesson(lesson: Lesson) {
+    console.log("klikam");
+    this.router.navigate(['/course/', this.course.slug, lesson.id]);
+    this.loadLesson();
+
+  }
+
+  loadLesson() {
+    this.showMenu = false;
     this.route.paramMap.subscribe((param: Params) => {
 
       this.currentLesson = param.get('lesson');
@@ -70,7 +87,6 @@ export class DashboardSkeletonComponent implements OnInit {
 
       });
     });
-
   }
 
   isCurrentLesson(lesson: Lesson): boolean {

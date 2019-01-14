@@ -30,7 +30,7 @@
                 <div class="dropdown-container" [ngClass]="{ 'sidebar-dropdown-open': isSectionCollapsed(item), 'sidebar-dropdown-hidden': !isSectionCollapsed(item)}">
                   <ul>
                     <li class="" *ngFor="let lesson of item.lessons">
-                      <a>
+                      <a (click)="goToLesson(lesson)">
 
                         <div class="row">
                           <div class="col-md-1 current-lesson-container">
