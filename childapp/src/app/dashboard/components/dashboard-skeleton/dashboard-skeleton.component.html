@@ -55,28 +55,15 @@
           </li>
 
 
-
         </ul>
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
       <app-nav-bar [drawer]=true [sidenav]="sidenav" [title]="currentLessonObj.name"></app-nav-bar>
-      <app-video [lesson]="currentLessonObj" *ngIf="showMenu"></app-video>
-
-      <!-- {{ currentLessonObj.description }} -->
-
+      <app-video [lesson]="currentLessonObj" *ngIf="showMenu" (videoEnded)="videoEndedEvent($event)"></app-video>
       <div #dataContainer class="description-lesson-html"></div>
-
-      <!-- <div [innerHTML]="currentLessonObj.description"></div>
-       <router-outlet></router-outlet>
-
-      <div style="background:#eeeeee; border:1px solid #cccccc; padding:5px 10px">test snippet</div> -->
 
     </mat-sidenav-content>
   </mat-sidenav-container>
 
-
-
 </div>
-
-<!--  -->

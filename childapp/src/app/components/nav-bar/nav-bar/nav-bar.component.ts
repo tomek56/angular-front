@@ -21,9 +21,6 @@ export class NavBarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log("title");
-
-    console.log(this.title);
     if (!this.drawer) {
       this.drawerVisible = false;
     }

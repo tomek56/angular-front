@@ -5,9 +5,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { HttpService } from 'src/app/services/http.service';
 import { CourseSection } from 'src/app/models/courseSection';
 import { Lesson } from 'src/app/models/lesson';
-  // //#region Methods from JS file
-  // declare function dropdownSet(): any;
-  // //#endregion
+
 
 
 @Component({
@@ -28,9 +26,6 @@ export class DashboardSkeletonComponent implements OnInit {
   constructor(private route: ActivatedRoute, private httpService: HttpService, private router: Router) { }
 
   getCurrentLesson(): Lesson {
-    console.log('get current lesson');
-    console.log(this.currentLesson);
-
     let lesson: Lesson;
     for (const section of this.course.sections) {
       for (const l of section.lessons) {
@@ -39,24 +34,15 @@ export class DashboardSkeletonComponent implements OnInit {
         }
       }
     }
-    console.log(lesson);
-
     return lesson;
   }
 
   ngOnInit() {
-
-    console.log("changeLink");
-
     this.sidenav.toggle();
-
     this.loadLesson();
-
-
   }
 
   goToLesson(lesson: Lesson) {
-    console.log("klikam");
     this.router.navigate(['/course/', this.course.slug, lesson.id]);
     this.loadLesson();
 
@@ -117,12 +103,8 @@ export class DashboardSkeletonComponent implements OnInit {
   }
 
   goToCourse() {
-    console.log("Asd");
-
     this.router.navigate(['/course/', this.course.slug]);
-  // toggleMenu() {
-  //   console.log("Asd");
-  // }
+
   }
 
   getLessonNumber(lesson: Lesson): number {
@@ -138,4 +120,35 @@ export class DashboardSkeletonComponent implements OnInit {
 
     return index;
   }
+
+  videoEndedEvent(event) {
+    const l = this.getNextLesson();
+    if (l === undefined) {
+      console.log("nie ma kolejnej lekcji!");
+    } else {
+      this.goToLesson(l);
+    }
+  }
+
+  getNextLesson(): Lesson | undefined {
+    let next = false;
+
+    for (const section of this.course.sections) {
+      for (const l of section.lessons) {
+        if (next) {
+          return l;
+        }
+        if (l.id == this.currentLesson) {
+          next = true;
+        }
+      }
+    }
+
+    return undefined;
+  }
+
+  getLessonName(): string {
+    return 'sd';
+  }
+
 }

@@ -1,5 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { Lesson } from 'src/app/models/lesson';
+import { VgAPI } from 'videogular2/core';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-video',
@@ -8,13 +10,29 @@ import { Lesson } from 'src/app/models/lesson';
 })
 export class VideoComponent implements OnInit {
 
+  api: VgAPI;
+
   @Input()
   lesson: Lesson;
+
+  @Output()
+  videoEnded = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
-    console.log('lekcja juz w');
-    console.log(this.lesson.movie.url);
+  }
+
+  onPlayerReady(api: VgAPI) {
+    this.api = api;
+
+    this.api.getDefaultMedia().subscriptions.ended.subscribe(
+        () => {
+          console.log("next Lesson emit");
+          console.log(this.videoEnded);
+
+          this.videoEnded.emit();
+        }
+    );
   }
 }
