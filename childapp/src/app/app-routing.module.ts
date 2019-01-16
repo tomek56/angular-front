@@ -5,6 +5,7 @@ import { AuthpageComponent } from './components/authpage/authpage.component';
 import { DashboardSkeletonComponent } from './dashboard/components/dashboard-skeleton/dashboard-skeleton.component';
 import { PanelComponent } from './dashboard/components/panel/panel/panel.component';
 import { CourseDetailComponent } from './components/course/course-detail/course-detail.component';
+import { AuthContainerComponent } from './components/authpage/auth-container/auth-container.component';
 
 
 const routes: Routes = [
@@ -31,7 +32,17 @@ const routes: Routes = [
   {
     path: 'course/:id',
     component: CourseDetailComponent,
-  }
+  },
+  {
+    path: 'auth',
+    component: AuthContainerComponent,
+    children: [
+      {
+        path: 'login',
+        component: AuthpageComponent
+      }
+    ]
+  },
 ];
 
 
