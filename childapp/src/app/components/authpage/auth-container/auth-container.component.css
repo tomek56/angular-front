@@ -3,6 +3,13 @@
   /* box-shadow: inset 0 0 1000px rgba(0, 0, 0, 0.1); */
   padding: 0px 0;
   background-position: center;
-  background-color: brown;
+  background-color: #f9fafe;
   height: 100%;
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
