@@ -4,13 +4,33 @@
   </div>
   <h3>Zaloguj się</h3>
   <div class="row">
-      <input type="text" name="username" id="username" placeholder="Twój adres email"  />
+
+      <div class="input-container" style="display: flex;">
+          <span style=" position: static; color: #000000;">
+              <i class="fas fa-at input-icon"></i>
+
+            </span>
+
+            <input type="text" name="username" id="username" placeholder="Twój adres email"  />
+
+
+      </div>
+
 
   </div>
 
-  <div class="row margin-bottom-10">
+  <div class="row margin-bottom-10" >
+      <div class="input-container" style="display: flex;">
+          <span style="position: static; color: #000000;">
+              <i class="fa fa-unlock input-icon"></i>
 
-      <input type="password" name="password" id="password" placeholder="Hasło" />
+            </span>
+
+          <input type="password" name="password" id="password" placeholder="Hasło" />
+
+
+      </div>
+
   </div>
   <div class="row">
 
@@ -21,12 +41,14 @@
   <div class="row social-btn-2">
       <button class="fb"(click)="login()">Zaloguj przez Facebook</button>
     </div>
+  <div class="row login-separator-with-label">
+    <div class="login-separator"></div>
+    <div><span>Nie masz jeszcze konta?</span></div>
 
-  <div class="row">
-    <p>Or via social</p>
-    <div class="social-btn-2">
-      <a class="fb" href="#"><i class="ion-social-facebook"></i>Facebook</a>
-      <a class="tw" href="#"><i class="ion-social-twitter"></i>twitter</a>
-    </div>
   </div>
+
+  <div class="row login-register-component">
+      <button class="register-btn" (click)="goToRegister()">Załóż darmowe konto</button>
+    </div>
+
 </div>

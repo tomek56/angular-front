@@ -28,6 +28,10 @@ export class AuthpageComponent implements OnInit {
   //  this.auth.authenticate('tokenauth', {});
   }
 
+  goToRegister() {
+
+  }
+
   register() {
 
  //   this.auth.authenticate()
