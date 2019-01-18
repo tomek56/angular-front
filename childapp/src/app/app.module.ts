@@ -63,6 +63,8 @@ import {VgBufferingModule} from 'videogular2/buffering';
 import { AuthContainerComponent } from './components/authpage/auth-container/auth-container.component';
 import { AuthRegisterComponent } from './components/authpage/auth-register/auth-register.component';
 import { VgStreamingModule } from 'videogular2/streaming';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -97,7 +99,7 @@ import { VgStreamingModule } from 'videogular2/streaming';
     VgControlsModule,
     VgOverlayPlayModule,
     VgBufferingModule,
-    VgStreamingModule
+    FormsModule,
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

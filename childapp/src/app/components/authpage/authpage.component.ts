@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-authpage',
@@ -9,8 +10,10 @@ import { Router } from '@angular/router';
 })
 export class AuthpageComponent implements OnInit {
 
-  @Input() action = 'login';
-  classses: any = 'm-grid m-grid--hor m-grid--root m-page';
+  subbmitted: Bool = false;
+  errorLogin: Bool = false;
+
+  message = new TemplateMessage();
 
   constructor(private auth: AuthService, private router: Router,
     ) { }
@@ -18,11 +21,27 @@ export class AuthpageComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSubmit(loginForm: NgForm) {
+    this.subbmitted = true;
+    console.log(loginForm.status);
+    if (loginForm.status === 'VALID') {
+      this.login();
+    }
+
+  }
+
   login() {
-    console.log('asd');
-    this.auth.authorize('tomek', 'qwerty123').subscribe(data => {
+    this.errorLogin = false;
+
+    this.auth.authorize(this.message.username, this.message.password).subscribe(data => {
       console.log(data);
-      this.router.navigate(['/dashboard']);
+      console.log("data");
+
+      this.router.navigate(['/panel']);
+
+    },
+    errror => {
+      this.errorLogin = true;
 
     });
   //  this.auth.authenticate('tokenauth', {});
@@ -36,8 +55,14 @@ export class AuthpageComponent implements OnInit {
   register() {
 
  //   this.auth.authenticate()
-    this.action = 'register';
+    //this.action = 'register';
   }
 
 
+}
+
+class TemplateMessage {
+  constructor(
+    public username?: string,
+    public password?: string) { }
 }

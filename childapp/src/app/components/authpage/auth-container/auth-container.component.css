@@ -69,7 +69,7 @@ margin-bottom: 25px;
 }
 @media (max-width: 767px) {
 .login-content label {
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
 }
 }
 .login-content input {
@@ -251,12 +251,26 @@ background-color: #00b9ef;
 .input-container {
  display: flex;
  width: 100%;
- margin-bottom: 10px;
+ margin-bottom: 6px;
  /* -webkit-border-radius: 5px;
  -moz-border-radius: 5px; */
  border-radius: 4px;
  /* border: 1px solid #e1e1e1; */
  border: 1px solid #8a8a8a;
 
+
+}
+
+.input-red-stroke {
+  border: 1px solid red;
+}
+
+.auth-alert-box{
+  height: 30px;
+  padding-left: 10px;
+  margin: 0px;
+  padding-top: 3px;
+  margin-bottom: 20px;
+  border-radius: 4px;
 
 }
