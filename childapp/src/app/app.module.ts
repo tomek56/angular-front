@@ -61,7 +61,8 @@ import {VgControlsModule} from 'videogular2/controls';
 import {VgOverlayPlayModule} from 'videogular2/overlay-play';
 import {VgBufferingModule} from 'videogular2/buffering';
 import { AuthContainerComponent } from './components/authpage/auth-container/auth-container.component';
-
+import { AuthRegisterComponent } from './components/authpage/auth-register/auth-register.component';
+import { VgStreamingModule } from 'videogular2/streaming';
 @NgModule({
   declarations: [
     AppComponent,
@@ -74,7 +75,8 @@ import { AuthContainerComponent } from './components/authpage/auth-container/aut
     CourseDetailComponent,
     NavBarComponent,
     VideoComponent,
-    AuthContainerComponent
+    AuthContainerComponent,
+    AuthRegisterComponent
   ],
   imports: [
     AppRoutingModule,
@@ -94,7 +96,8 @@ import { AuthContainerComponent } from './components/authpage/auth-container/aut
     VgCoreModule,
     VgControlsModule,
     VgOverlayPlayModule,
-    VgBufferingModule
+    VgBufferingModule,
+    VgStreamingModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

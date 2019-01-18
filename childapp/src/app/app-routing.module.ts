@@ -6,6 +6,7 @@ import { DashboardSkeletonComponent } from './dashboard/components/dashboard-ske
 import { PanelComponent } from './dashboard/components/panel/panel/panel.component';
 import { CourseDetailComponent } from './components/course/course-detail/course-detail.component';
 import { AuthContainerComponent } from './components/authpage/auth-container/auth-container.component';
+import { AuthRegisterComponent } from './components/authpage/auth-register/auth-register.component';
 
 
 const routes: Routes = [
@@ -40,6 +41,10 @@ const routes: Routes = [
       {
         path: 'login',
         component: AuthpageComponent
+      },
+      {
+        path: 'register',
+        component: AuthRegisterComponent
       }
     ]
   },

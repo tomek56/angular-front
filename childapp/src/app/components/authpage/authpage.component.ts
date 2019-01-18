@@ -29,6 +29,7 @@ export class AuthpageComponent implements OnInit {
   }
 
   goToRegister() {
+    this.router.navigate(['/auth/register/']);
 
   }
 
@@ -37,5 +38,6 @@ export class AuthpageComponent implements OnInit {
  //   this.auth.authenticate()
     this.action = 'register';
   }
+
 
 }
