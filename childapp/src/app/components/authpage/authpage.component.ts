@@ -10,8 +10,8 @@ import { NgForm } from '@angular/forms';
 })
 export class AuthpageComponent implements OnInit {
 
-  subbmitted: Bool = false;
-  errorLogin: Bool = false;
+  subbmitted = false;
+  errorLogin = false;
 
   message = new TemplateMessage();
 
