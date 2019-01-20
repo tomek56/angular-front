@@ -7,7 +7,7 @@ import { PanelComponent } from './dashboard/components/panel/panel/panel.compone
 import { CourseDetailComponent } from './components/course/course-detail/course-detail.component';
 import { AuthContainerComponent } from './components/authpage/auth-container/auth-container.component';
 import { AuthRegisterComponent } from './components/authpage/auth-register/auth-register.component';
-
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -24,7 +24,8 @@ const routes: Routes = [
   },
   {
     path: 'panel',
-    component: PanelComponent
+    component: PanelComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'course/:id/:lesson',
