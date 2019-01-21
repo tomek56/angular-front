@@ -35,8 +35,9 @@
                         <a href="#">{{ item.category.name }}</a>
                       </span> -->
               </div>
+              <a routerLink="/course/{{ item.slug }}">
               <div class="mv-img-panel">
-                <a class="" href="#"><img class="mv-img" [src]="getUrl(item)" alt=""></a>
+                <a class="" routerLink="/course/{{ item.slug }}"><img class="mv-img" [src]="getUrl(item)" alt=""></a>
               </div>
 
 
@@ -47,7 +48,7 @@
                     </div>
 
 
-                <h6><a href="#"> {{item.title}}</a></h6>
+                <h6><a routerLink="/course/{{ item.slug }}"> {{item.title}}</a></h6>
 
                 <div class="panel-lesson-numer">
                   <p><i class="far-panel far fa fa-laptop-code"></i>Liczba lekcji: <span>17</span></p>
@@ -55,6 +56,7 @@
 
 
               </div>
+            </a>
               <!-- <h2>adsasdasd</h2> -->
 
             </div>

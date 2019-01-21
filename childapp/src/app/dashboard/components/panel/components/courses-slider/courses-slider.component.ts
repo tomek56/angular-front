@@ -24,4 +24,8 @@ export class CoursesSliderComponent implements OnInit {
   getTitle(): string {
     return this.courses[0].category.name;
   }
+
+  goToCourse(course: Course) {
+
+  }
 }
