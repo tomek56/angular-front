@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MatSidenav } from '@angular/material';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -18,7 +19,7 @@ export class NavBarComponent implements OnInit {
   @Input()
   title: string;
 
-  constructor() { }
+  constructor(private auth: AuthService) { }
 
   ngOnInit() {
     if (!this.drawer) {
@@ -33,6 +34,10 @@ export class NavBarComponent implements OnInit {
     } else {
       this.drawerVisible = false;
     }
+  }
+
+  logoutAction() {
+    this.auth.logout(true);
   }
 
 }

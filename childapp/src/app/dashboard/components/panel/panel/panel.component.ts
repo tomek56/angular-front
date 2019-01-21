@@ -3,6 +3,10 @@ import { HttpService } from 'src/app/services/http.service';
 import { LinkhelperService } from 'src/app/services/linkhelper.service';
 import { Course } from 'src/app/models/course';
 
+ //#region Methods from JS file
+ declare function slickSlider(): any;
+ //#endregion
+
 @Component({
   selector: 'app-panel',
   templateUrl: './panel.component.html',
@@ -24,6 +28,8 @@ export class PanelComponent implements OnInit {
     this.httpService.getCourses().subscribe(data => {
       this.courses = data.courses;
       this.splitCourses();
+      slickSlider();
+
     });
   }
 

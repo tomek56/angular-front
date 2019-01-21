@@ -25,9 +25,7 @@ export class VideoComponent implements OnInit {
 
   onPlayerReady(api: VgAPI) {
     this.api = api;
-    console.log("lesson.movie.url");
-    console.log(this.lesson.movie.url);
-    console.log(this.lesson);
+
 
     this.api.getDefaultMedia().subscriptions.ended.subscribe(
         () => {
