@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { AuthService } from '../services/auth.service';
-import { Observable } from 'rxjs';
+import { Observable, Subject, BehaviorSubject } from 'rxjs';
 import { variable } from '@angular/compiler/src/output/output_ast';
-
+import { tap, mapTo, share } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class LandingGuard implements CanActivate {
@@ -17,40 +17,15 @@ export class LandingGuard implements CanActivate {
       state: RouterStateSnapshot
     ): Observable<boolean> {
 
-
+      let subj = new BehaviorSubject<boolean>(true);
 
         this.authenticationService.isAuthorized().subscribe(value => {
           if (value) {
             this.router.navigate(['/panel']);
-
-            // tslint:disable-next-line:no-shadowed-variable
-            const observable = Observable.create((observer:any) => {
-              observer.next(false);
-            });
-
-
-
-            return observable;
-
-          } else {
-
-            const observable = Observable.create((observer:any) => {
-              observer.next(true);
-            });
-            // var obs = new Observable<boolean>.create();
-            return observable;
-
           }
-
-
-
         });
 
-        const observable = Observable.create((observer:any) => {
-          observer.next(true);
-        });
-        // var obs = new Observable<boolean>.create();
-        return observable;
+        return subj.asObservable();
 
 
     }
