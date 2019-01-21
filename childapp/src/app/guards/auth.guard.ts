@@ -16,31 +16,18 @@ export class AuthGuard implements CanActivate {
       state: RouterStateSnapshot
     ): Observable<boolean> {
 
-        console.log('can activate komp');
-        console.log(this.authenticationService.isAuthorized());
-        console.log(state);
-        console.log(route);
-
         this.authenticationService.isAuthorized().subscribe(value => {
           if (!value) {
             this.router.navigate(['/auth/login'], { queryParams: { returnUrl: state.url }});
-            return false;
+            return this.authenticationService.isAuthorized();
 
           }
 
 
-          return true;
+          return this.authenticationService.isAuthorized();
         });
 
         return this.authenticationService.isAuthorized();
 
-        // if (this.authenticationService.isAuthorized) {
-        //     // authorised so return true
-        //     return true;
-        // }
-
-        // // not logged in so redirect to login page with the return url
-        // this.router.navigate(['/auth/login'], { queryParams: { returnUrl: state.url }});
-        // return false;
     }
 }

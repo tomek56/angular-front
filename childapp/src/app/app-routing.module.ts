@@ -8,11 +8,14 @@ import { CourseDetailComponent } from './components/course/course-detail/course-
 import { AuthContainerComponent } from './components/authpage/auth-container/auth-container.component';
 import { AuthRegisterComponent } from './components/authpage/auth-register/auth-register.component';
 import { AuthGuard } from './guards/auth.guard';
+import { LandingGuard } from './guards/landing.guard';
 
 const routes: Routes = [
   {
     path: '',
-		component: HomepageComponent
+    component: HomepageComponent,
+    canActivate: [LandingGuard]
+
   },
   {
     path: 'login',
