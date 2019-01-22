@@ -19,12 +19,21 @@ export class NavBarComponent implements OnInit {
   @Input()
   title: string;
 
+  userLogged = false;
+
   constructor(private auth: AuthService) { }
 
   ngOnInit() {
     if (!this.drawer) {
       this.drawerVisible = false;
     }
+
+    this.auth.isAuthorized().subscribe(
+      value => {
+        this.userLogged = value;
+      }
+    );
+
   }
 
   toggleDrawer() {

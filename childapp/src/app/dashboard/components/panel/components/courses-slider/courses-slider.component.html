@@ -36,24 +36,20 @@
                       </span> -->
               </div>
               <a routerLink="/course/{{ item.slug }}">
-              <div class="mv-img-panel">
-                <a class="" routerLink="/course/{{ item.slug }}"><img class="mv-img" [src]="getUrl(item)" alt=""></a>
-              </div>
-
+                <div class="mv-img-panel">
+                  <a class="" routerLink="/course/{{ item.slug }}"><img class="mv-img" [src]="getUrl(item)" alt=""></a>
+                </div>
 
 
               <div class="title-in title-slider-panel">
-                  <div class="panel-level">
-                      <p>Łatwy</p>
-                    </div>
-
-
-                <h6><a routerLink="/course/{{ item.slug }}"> {{item.title}}</a></h6>
+                    <div class="panel-level">
+                        <p>Łatwy</p>
+                      </div>
+                <h6><a routerLink="/course/{{ item.slug }}">{{item.title}}</a></h6>
 
                 <div class="panel-lesson-numer">
                   <p><i class="far-panel far fa fa-laptop-code"></i>Liczba lekcji: <span>17</span></p>
                 </div>
-
 
               </div>
             </a>

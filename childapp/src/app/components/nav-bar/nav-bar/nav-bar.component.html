@@ -32,7 +32,7 @@
 
         </div>
       <!-- Nav User Start -->
-      <li class="">
+      <li class="" *ngIf="userLogged">
         <button class="redbtnstrokepanel" data-toggle="dropdown">
           <!-- <img src="assets/img/avatars/01_80x80.png" alt="" class="rounded-circle"> -->
           <span>Więcej&nbsp;</span>
@@ -48,6 +48,15 @@
           <li><a (click)="logoutAction()"><i class="far-panel far fa fa-power-off fa-lg"></i>Logout</a></li>
         </ul>
       </li>
+
+      <li class="" *ngIf="!userLogged">
+
+        <button class="redbtnstrokepanel" data-toggle="dropdown">
+          <!-- <img src="assets/img/avatars/01_80x80.png" alt="" class="rounded-circle"> -->
+          <span>Zaloguj się&nbsp;</span>
+        </button>
+
+        </li>
       <!-- Nav User End -->
     </ul>
     <!-- </div>  -->

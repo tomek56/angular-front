@@ -8,12 +8,8 @@
     <div class="input-container" style="display: flex;" [ngClass]="{ 'input-red-stroke': username.invalid && this.subbmitted}">
       <span style=" position: static; color: #000000;">
         <i class="fas fa-at input-icon"></i>
-
       </span>
-
       <input [(ngModel)]="message.username"  #username="ngModel" type="text" name="username" id="username" placeholder="Twój adres email" required />
-
-
     </div>
     <div *ngIf="username.invalid && this.subbmitted" class="alert alert-danger auth-alert-box">Pole wymagane</div>
 
