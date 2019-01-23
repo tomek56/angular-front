@@ -12,6 +12,12 @@ export class CoursesSliderComponent implements OnInit {
   @Input()
   courses: Array<Course>;
 
+  @Input()
+  title: string;
+
+  @Input()
+  progress: boolean;
+
   constructor(private helperLink: LinkhelperService) { }
 
   ngOnInit() {

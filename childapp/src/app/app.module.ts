@@ -9,6 +9,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SpyInterceptor } from './services/interceptor';
 import { HttpModule } from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -100,6 +101,7 @@ import { FormsModule } from '@angular/forms';
     VgOverlayPlayModule,
     VgBufferingModule,
     FormsModule,
+
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

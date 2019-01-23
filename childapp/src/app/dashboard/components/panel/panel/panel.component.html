@@ -5,6 +5,8 @@
 
 
     <div class="panel-content">
+        <app-courses-slider [progress]=true [courses]="myList"></app-courses-slider>
+
       <app-courses-slider  *ngFor="let item of coursesByCategories" [courses]="item"></app-courses-slider>
     </div>
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/services/http.service';
 import { LinkhelperService } from 'src/app/services/linkhelper.service';
 import { Course } from 'src/app/models/course';
+import { CourseList } from 'src/app/models/courseList';
 
  //#region Methods from JS file
  declare function slickSlider(): any;
@@ -16,6 +17,7 @@ export class PanelComponent implements OnInit {
 
   courses: Array<Course>;
   coursesByCategories: Array<Array<Course>>;
+  myList: Array<Course>;
 
   constructor(private httpService: HttpService, private helperLink: LinkhelperService) {
     this.getCourses();
@@ -25,12 +27,18 @@ export class PanelComponent implements OnInit {
   }
 
   getCourses() {
+
     this.httpService.getCourses().subscribe(data => {
       this.courses = data.courses;
       this.splitCourses();
       slickSlider();
-
     });
+
+    this.httpService.getMyCourses().subscribe(data => {
+      this.myList = data;
+    },
+
+    );
   }
 
   splitCourses() {
@@ -45,12 +53,8 @@ export class PanelComponent implements OnInit {
         this.coursesByCategories.push(coursesByCategory);
       }
 
-
-
     }
 //      this.coursesByCategories = this.courses.
-
   }
-
 
 }

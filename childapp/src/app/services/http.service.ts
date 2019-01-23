@@ -23,6 +23,10 @@ export class HttpService {
     return this.http.get<Array<Category>> (this.link.getFullLink('/api/get-categories/'), {});
   }
 
+  getMyCourses(): Observable<Array<Course>> {
+    return this.http.get<Array<Course>> (this.link.getFullLink('/api/get-progress/'), {});
+  }
+
   getCourses(): Observable<CourseList> {
     return this.http.post<CourseList> (this.link.getFullLink('/api/courses/'), {});
   }

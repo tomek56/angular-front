@@ -2,6 +2,7 @@ import { Category } from './category';
 import { Tag } from './tag';
 import { CourseDescription } from './courseDescription';
 import { CourseSection } from './courseSection';
+import { LessonProgress } from './lessonProgress';
 
 export interface Course {
   id?: number;
@@ -13,5 +14,8 @@ export interface Course {
   slug?: string;
   description?: CourseDescription;
   sections: Array<CourseSection>;
+  lesson_to_continiue: LessonProgress;
+  progress: number;
+
 }
 
