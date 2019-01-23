@@ -35,38 +35,28 @@
                         <a href="#">{{ item.category.name }}</a>
                       </span> -->
               </div>
-              <a routerLink="/course/{{ item.slug }}">
+              <a (click)="goToProgressCourse(item)">
                 <div class="mv-img-panel">
-                  <a class="" routerLink="/course/{{ item.slug }}"><img class="mv-img" [src]="getUrl(item)" alt=""></a>
+                  <a class="" (click)="goToProgressCourse(item)" ><img class="mv-img" [src]="getUrl(item)" alt=""></a>
                 </div>
 
 
               <div class="title-in title-slider-panel">
-                  <!-- <div class="panel-level-progress">
-                      <p>80%</p>
-                    </div> -->
 
-                    <!-- <circle-progress class="panel-level-progress"
-                        [percent]="85"
-                        [radius]="30"
-                        [outerStrokeWidth]="8"
-                        [innerStrokeWidth]="4"
-                        [outerStrokeColor]="'#bc122e'"
-                        [backgroundColor]="'#bc122e'"
-                        [backgroundStroke]="'#bc122e'"
-                        [showBackground]="true"
-                        [animation]="true"
-                        [showSubtitle]="false"
-                        [animationDuration]="300"
-                      ></circle-progress> -->
-
+                <div *ngIf="progress">
+                    <div class="panel-level-progress-outter"></div>
+                    <div class="panel-level-progress-bar" [ngStyle]="{'width': getProgressBarWidth(item) }"></div>
+                    <div class="panel-level-progress">
+                        <p>{{item.progress}}%</p>
+                      </div>
+                    </div>
                 <div class="panel-level">
                   <p>Łatwy</p>
                 </div>
-                <h6><a routerLink="/course/{{ item.slug }}">{{item.title}}</a></h6>
+                <h6><a (click)="goToProgressCourse(item)">{{item.title}}</a></h6>
 
                 <div class="panel-lesson-numer">
-                  <p><i class="far-panel far fa fa-laptop-code"></i>Liczba lekcji: <span>17</span></p>
+                  <p><i class="far-panel far fa fa-laptop-code"></i>Liczba lekcji: <span>{{ getCourseLessons(item) }}</span></p>
                 </div>
 
 

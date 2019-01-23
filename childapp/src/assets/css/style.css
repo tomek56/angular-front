@@ -8097,15 +8097,43 @@ footer.full-width-ft .ft-copyright {
 
 .panel-level-progress{
   position: absolute;
-  left: 100px;
-  width: 50px;
+  left: 0px;
+  width: 100%;
   height: 50px;
-  top: 25px;
+  top: 70px;
+  text-align: right;
   /* top: 85px;
   left: 0px;
   background-color: #00838f;
   width: 100%;
   text-align: center; */
+}
+
+.panel-level-progress p{
+  color: #373737;
+  /* font-family: 'Dosis', sans-serif; */
+  font-size: 13px;
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+
+.panel-level-progress-outter{
+  background-color: #cccccc;
+  position: absolute;
+  top: 92px;
+  width: 250px;
+  height: 3px;
+}
+
+
+.panel-level-progress-bar{
+  background-color: #bc122e;
+  position: absolute;
+  top: 92px;
+
+  width: 10px;
+  height: 3px;
 }
 
 .panel-level{
