@@ -13,7 +13,7 @@
 
             </span>
 
-            <input type="text" name="username" id="username" placeholder="Twój adres email"  />
+            <input type="text"  [(ngModel)]="form.email" name="username" id="username" placeholder="Twój adres email"  />
 
       </div>
 
@@ -26,7 +26,7 @@
 
             </span>
 
-          <input type="password" name="password" id="password" placeholder="Hasło" />
+          <input type="password" [(ngModel)]="form.password" name="password" id="password" placeholder="Hasło" />
 
 
       </div>
@@ -37,10 +37,10 @@
 
   </div>
   <div class="row">
-    <button (click)="login()">Załóż darmowe konto</button>
+    <button (click)="register()">Załóż darmowe konto</button>
   </div>
   <div class="row social-btn-2">
-      <button class="fb"(click)="login()">Zarejestruj się przez Facebook</button>
+      <button class="fb"(click)="registerByFacebook()">Zarejestruj się przez Facebook</button>
     </div>
 
     <p class="register-terms">Rejestrująć się akceptujesz <a href="test">regulamin Meetideo</a> oraz akceptujesz jego warunki </p>

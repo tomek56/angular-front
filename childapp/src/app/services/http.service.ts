@@ -19,6 +19,15 @@ export class HttpService {
     return this.http.post<HomePage>(this.link.getFullLink('/api/homepage/'), {});
   }
 
+  registerUser(email: string, password: string) {
+    const params = new HttpParams()
+      .set('email', email)
+      .set('password', password);
+
+      return this.http.post(this.link.getFullLink('/api/register-user/'), params);
+
+  }
+
   getCategories(): Observable<Array<Category>> {
     return this.http.get<Array<Category>> (this.link.getFullLink('/api/get-categories/'), {});
   }
