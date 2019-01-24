@@ -41,6 +41,24 @@
  border: 0px;
 }
 
+.register-terms{
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+  /* color: green; */
+  /* font-size: 12px; */
+
+}
+
+
+.register-terms a{
+color: #dd003f;
+
+padding: 0px;
+  margin: 0px;
+  font-weight: bold;
+}
+
 @media (max-width: 767px) {
  .login-content .remember {
   margin-bottom: 15px;
@@ -120,13 +138,13 @@ border-radius: 4px;
 }
 .login-content p {
 color: #222222;
-margin-top: 35px;
-margin-bottom: 20px;
+margin-top: 20px;
+margin-bottom: 0px;
 }
 @media (max-width: 767px) {
 .login-content p {
-  margin-bottom: 15px;
-  margin-top: 15px;
+  /* margin-bottom: 15px;
+  margin-top: 15px; */
 }
 }
 .login-content .social-btn-2 {
@@ -211,6 +229,7 @@ background-color: #00b9ef;
  margin-top: 0px;
  position: relative;
  text-align: center;
+ font-weight: bold;
  top: 30px;
  padding-left:6px;
  padding-right: 6px;

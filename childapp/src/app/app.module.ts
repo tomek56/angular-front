@@ -89,6 +89,7 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     MatButtonModule,
     MatToolbarModule,
+    MatCheckboxModule,
     MatNativeDateModule,
     MatIconModule,
     MatExpansionModule,
