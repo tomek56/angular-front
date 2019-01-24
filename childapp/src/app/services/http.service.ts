@@ -47,4 +47,18 @@ export class HttpService {
 
       return this.http.post<Token> (this.link.getFullLink('/api/o/token/'), params);
   }
+
+  refreshToken(refreshToken: string): Observable<Token> {
+    //todo
+    console.log('odswiezam token');
+    const params = new HttpParams()
+    .set('grant_type', 'refresh_token')
+    .set('refresh_token', refreshToken)
+    .set('client_id', 'qraxiS3pvi9CSGFdESsuNrE8qWNQCgX6fRZWLL7z')
+    // tslint:disable-next-line:max-line-length
+    .set('client_secret', 'SNfx4yXgekd52QWLkSkqjrX1C7EoxL6UW594t3lkmt5awvPbt0rVf9iLqjr490IHnr8zDBCeoyh41hixo9u4cH9sWiSEL3Ia0Oy6fRpRrTR1UVcVjGrpVUldNZHR3wdA');
+
+    return this.http.post<Token> (this.link.getFullLink('/api/o/token/'), params);
+
+  }
 }

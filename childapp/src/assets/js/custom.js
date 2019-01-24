@@ -584,7 +584,7 @@ function slickSlider() {
   });
 
 
-    }, 300);
+    }, 1300);
 
     setTimeout(
       function() {

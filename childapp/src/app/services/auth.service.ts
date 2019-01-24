@@ -36,6 +36,23 @@ export class AuthService {
     return this.tokenStorage.getAccessToken();
   }
 
+  public refreshToken(): Observable<Token> {
+    console.log('auth refresh');
+
+    return this.tokenStorage.getRefreshToken().pipe(
+      switchMap((refreshToken: string) => {
+        console.log('auth refresh');
+
+        return this.service.refreshToken(refreshToken);
+      }),
+      tap(this.saveAccessData.bind(this)),
+      catchError(err => {
+        this.logout();
+        return throwError(err);
+      })
+    );
+  }
+
   private saveAccessData(accessData: Token) {
     if (typeof accessData !== 'undefined') {
       this.tokenStorage
