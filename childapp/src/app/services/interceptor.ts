@@ -39,12 +39,7 @@ export class SpyInterceptor implements HttpInterceptor {
 
     });
 
-    console.log('zaczynamy');
-    console.log(token);
-    console.log(tokenExists);
-
     if (tokenExists) {
-      console.log('dodaje token');
       this.headers = new HttpHeaders().set('Authorization', token);
       // tslint:disable-next-line:no-shadowed-variable
       const reqCloned = req.clone({headers: this.headers});
@@ -79,11 +74,9 @@ export class SpyInterceptor implements HttpInterceptor {
   }
 
   handle401Error(req: HttpRequest<any>, next: HttpHandler) {
-    console.log('handle 401');
 
     if (!this.isRefreshingToken) {
         this.isRefreshingToken = true;
-
         // Reset here so that the following requests wait until the token
         // comes back from the refreshToken call.
         this.tokenSubject.next(null);
@@ -91,8 +84,6 @@ export class SpyInterceptor implements HttpInterceptor {
 
         return   this.auth.refreshToken().pipe(
             switchMap((newToken: Token) => {
-              console.log('handle 401 pipe newToken');
-              console.log(newToken);
 
                 if (newToken) {
                     this.tokenSubject.next(newToken.access_token);
@@ -110,7 +101,6 @@ export class SpyInterceptor implements HttpInterceptor {
                 this.isRefreshingToken = false;
             }), );
     } else {
-        console.log('else handle 401');
 
         return this.tokenSubject.pipe(
             filter(token => token != null),

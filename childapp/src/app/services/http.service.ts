@@ -24,6 +24,10 @@ export class HttpService {
       .set('email', email)
       .set('password', password);
 
+      console.log('params');
+      console.log(email);
+      console.log(password);
+
       return this.http.post(this.link.getFullLink('/api/register-user/'), params);
 
   }
