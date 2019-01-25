@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MatSidenav } from '@angular/material';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthHttpService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -21,7 +21,7 @@ export class NavBarComponent implements OnInit {
 
   userLogged = false;
 
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthHttpService) { }
 
   ngOnInit() {
     if (!this.drawer) {

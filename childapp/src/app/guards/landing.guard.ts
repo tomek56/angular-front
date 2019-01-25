@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { AuthService } from '../services/auth.service';
+import { AuthHttpService } from '../services/auth.service';
 import { Observable, Subject, BehaviorSubject } from 'rxjs';
 import { variable } from '@angular/compiler/src/output/output_ast';
 import { tap, mapTo, share } from 'rxjs/operators';
@@ -9,7 +9,7 @@ import { tap, mapTo, share } from 'rxjs/operators';
 export class LandingGuard implements CanActivate {
     constructor(
         private router: Router,
-        private authenticationService: AuthService
+        private authenticationService: AuthHttpService
     ) {}
 
     canActivate(

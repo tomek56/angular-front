@@ -1,7 +1,7 @@
 import { HttpInterceptor, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { HttpClientModule, HttpClient, HttpParams, HttpRequest, HttpHandler } from '@angular/common/http';
 import {Injector, Injectable} from '@angular/core';
-import { AuthService } from './auth.service';
+import { AuthHttpService } from './auth.service';
 import { BehaviorSubject } from 'rxjs';
 import {throwError as observableThrowError, Observable } from 'rxjs';
 import { catchError, switchMap, finalize, filter, take } from 'rxjs/operators';
@@ -15,7 +15,7 @@ export class SpyInterceptor implements HttpInterceptor {
   isRefreshingToken: boolean = false;
   tokenSubject: BehaviorSubject<string> = new BehaviorSubject<string>(null);
 
-  constructor(private auth: AuthService, private storage: TokenStorage) {}
+  constructor(private auth: AuthHttpService, private storage: TokenStorage) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler): any {
     //const reqCloned = req.clone();

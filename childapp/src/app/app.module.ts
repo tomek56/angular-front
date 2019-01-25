@@ -9,6 +9,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SpyInterceptor } from './services/interceptor';
 import { HttpModule } from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { SocialLoginModule, AuthServiceConfig } from 'angularx-social-login';
+import { FacebookLoginProvider} from 'angularx-social-login';
 
 import {
   MatAutocompleteModule,
@@ -66,6 +68,23 @@ import { AuthRegisterComponent } from './components/authpage/auth-register/auth-
 import { VgStreamingModule } from 'videogular2/streaming';
 import { FormsModule } from '@angular/forms';
 
+
+
+
+let config = new AuthServiceConfig([
+  {
+    id: FacebookLoginProvider.PROVIDER_ID,
+    provider: new FacebookLoginProvider('327589578043050')
+  }
+]);
+
+
+
+export function provideConfig() {
+  return config;
+}
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -102,12 +121,17 @@ import { FormsModule } from '@angular/forms';
     VgOverlayPlayModule,
     VgBufferingModule,
     FormsModule,
+    SocialLoginModule
 
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: SpyInterceptor,
     multi: true,
+  },
+  {
+    provide: AuthServiceConfig,
+    useFactory: provideConfig
   }],
   bootstrap: [AppComponent]
 })

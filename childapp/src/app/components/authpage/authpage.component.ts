@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthHttpService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 
@@ -15,7 +15,7 @@ export class AuthpageComponent implements OnInit {
 
   message = new TemplateMessage();
 
-  constructor(private auth: AuthService, private router: Router,
+  constructor(private auth: AuthHttpService, private router: Router,
     ) { }
 
   ngOnInit() {
