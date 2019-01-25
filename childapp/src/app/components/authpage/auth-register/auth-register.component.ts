@@ -44,7 +44,19 @@ export class AuthRegisterComponent implements OnInit {
 
     this.service.registerUser(this.form.email, this.form.password).subscribe(
       data => {
-        this.router.navigate(['/panel/']);
+        console.log('zarejestrowany ok');
+
+        this.auth.authorize(this.form.email, this.form.password).subscribe(data => {
+          this.router.navigate(['/panel']);
+          console.log('nav ok');
+
+        },
+        error => {
+          console.log(error);
+          this.errorMessage = 'Wystąpił błąd podczas rejestracji';
+          this.errorRegister = true;
+        });
+
       },
       error => {
         console.log(error);
