@@ -51,6 +51,19 @@ export class HttpService {
     return this.http.post<Course> (this.link.getFullLink('/api/course-detail/'), params);
   }
 
+  convertToken(providerToken: string): Observable<Token> {
+    const params = new HttpParams()
+    .set('grant_type', 'convert_token')
+    .set('client_id', 'qraxiS3pvi9CSGFdESsuNrE8qWNQCgX6fRZWLL7z')
+    // tslint:disable-next-line:max-line-length
+    .set('client_secret', 'SNfx4yXgekd52QWLkSkqjrX1C7EoxL6UW594t3lkmt5awvPbt0rVf9iLqjr490IHnr8zDBCeoyh41hixo9u4cH9sWiSEL3Ia0Oy6fRpRrTR1UVcVjGrpVUldNZHR3wdA')
+    .set('backend', 'facebook')
+    .set('token', providerToken);
+
+    return this.http.post<Token> (this.link.getFullLink('/auth/token/'), params);
+
+  }
+
   getToken(username: string, password: string): Observable<Token> {
 
       const params = new HttpParams()

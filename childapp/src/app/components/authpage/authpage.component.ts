@@ -23,7 +23,6 @@ export class AuthpageComponent implements OnInit {
 
   onSubmit(loginForm: NgForm) {
     this.subbmitted = true;
-    console.log(loginForm.status);
     if (loginForm.status === 'VALID') {
       this.login();
     }
@@ -34,17 +33,11 @@ export class AuthpageComponent implements OnInit {
     this.errorLogin = false;
 
     this.auth.authorize(this.message.username, this.message.password).subscribe(data => {
-      console.log(data);
-      console.log("data");
-
       this.router.navigate(['/panel']);
-
     },
     errror => {
       this.errorLogin = true;
-
     });
-  //  this.auth.authenticate('tokenauth', {});
   }
 
   goToRegister() {

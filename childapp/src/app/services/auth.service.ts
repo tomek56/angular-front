@@ -28,6 +28,8 @@ export class AuthHttpService {
     );
   }
 
+
+
   public isAuthorized(): Observable<boolean> {
     return this.tokenStorage.getAccessToken().pipe(map(token => !!token));
   }

@@ -4,7 +4,9 @@ import { Router } from '@angular/router';
 import { HttpService } from 'src/app/services/http.service';
 import { NgForm } from '@angular/forms';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { FacebookLoginProvider, AuthService } from 'angularx-social-login';
+import { FacebookLoginProvider } from 'angularx-social-login';
+import { AuthService } from 'angularx-social-login';
+import { SocialUser } from 'angularx-social-login';
 
 @Component({
   selector: 'app-auth-register',
@@ -19,10 +21,23 @@ export class AuthRegisterComponent implements OnInit {
   subbmitted = false;
   errorMessage = '';
 
-  constructor(private auth: AuthHttpService, provider: AuthService, private router: Router, private service: HttpService
+  private user: SocialUser;
+  private loggedIn: boolean;
+
+  constructor(
+    private auth: AuthHttpService,
+    private provider: AuthService,
+    private router: Router,
+    private service: HttpService
   ) { }
 
   ngOnInit() {
+    this.provider.authState.subscribe((user) => {
+      this.user = user;
+      this.loggedIn = (user != null);
+      console.log('user');
+      console.log(user);
+    });
   }
 
   goToLogin() {
@@ -76,7 +91,7 @@ export class AuthRegisterComponent implements OnInit {
   }
 
   registerByFacebook() {
-    //this.provider.signIn(FacebookLoginProvider.PROVIDER_ID);
+    this.provider.signIn(FacebookLoginProvider.PROVIDER_ID);
   }
 }
 

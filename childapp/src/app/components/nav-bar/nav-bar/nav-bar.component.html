@@ -52,11 +52,14 @@
       </li>
 
       <li class="" *ngIf="!userLogged">
+        <!-- <a routerLink="/auth/login"> -->
 
-        <button class="redbtnstrokepanel" data-toggle="dropdown">
+
+        <button routerLink="/auth/login" class="redbtnstrokepanel" data-toggle="dropdown">
           <!-- <img src="assets/img/avatars/01_80x80.png" alt="" class="rounded-circle"> -->
           <span>Zaloguj się&nbsp;</span>
         </button>
+      <!-- </a> -->
 
         </li>
       <!-- Nav User End -->
