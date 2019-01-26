@@ -32,12 +32,7 @@ export class AuthRegisterComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.provider.authState.subscribe((user) => {
-      this.user = user;
-      this.loggedIn = (user != null);
-      console.log('user');
-      console.log(user);
-    });
+
   }
 
   goToLogin() {
@@ -92,6 +87,26 @@ export class AuthRegisterComponent implements OnInit {
 
   registerByFacebook() {
     this.provider.signIn(FacebookLoginProvider.PROVIDER_ID);
+
+    this.provider.authState.subscribe((user) => {
+      console.log('this.provider.authState.subscr');
+      this.user = user;
+      this.loggedIn = (user != null);
+
+      if (this.loggedIn) {
+        this.service.convertToken(this.user.authToken).subscribe(
+          data => {
+            console.log(data);
+          },
+          error => {
+            console.log(error);
+          }
+        );
+      }
+      console.log('user');
+      console.log(user);
+    });
+
   }
 }
 

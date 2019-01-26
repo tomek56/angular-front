@@ -60,23 +60,22 @@ export class HttpService {
     .set('backend', 'facebook')
     .set('token', providerToken);
 
-    return this.http.post<Token> (this.link.getFullLink('/auth/token/'), params);
+    console.log('providerToken');
+    console.log(providerToken);
+
+    return this.http.post<Token> (this.link.getFullLink('/auth/convert-token/'), params);
 
   }
 
   getToken(username: string, password: string): Observable<Token> {
-
       const params = new HttpParams()
       .set('grant_type', 'password')
       .set('username', username)
       .set('password', password);
-
       return this.http.post<Token> (this.link.getFullLink('/api/o/token/'), params);
   }
 
   refreshToken(refreshToken: string): Observable<Token> {
-    //todo
-    console.log('odswiezam token');
     const params = new HttpParams()
     .set('grant_type', 'refresh_token')
     .set('refresh_token', refreshToken)
