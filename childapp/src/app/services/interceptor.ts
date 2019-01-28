@@ -21,7 +21,10 @@ export class SpyInterceptor implements HttpInterceptor {
     //const reqCloned = req.clone();
 
     const tokenEndpoint = req.url.search('api/o/token/');
-    if (tokenEndpoint !== -1) {
+    const convertTokenEndpoint = req.url.search('auth/convert-token');
+    const registerEnpoint = req.url.search('api/register-user');
+
+    if (tokenEndpoint !== -1 || convertTokenEndpoint !== -1 || registerEnpoint  !== -1 ) {
       // tslint:disable-next-line:max-line-length
       this.headers = new HttpHeaders().set('Authorization', 'Basic cXJheGlTM3B2aTlDU0dGZEVTc3VOckU4cVdOUUNnWDZmUlpXTEw3ejpTTmZ4NHlYZ2VrZDUyUVdMa1NrcWpyWDFDN0VveEw2VVc1OTR0M2xrbXQ1YXd2UGJ0MHJWZjlpTHFqcjQ5MElIbnI4ekRCQ2VveWg0MWhpeG85dTRjSDlzV2lTRUwzSWEwT3k2ZlJwUnJUUjFVVmNWakdycFZVbGROWkhSM3dkQQ==')
       const reqCloned = req.clone({headers: this.headers});

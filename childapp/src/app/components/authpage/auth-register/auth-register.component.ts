@@ -55,22 +55,18 @@ export class AuthRegisterComponent implements OnInit {
 
     this.service.registerUser(this.form.email, this.form.password).subscribe(
       data => {
-        console.log('zarejestrowany ok');
 
         this.auth.authorize(this.form.email, this.form.password).subscribe(data => {
           this.router.navigate(['/panel']);
-          console.log('nav ok');
 
         },
         error => {
-          console.log(error);
           this.errorMessage = 'Wystąpił błąd podczas rejestracji';
           this.errorRegister = true;
         });
 
       },
       error => {
-        console.log(error);
         this.errorMessage = 'Wystąpił błąd podczas rejestracji';
         this.errorRegister = true;
 
@@ -89,22 +85,20 @@ export class AuthRegisterComponent implements OnInit {
     this.provider.signIn(FacebookLoginProvider.PROVIDER_ID);
 
     this.provider.authState.subscribe((user) => {
-      console.log('this.provider.authState.subscr');
       this.user = user;
       this.loggedIn = (user != null);
 
       if (this.loggedIn) {
-        this.service.convertToken(this.user.authToken).subscribe(
+        this.auth.fbAuthorization(this.user.authToken).subscribe(
           data => {
-            console.log(data);
+            this.router.navigate(['/panel']);
           },
           error => {
-            console.log(error);
+            this.errorMessage = 'Wystąpił błąd podczas rejestracji';
+            this.errorRegister = true;
           }
         );
       }
-      console.log('user');
-      console.log(user);
     });
 
   }

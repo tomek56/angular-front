@@ -28,6 +28,16 @@ export class AuthHttpService {
     );
   }
 
+  fbAuthorization(token: string): Observable<any> {
+
+    return this.service.convertToken(token).pipe(
+      map((result: Token) => {
+        this.saveAccessData(result);
+        return result;
+      }),
+      tap()
+    );
+  }
 
 
   public isAuthorized(): Observable<boolean> {
