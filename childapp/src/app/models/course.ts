@@ -16,6 +16,26 @@ export interface Course {
   sections: Array<CourseSection>;
   lesson_to_continiue: LessonProgress;
   progress: number;
-
+  number_of_lessons: number;
+  level?: string;
 }
 
+
+export class CourseModel {
+
+  static getCourseLevel(course: Course): string {
+    if (course.level === 'easy') {
+      return 'Łatwy';
+    }
+
+    if (course.level === 'normal') {
+      return 'Średniozaawansowany';
+    }
+
+    if (course.level === 'hard') {
+      return 'Zaawansowany';
+    }
+    return '';
+  }
+
+}

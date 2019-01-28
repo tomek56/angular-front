@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Course } from 'src/app/models/course';
+import { Course, CourseModel } from 'src/app/models/course';
 import { LinkhelperService } from 'src/app/services/linkhelper.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -36,17 +36,12 @@ export class CoursesSliderComponent implements OnInit {
 
   }
 
-  getCourseLessons(course: Course): number {
-    let count = 0;
-    // TODO po zrobieniu w API
-    return 2;
-    course.sections.forEach(section => {
-      section.lessons.forEach(lesson => {
-        count = count + 1;
-      });
-    });
+  getCourseLevel(course: Course) {
+    return CourseModel.getCourseLevel(course);
+  }
 
-    return count;
+  getCourseLessons(course: Course): number {
+    return course.number_of_lessons;
   }
 
   goToProgressCourse(course: Course) {

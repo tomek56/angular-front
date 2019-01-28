@@ -17,7 +17,8 @@ export class PanelComponent implements OnInit {
 
   courses: Array<Course>;
   coursesByCategories: Array<Array<Course>>;
-  myList: Array<Course>;
+  myList: Array<Course> = Array();
+  showMyList = false;
 
   constructor(private httpService: HttpService, private helperLink: LinkhelperService) {
     this.getCourses();
@@ -35,7 +36,11 @@ export class PanelComponent implements OnInit {
     });
 
     this.httpService.getMyCourses().subscribe(data => {
+      console.log("data mylist");
+      console.log(data);
       this.myList = data;
+      this.showMyList = (this.myList.length > 0);
+
     },
 
     );
