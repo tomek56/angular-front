@@ -12,7 +12,7 @@ import { Lesson } from 'src/app/models/lesson';
 })
 export class CourseDetailComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private httpService: HttpService) { }
+  constructor(private route: ActivatedRoute, private httpService: HttpService, private linker: LinkhelperService) { }
   course: Course;
 
   @ViewChild('descriptionContainer') dataContainer: ElementRef;
@@ -26,6 +26,12 @@ export class CourseDetailComponent implements OnInit {
         this.dataContainer.nativeElement.innerHTML = this.course.description.description
       });
     });
+  }
+
+  getThumbCourse(): string {
+    console.log("link");
+    console.log(this.linker.getFullLink(this.course.image_285x437))
+    return this.linker.getFullLink(this.course.image_285x437);
   }
 
   goToLesson(lesson: Lesson) {
