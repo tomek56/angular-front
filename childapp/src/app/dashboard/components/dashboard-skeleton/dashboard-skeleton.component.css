@@ -89,7 +89,7 @@ background-color: rgba(0, 0, 0, 0.45)
 .sidebar--nav li {
   position: relative;
   z-index: 0;
-  font-size: 14px;
+  font-size: 15px;
   text-transform: none;
   font-weight: normal;
 
@@ -101,8 +101,8 @@ background-color: rgba(0, 0, 0, 0.45)
 
 .left-menu-lesson-name span{
   color: rgba(255, 255, 255, 0.5);
-  font-family: 'Dosis', sans-serif;
-  font-size: 17px;
+  /* font-family: 'Dosis', sans-serif; */
+  font-size: 12px;
   font-weight: lighter;
 }
 .sidebar--nav > ul > li + li {
@@ -245,10 +245,16 @@ background-color: rgba(0, 0, 0, 0.45)
   transform: translateY(-50%);
 }
 
+.watched{
+  background-color: #076303;
+  border: 0px solid #ffffff;
+  padding-top: 0px;
+}
+
 .current-played{
   background-color: #dd003f;
   border: 0px solid #ffffff;
-  padding-top: 2px;
+  padding-top: 0px;
 }
 
 .to-watch-played{
@@ -259,8 +265,11 @@ background-color: rgba(0, 0, 0, 0.45)
 
 .icon-curent-played-lesson{
   color: #fff;
-  padding-left: 10px;
+  padding-left: 9px;
   height: 30px;
+  /* margin-top: -5px;
+  padding-top: -5px; */
+
 }
 
 .current-lesson{

@@ -6,4 +6,10 @@ export interface Lesson {
   free?: boolean;
   movie: LessonMovie;
   description: string;
+  progress: LessonSingleProgress;
+}
+
+export interface LessonSingleProgress {
+  c_t?: number;
+  l_d?: number;
 }

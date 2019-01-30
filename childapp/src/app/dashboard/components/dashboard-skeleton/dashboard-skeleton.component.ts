@@ -5,6 +5,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { HttpService } from 'src/app/services/http.service';
 import { CourseSection } from 'src/app/models/courseSection';
 import { Lesson } from 'src/app/models/lesson';
+import { TimeHelperService } from 'src/app/services/time-helper.service';
 
 
 
@@ -23,7 +24,12 @@ export class DashboardSkeletonComponent implements OnInit {
 
   @ViewChild('dataContainer') dataContainer: ElementRef;
   @ViewChild('drawer') sidenav: MatSidenav;
-  constructor(private route: ActivatedRoute, private httpService: HttpService, private router: Router) { }
+  constructor(private route: ActivatedRoute,
+    private httpService: HttpService,
+    private router: Router,
+    private timeHelper: TimeHelperService
+
+    ) { }
 
   getCurrentLesson(): Lesson {
     let lesson: Lesson;
@@ -55,6 +61,8 @@ export class DashboardSkeletonComponent implements OnInit {
       this.currentLesson = param.get('lesson');
 
       this.httpService.getCourseDetail(param.get('id')).subscribe(data => {
+        console.log('data');
+        console.log(data);
 
         this.course = data;
 
@@ -71,19 +79,46 @@ export class DashboardSkeletonComponent implements OnInit {
         this.dataContainer.nativeElement.innerHTML = this.currentLessonObj.description;
         this.showMenu = true;
 
+      },
+      error => {
       });
     });
   }
 
+  getTime(lesson: Lesson): string {
+    return this.timeHelper.getDuration(lesson.movie.duration);
+
+  }
+
+  getTitle(): string {
+    if (this.showMenu) {
+      return this.currentLessonObj.name;
+    }
+    return '';
+  }
   isCurrentLesson(lesson: Lesson): boolean {
     // tslint:disable-next-line:triple-equals
     return (lesson.id == this.currentLesson);
+  }
+
+  isWatchedLesson(lesson: Lesson): boolean {
+
+    if (lesson.progress.c_t > 0) {
+      return (lesson.progress.c_t + 10) > lesson.progress.l_d;
+    }
+
+    return false;
   }
 
   getLessonClass(lesson: Lesson): string {
     if (this.isCurrentLesson(lesson)) {
       return 'current-played';
     }
+
+    if (this.isWatchedLesson(lesson)) {
+      return 'watched';
+    }
+
     return 'to-watch-played';
   }
 

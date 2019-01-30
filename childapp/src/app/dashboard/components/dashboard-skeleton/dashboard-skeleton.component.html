@@ -38,10 +38,14 @@
                               <span style="font-size: 9px;" class="icon-curent-played-lesson" [hidden]="!isCurrentLesson(lesson)">
                                 <i class="fa fa-play"></i>
                               </span>
+
+                              <span style="font-size: 9px;" class="icon-curent-played-lesson" [hidden]="isCurrentLesson(lesson) || !isWatchedLesson(lesson)">
+                                <i class="fa fa-check"></i>
+                              </span>
                             </div>
                           </div>
                           <div class="col-md-11 left-menu-lesson-name">
-                            {{ getLessonNumber(lesson) }}. {{ lesson.name }}&nbsp;&nbsp;<span>3:12</span>
+                            {{ getLessonNumber(lesson) }}. {{ lesson.name }}&nbsp;&nbsp;<span>{{ getTime(lesson) }}</span>
                           </div>
                         </div>
                       </a>
@@ -59,7 +63,7 @@
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-      <app-nav-bar [drawer]=true [sidenav]="sidenav" [title]="currentLessonObj.name"></app-nav-bar>
+      <app-nav-bar [drawer]=true [sidenav]="sidenav" [title]="getTitle()"></app-nav-bar>
       <app-video [lesson]="currentLessonObj" *ngIf="showMenu" (videoEnded)="videoEndedEvent($event)"></app-video>
       <div #dataContainer class="description-lesson-html"></div>
 
