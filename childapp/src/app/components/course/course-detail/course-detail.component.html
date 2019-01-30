@@ -15,7 +15,7 @@
 
 
       <div class="page-single movie-single movie_single">
-        <div class="container">
+        <div class="container" *ngIf="this.courseDownloaded">
           <div class="row ipad-width2">
             <div class="col-md-4 col-sm-12 col-xs-12">
               <div class="movie-img sticky-sb">
@@ -57,12 +57,16 @@
                       <div id="overview" class="tab active">
                         <div class="row">
                           <div class="col-md-11 col-sm-12 col-xs-12">
-                            <div #descriptionContainer></div>
+                            <!-- <div #descriptionContainer></div> -->
+
+                            <app-html-description [course]="course"></app-html-description>
+
                             <div *ngFor="let item of course.sections">
 
                               <div class="title-hd-sm">
                                 <h4>{{item.name}}</h4>
                               </div>
+
                               <!-- movie user review -->
                               <div class="mv-user-review-item" *ngFor="let lesson of item.lessons">
                                 <a routerLink="{{ lesson.id }}">

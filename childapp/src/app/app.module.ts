@@ -67,6 +67,7 @@ import { AuthContainerComponent } from './components/authpage/auth-container/aut
 import { AuthRegisterComponent } from './components/authpage/auth-register/auth-register.component';
 import { VgStreamingModule } from 'videogular2/streaming';
 import { FormsModule } from '@angular/forms';
+import { HtmlDescriptionComponent } from './components/description/html-description/html-description.component';
 
 
 
@@ -98,7 +99,8 @@ export function provideConfig() {
     NavBarComponent,
     VideoComponent,
     AuthContainerComponent,
-    AuthRegisterComponent
+    AuthRegisterComponent,
+    HtmlDescriptionComponent
   ],
   imports: [
     AppRoutingModule,

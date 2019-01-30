@@ -13,25 +13,28 @@ import { Lesson } from 'src/app/models/lesson';
 export class CourseDetailComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private httpService: HttpService, private linker: LinkhelperService) { }
-  course: Course;
 
-  @ViewChild('descriptionContainer') dataContainer: ElementRef;
+  course: Course;
+  courseDownloaded = false;
+
+  // @ViewChild('descriptionContainer') dataContainer: ElementRef;
 
   ngOnInit() {
     this.route.paramMap.subscribe((param: Params) => {
-      console.log(param.get('id'));
       this.httpService.getCourseDetail(param.get('id')).subscribe(data => {
-        // this.categories = data;
+        this.courseDownloaded = true
         this.course = data;
-        this.dataContainer.nativeElement.innerHTML = this.course.description.description
+        // this.dataContainer.nativeElement.innerHTML = this.course.description.description;
       });
     });
   }
 
   getThumbCourse(): string {
-    console.log("link");
-    console.log(this.linker.getFullLink(this.course.image_285x437))
-    return this.linker.getFullLink(this.course.image_285x437);
+    if (this.courseDownloaded) {
+      return this.linker.getFullLink(this.course.image_285x437);
+    }
+
+    return '';
   }
 
   goToLesson(lesson: Lesson) {
