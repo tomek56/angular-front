@@ -4,6 +4,7 @@ import { HttpService } from 'src/app/services/http.service';
 import { LinkhelperService } from 'src/app/services/linkhelper.service';
 import { Course } from 'src/app/models/course';
 import { Lesson } from 'src/app/models/lesson';
+import { TimeHelperService } from 'src/app/services/time-helper.service';
 
 @Component({
   selector: 'app-course-detail',
@@ -12,7 +13,12 @@ import { Lesson } from 'src/app/models/lesson';
 })
 export class CourseDetailComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private httpService: HttpService, private linker: LinkhelperService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private httpService: HttpService,
+    private linker: LinkhelperService,
+    private timeHelper: TimeHelperService
+    ) { }
 
   course: Course;
   courseDownloaded = false;
@@ -22,7 +28,7 @@ export class CourseDetailComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe((param: Params) => {
       this.httpService.getCourseDetail(param.get('id')).subscribe(data => {
-        this.courseDownloaded = true
+        this.courseDownloaded = true;
         this.course = data;
         // this.dataContainer.nativeElement.innerHTML = this.course.description.description;
       });
@@ -35,6 +41,10 @@ export class CourseDetailComponent implements OnInit {
     }
 
     return '';
+  }
+
+  getTime(lesson: Lesson): string {
+    return this.timeHelper.getDuration(lesson.movie.duration);
   }
 
   goToLesson(lesson: Lesson) {
