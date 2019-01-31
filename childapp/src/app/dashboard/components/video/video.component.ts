@@ -2,6 +2,8 @@ import { Component, OnInit, Input, Output } from '@angular/core';
 import { Lesson } from 'src/app/models/lesson';
 import { VgAPI } from 'videogular2/core';
 import { EventEmitter } from '@angular/core';
+import { Observable, timer } from 'rxjs';
+import { mergeMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-video',
@@ -29,15 +31,11 @@ export class VideoComponent implements OnInit {
   onPlayerReady(api: VgAPI) {
     this.api = api;
 
-
     this.api.getDefaultMedia().subscriptions.ended.subscribe(
         () => {
-          let currentTime = this.api.getDefaultMedia().currentTime;
 
+          const currentTime = this.api.getDefaultMedia().currentTime;
           this.videoEnded.emit();
-
-          console.log('save progress ' + currentTime);
-
           this.saveProgress.emit({currentTime: currentTime});
           //
         }

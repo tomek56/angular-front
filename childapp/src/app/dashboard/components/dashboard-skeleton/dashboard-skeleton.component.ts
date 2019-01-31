@@ -18,7 +18,7 @@ import { httpFactory } from '@angular/http/src/http_module';
 export class DashboardSkeletonComponent implements OnInit {
 
   private course: Course;
-  private showMenu = false;
+  private showMenu = true;
   private collapsedSections: Array<number> = Array();
   private currentLesson: number;
   private currentLessonObj: Lesson;
@@ -57,15 +57,38 @@ export class DashboardSkeletonComponent implements OnInit {
   }
 
   loadLesson() {
+
     this.showMenu = false;
+
     this.route.paramMap.subscribe((param: Params) => {
 
       this.currentLesson = param.get('lesson');
+      if (this.course === undefined) {
 
-      this.httpService.getCourseDetail(param.get('id')).subscribe(data => {
+        this.httpService.getCourseDetail(param.get('id')).subscribe(data => {
 
-        this.course = data;
+          this.course = data;
 
+          for (const section of this.course.sections) {
+            for (const lesson of section.lessons) {
+              if (lesson.id == this.currentLesson) {
+                this.collapsedSections.push(section.id);
+              }
+            }
+          }
+
+          this.currentLessonObj = this.getCurrentLesson();
+          console.log("currentLessonObj");
+          console.log(this.currentLessonObj);
+
+          this.dataContainer.nativeElement.innerHTML = this.currentLessonObj.description;
+          this.showMenu = true;
+
+        },
+          error => {
+        });
+
+      } else {
         for (const section of this.course.sections) {
           for (const lesson of section.lessons) {
             if (lesson.id == this.currentLesson) {
@@ -73,14 +96,18 @@ export class DashboardSkeletonComponent implements OnInit {
             }
           }
         }
+
+        this.currentLessonObj = undefined;
+
         this.currentLessonObj = this.getCurrentLesson();
+
+        console.log('currentLessonObj else');
+        console.log(this.currentLessonObj);
 
         this.dataContainer.nativeElement.innerHTML = this.currentLessonObj.description;
         this.showMenu = true;
+      }
 
-      },
-      error => {
-      });
     });
   }
 
@@ -171,12 +198,12 @@ export class DashboardSkeletonComponent implements OnInit {
     //this.httpService.save
 
     this.httpService.saveProgress(this.currentLesson, this.course.id, event.currentTime).subscribe(
-      data => {
-        console.log(data);
-      },
-      error => {
-        console.log(error);
-      }
+        data => {
+          console.log(data);
+        },
+        error => {
+          console.log(error);
+        }
       );
   }
 

@@ -64,7 +64,7 @@
     </mat-sidenav>
     <mat-sidenav-content>
       <app-nav-bar [drawer]=true [sidenav]="sidenav" [title]="getTitle()"></app-nav-bar>
-      <app-video [lesson]="currentLessonObj" *ngIf="showMenu" (videoEnded)="videoEndedEvent($event)" (saveProgress)="saveProgressEvent($event)"></app-video>
+      <app-video [lesson]="this.currentLessonObj" *ngIf="showMenu" (videoEnded)="videoEndedEvent($event)" (saveProgress)="saveProgressEvent($event)"></app-video>
       <div #dataContainer class="description-lesson-html"></div>
 
     </mat-sidenav-content>
