@@ -252,8 +252,7 @@ background-color: rgba(0, 0, 0, 0.45)
 }
 
 .current-played{
-  background-color: #dd003f;
-  border: 0px solid #ffffff;
+  border: 1px solid #ffffff;
   padding-top: 0px;
 }
 
@@ -281,6 +280,14 @@ background-color: rgba(0, 0, 0, 0.45)
   -webkit-border-radius: 13px;
   -moz-border-radius:13px;
   border-radius: 13px;
+}
+
+.current_lesson_label{
+  font-weight: 600;
+}
+
+.current_lesson_label_done{
+  color:  rgba(255, 255, 255, 0.7)
 }
 
 .description-lesson-html{

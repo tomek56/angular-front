@@ -6,6 +6,7 @@ import { HttpService } from 'src/app/services/http.service';
 import { CourseSection } from 'src/app/models/courseSection';
 import { Lesson } from 'src/app/models/lesson';
 import { TimeHelperService } from 'src/app/services/time-helper.service';
+import { httpFactory } from '@angular/http/src/http_module';
 
 
 
@@ -24,6 +25,7 @@ export class DashboardSkeletonComponent implements OnInit {
 
   @ViewChild('dataContainer') dataContainer: ElementRef;
   @ViewChild('drawer') sidenav: MatSidenav;
+
   constructor(private route: ActivatedRoute,
     private httpService: HttpService,
     private router: Router,
@@ -61,8 +63,6 @@ export class DashboardSkeletonComponent implements OnInit {
       this.currentLesson = param.get('lesson');
 
       this.httpService.getCourseDetail(param.get('id')).subscribe(data => {
-        console.log('data');
-        console.log(data);
 
         this.course = data;
 
@@ -74,7 +74,6 @@ export class DashboardSkeletonComponent implements OnInit {
           }
         }
         this.currentLessonObj = this.getCurrentLesson();
-        //dataContainer
 
         this.dataContainer.nativeElement.innerHTML = this.currentLessonObj.description;
         this.showMenu = true;
@@ -159,10 +158,26 @@ export class DashboardSkeletonComponent implements OnInit {
   videoEndedEvent(event) {
     const l = this.getNextLesson();
     if (l === undefined) {
-      console.log("nie ma kolejnej lekcji!");
     } else {
       this.goToLesson(l);
     }
+  }
+
+  saveProgressEvent(event) {
+    console.log('saveProgressEvent');
+    console.log(event);
+  //  console.log(event['currentTime']);
+    console.log(event.currentTime);
+    //this.httpService.save
+
+    this.httpService.saveProgress(this.currentLesson, this.course.id, event.currentTime).subscribe(
+      data => {
+        console.log(data);
+      },
+      error => {
+        console.log(error);
+      }
+      );
   }
 
   getNextLesson(): Lesson | undefined {
@@ -186,4 +201,7 @@ export class DashboardSkeletonComponent implements OnInit {
     return 'sd';
   }
 
+  saveProgress() {
+
+  }
 }

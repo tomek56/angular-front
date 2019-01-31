@@ -53,6 +53,7 @@ export class CourseDetailComponent implements OnInit {
 
   getLessonNumber(lesson: Lesson): number {
     let index = 1;
+
     for (const section of this.course.sections) {
       for (const l of section.lessons) {
         if (l.id === lesson.id) {

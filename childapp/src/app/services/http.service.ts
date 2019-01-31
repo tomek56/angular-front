@@ -60,9 +60,6 @@ export class HttpService {
     .set('backend', 'facebook')
     .set('token', providerToken);
 
-    console.log('providerToken');
-    console.log(providerToken);
-
     return this.http.post<Token> (this.link.getFullLink('/auth/convert-token/'), params);
 
   }
@@ -84,6 +81,26 @@ export class HttpService {
     .set('client_secret', 'SNfx4yXgekd52QWLkSkqjrX1C7EoxL6UW594t3lkmt5awvPbt0rVf9iLqjr490IHnr8zDBCeoyh41hixo9u4cH9sWiSEL3Ia0Oy6fRpRrTR1UVcVjGrpVUldNZHR3wdA');
 
     return this.http.post<Token> (this.link.getFullLink('/api/o/token/'), params);
+  }
 
+  saveProgress(lessonId: number, courseId: number, currentTime: number): Observable<any> {
+
+    const curr = Math.floor(currentTime);
+
+    const params = new HttpParams()
+    .set('course_id', courseId.toString())
+    .set('lesson_id', lessonId.toString())
+    .set('duration', curr.toString());
+
+    console.log('params');
+    console.log(params);
+    console.log(courseId);
+    console.log(lessonId);
+    console.log(curr);
+    console.log(this.link.getFullLink('/api/save-progress/'));
+
+//{'course_id' : courseId, 'lesson_id' : lessonId, 'duration': curr }
+    // tslint:disable-next-line:max-line-length
+    return this.http.post<any>(this.link.getFullLink('/api/save-progress/'), params);
   }
 }

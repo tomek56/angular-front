@@ -35,8 +35,8 @@
                         <div class="row">
                           <div class="col-md-1 current-lesson-container">
                             <div class="current-lesson" [ngClass]="getLessonClass(lesson)">
-                              <span style="font-size: 9px;" class="icon-curent-played-lesson" [hidden]="!isCurrentLesson(lesson)">
-                                <i class="fa fa-play"></i>
+                              <span style="font-size: 13px;" class="icon-curent-played-lesson" [hidden]="!isCurrentLesson(lesson)">
+                                <i class="fas fa-angle-right"></i>
                               </span>
 
                               <span style="font-size: 9px;" class="icon-curent-played-lesson" [hidden]="isCurrentLesson(lesson) || !isWatchedLesson(lesson)">
@@ -44,7 +44,7 @@
                               </span>
                             </div>
                           </div>
-                          <div class="col-md-11 left-menu-lesson-name">
+                          <div class="col-md-11 left-menu-lesson-name" [ngClass]="{ 'current_lesson_label' : isCurrentLesson(lesson), 'current_lesson_label_done' : isWatchedLesson(lesson) && !isCurrentLesson(lesson) }">
                             {{ getLessonNumber(lesson) }}. {{ lesson.name }}&nbsp;&nbsp;<span>{{ getTime(lesson) }}</span>
                           </div>
                         </div>
@@ -64,7 +64,7 @@
     </mat-sidenav>
     <mat-sidenav-content>
       <app-nav-bar [drawer]=true [sidenav]="sidenav" [title]="getTitle()"></app-nav-bar>
-      <app-video [lesson]="currentLessonObj" *ngIf="showMenu" (videoEnded)="videoEndedEvent($event)"></app-video>
+      <app-video [lesson]="currentLessonObj" *ngIf="showMenu" (videoEnded)="videoEndedEvent($event)" (saveProgress)="saveProgressEvent($event)"></app-video>
       <div #dataContainer class="description-lesson-html"></div>
 
     </mat-sidenav-content>

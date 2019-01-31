@@ -18,6 +18,9 @@ export class VideoComponent implements OnInit {
   @Output()
   videoEnded = new EventEmitter();
 
+  @Output()
+  saveProgress = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
@@ -29,8 +32,17 @@ export class VideoComponent implements OnInit {
 
     this.api.getDefaultMedia().subscriptions.ended.subscribe(
         () => {
+          let currentTime = this.api.getDefaultMedia().currentTime;
+
           this.videoEnded.emit();
+
+          console.log('save progress ' + currentTime);
+
+          this.saveProgress.emit({currentTime: currentTime});
+          //
         }
     );
+
+
   }
 }
