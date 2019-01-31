@@ -7,6 +7,7 @@ import { CourseSection } from 'src/app/models/courseSection';
 import { Lesson } from 'src/app/models/lesson';
 import { TimeHelperService } from 'src/app/services/time-helper.service';
 import { httpFactory } from '@angular/http/src/http_module';
+import { VideoComponent } from '../video/video.component';
 
 
 
@@ -21,20 +22,22 @@ export class DashboardSkeletonComponent implements OnInit {
   private showMenu = true;
   private collapsedSections: Array<number> = Array();
   private currentLesson: number;
-  private currentLessonObj: Lesson;
+  currentLessonObj: Lesson;
   sources: Array<string>;
 
   @ViewChild('dataContainer') dataContainer: ElementRef;
   @ViewChild('drawer') sidenav: MatSidenav;
+  @ViewChild('videoContainer') videoContainer: VideoComponent;
+
+
+
 
   constructor(private route: ActivatedRoute,
     private httpService: HttpService,
     private router: Router,
     private timeHelper: TimeHelperService
-
     ) {
       this.sources = [];
-
     }
 
   getCurrentLesson(): Lesson {
@@ -52,6 +55,12 @@ export class DashboardSkeletonComponent implements OnInit {
   ngOnInit() {
     this.sidenav.toggle();
     this.loadLesson();
+  }
+
+  ngOnDestroy() {
+    if (this.videoContainer !== undefined ) {
+      this.videoContainer.emitSaveProgressEvent();
+    }
   }
 
   goToLesson(lesson: Lesson) {
@@ -73,52 +82,39 @@ export class DashboardSkeletonComponent implements OnInit {
 
           this.course = data;
 
-          for (const section of this.course.sections) {
-            for (const lesson of section.lessons) {
-              if (lesson.id == this.currentLesson) {
-                this.collapsedSections.push(section.id);
-              }
-            }
-          }
-
-          this.currentLessonObj = this.getCurrentLesson();
-          this.sources = [this.currentLessonObj.movie.url];
-
-
-          this.dataContainer.nativeElement.innerHTML = this.currentLessonObj.description;
-          this.showMenu = true;
+          this.setCurrentLesson();
 
         },
           error => {
         });
 
       } else {
-        for (const section of this.course.sections) {
-          for (const lesson of section.lessons) {
-            if (lesson.id == this.currentLesson) {
-              this.collapsedSections.push(section.id);
-            }
-          }
-        }
-
-        this.currentLessonObj = undefined;
-
-        this.currentLessonObj = this.getCurrentLesson();
-        this.sources = [this.currentLessonObj.movie.url];
-
-        console.log('currentLessonObj else');
-        console.log(this.currentLessonObj);
-
-        this.dataContainer.nativeElement.innerHTML = this.currentLessonObj.description;
-        this.showMenu = true;
+          this.setCurrentLesson();
       }
-
     });
+  }
+
+  setCurrentLesson() {
+    for (const section of this.course.sections) {
+      for (const lesson of section.lessons) {
+        if (lesson.id == this.currentLesson) {
+          this.collapsedSections.push(section.id);
+        }
+      }
+    }
+
+    if (this.videoContainer !== undefined ) {
+      this.videoContainer.emitSaveProgressEvent();
+    }
+
+    this.currentLessonObj = this.getCurrentLesson();
+    this.sources = [this.currentLessonObj.movie.url];
+    this.dataContainer.nativeElement.innerHTML = this.currentLessonObj.description;
+    this.showMenu = true;
   }
 
   getTime(lesson: Lesson): string {
     return this.timeHelper.getDuration(lesson.movie.duration);
-
   }
 
   getTitle(): string {
@@ -126,6 +122,7 @@ export class DashboardSkeletonComponent implements OnInit {
       return this.currentLessonObj.name;
     }
     return '';
+
   }
   isCurrentLesson(lesson: Lesson): boolean {
     // tslint:disable-next-line:triple-equals
@@ -169,6 +166,11 @@ export class DashboardSkeletonComponent implements OnInit {
   }
 
   goToCourse() {
+
+    if (this.videoContainer !== undefined ) {
+      this.videoContainer.emitSaveProgressEvent();
+    }
+
     this.router.navigate(['/course/', this.course.slug]);
 
   }
@@ -196,18 +198,10 @@ export class DashboardSkeletonComponent implements OnInit {
   }
 
   saveProgressEvent(event) {
-    console.log('saveProgressEvent');
-    console.log(event);
-  //  console.log(event['currentTime']);
-    console.log(event.currentTime);
-    //this.httpService.save
-
-    this.httpService.saveProgress(this.currentLesson, this.course.id, event.currentTime).subscribe(
+    this.httpService.saveProgress(event.lessonId, this.course.id, event.currentTime).subscribe(
         data => {
-          console.log(data);
         },
         error => {
-          console.log(error);
         }
       );
   }

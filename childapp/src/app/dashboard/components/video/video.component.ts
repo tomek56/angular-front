@@ -14,6 +14,7 @@ export class VideoComponent implements OnInit {
 
   api: VgAPI;
 
+
   @Input()
   lesson: Lesson;
 
@@ -40,11 +41,34 @@ export class VideoComponent implements OnInit {
 
           const currentTime = this.api.getDefaultMedia().currentTime;
           this.videoEnded.emit();
-          this.saveProgress.emit({currentTime: currentTime});
+          this.saveProgress.emit({currentTime: currentTime, lessonId: this.lesson.id});
           //
         }
     );
 
+    this.api.getDefaultMedia().subscriptions.pause.subscribe(
+      () => {
+        const currentTime = this.api.getDefaultMedia().currentTime;
+        if (currentTime > 1 && this.lesson !== undefined) {
+          this.saveProgress.emit({currentTime: currentTime, lessonId: this.lesson.id});
+
+        }
+
+      }
+    );
+
+
+  }
+
+  emitSaveProgressEvent() {
+
+
+    const currentTime = this.api.getDefaultMedia().currentTime;
+    console.log(currentTime);
+
+    if (currentTime > 1) {
+      this.saveProgress.emit({currentTime: currentTime, lessonId: this.lesson.id});
+    }
 
   }
 }
