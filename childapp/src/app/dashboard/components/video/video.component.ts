@@ -23,7 +23,11 @@ export class VideoComponent implements OnInit {
   @Output()
   saveProgress = new EventEmitter();
 
-  constructor() { }
+  @Input()
+  sources: Array<string>;
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

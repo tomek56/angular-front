@@ -22,6 +22,7 @@ export class DashboardSkeletonComponent implements OnInit {
   private collapsedSections: Array<number> = Array();
   private currentLesson: number;
   private currentLessonObj: Lesson;
+  sources: Array<string>;
 
   @ViewChild('dataContainer') dataContainer: ElementRef;
   @ViewChild('drawer') sidenav: MatSidenav;
@@ -31,7 +32,10 @@ export class DashboardSkeletonComponent implements OnInit {
     private router: Router,
     private timeHelper: TimeHelperService
 
-    ) { }
+    ) {
+      this.sources = [];
+
+    }
 
   getCurrentLesson(): Lesson {
     let lesson: Lesson;
@@ -78,8 +82,8 @@ export class DashboardSkeletonComponent implements OnInit {
           }
 
           this.currentLessonObj = this.getCurrentLesson();
-          console.log("currentLessonObj");
-          console.log(this.currentLessonObj);
+          this.sources = [this.currentLessonObj.movie.url];
+
 
           this.dataContainer.nativeElement.innerHTML = this.currentLessonObj.description;
           this.showMenu = true;
@@ -100,6 +104,7 @@ export class DashboardSkeletonComponent implements OnInit {
         this.currentLessonObj = undefined;
 
         this.currentLessonObj = this.getCurrentLesson();
+        this.sources = [this.currentLessonObj.movie.url];
 
         console.log('currentLessonObj else');
         console.log(this.currentLessonObj);
