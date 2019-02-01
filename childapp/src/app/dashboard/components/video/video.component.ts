@@ -56,19 +56,17 @@ export class VideoComponent implements OnInit {
 
       }
     );
-
-
   }
 
   emitSaveProgressEvent() {
 
+    if (this.api.getDefaultMedia() !== undefined) {
+      const currentTime = this.api.getDefaultMedia().currentTime;
+      console.log(currentTime);
 
-    const currentTime = this.api.getDefaultMedia().currentTime;
-    console.log(currentTime);
-
-    if (currentTime > 1) {
-      this.saveProgress.emit({currentTime: currentTime, lessonId: this.lesson.id});
+      if (currentTime > 1) {
+        this.saveProgress.emit({currentTime: currentTime, lessonId: this.lesson.id});
+      }
     }
-
   }
 }

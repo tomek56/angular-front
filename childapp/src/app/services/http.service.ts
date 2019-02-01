@@ -90,14 +90,9 @@ export class HttpService {
     const params = new HttpParams()
     .set('course_id', courseId.toString())
     .set('lesson_id', lessonId.toString())
-    .set('duration', curr.toString());
+    .set('duration', curr.toString())
+    .set('device', 'web');
 
-    console.log('params');
-    console.log(params);
-    console.log(courseId);
-    console.log(lessonId);
-    console.log(curr);
-    console.log(this.link.getFullLink('/api/save-progress/'));
 
 //{'course_id' : courseId, 'lesson_id' : lessonId, 'duration': curr }
     // tslint:disable-next-line:max-line-length

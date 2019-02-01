@@ -98,6 +98,7 @@ export class DashboardSkeletonComponent implements OnInit {
     for (const section of this.course.sections) {
       for (const lesson of section.lessons) {
         if (lesson.id == this.currentLesson) {
+          this.collapsedSections = Array();
           this.collapsedSections.push(section.id);
         }
       }
@@ -198,6 +199,18 @@ export class DashboardSkeletonComponent implements OnInit {
   }
 
   saveProgressEvent(event) {
+    let next = false;
+
+    for (const section of this.course.sections) {
+      for (const l of section.lessons) {
+        if (event.lessonId === l.id) {
+         l.progress.c_t = event.currentTime;
+         l.progress.l_d = l.movie.duration;
+        }
+      }
+    }
+
+
     this.httpService.saveProgress(event.lessonId, this.course.id, event.currentTime).subscribe(
         data => {
         },
