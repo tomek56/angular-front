@@ -77,15 +77,20 @@ export class VideoComponent implements OnInit {
   setTime(newTime: number) {
 
 
-    this.api.getDefaultMedia().subscriptions.loadedData.subscribe(
+    let sub = this.api.getDefaultMedia().subscriptions.loadedData.subscribe(
       () => {
-        console.log('loaded data' +  this.api.duration);
+        const extraTime = Math.floor(newTime) + Math.floor(5);
 
-        if ((newTime + 5) < this.api.duration) {
+        if (extraTime < Math.floor(this.api.duration)) {
           this.api.seekTime(newTime);
+        } else {
+          console.log('else ze koniec lekcji i bez sensu odpalac od tego czasu');
         }
+
+        sub.unsubscribe();
       }
     );
+
 
 
   }

@@ -65,7 +65,9 @@ export class DashboardSkeletonComponent implements OnInit {
 
   goToLesson(lesson: Lesson) {
     if (lesson.progress.c_t > 0) {
-      this.router.navigate(['/course/', this.course.slug, lesson.id], { queryParams: { t: Math.floor(lesson.progress.c_t) } });
+      // this.router.navigate(['/course/', this.course.slug, lesson.id], { queryParams: { t: Math.floor(lesson.progress.c_t) } });
+      this.router.navigate(['/course/', this.course.slug, lesson.id]);
+
     } else {
       this.router.navigate(['/course/', this.course.slug, lesson.id]);
 
@@ -120,18 +122,29 @@ export class DashboardSkeletonComponent implements OnInit {
 
     if (this.videoContainer !== undefined ) {
       this.videoContainer.emitSaveProgressEvent();
-      this.videoContainer.setTime(time);
     }
 
     this.currentLessonObj = this.getCurrentLesson();
     this.sources = [this.currentLessonObj.movie.url];
 
-    if (this.videoContainer !== undefined ) {
-      this.videoContainer.setTime(time);
-    }
+
 
     this.dataContainer.nativeElement.innerHTML = this.currentLessonObj.description;
     this.showMenu = true;
+
+    if (this.videoContainer !== undefined ) {
+      this.videoContainer.setTime(time);
+     } else {
+
+      // setTimeout(function () {
+      //   if (this.videoContainer !== undefined ) {
+      //     console.log('test');
+      //   }
+      //   console.log('test2');
+
+      //   }, 10000);
+
+     }
   }
 
   getTime(lesson: Lesson): string {

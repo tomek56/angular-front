@@ -47,7 +47,10 @@ export class CoursesSliderComponent implements OnInit {
   goToProgressCourse(course: Course) {
 
     if (course.lesson_to_continiue) {
-      this.router.navigate(['/course/', course.slug, course.lesson_to_continiue.lesson.id]);
+      // this.router.navigate(['/course/', this.course.slug, lesson.id], { queryParams: { t: Math.floor(lesson.progress.c_t) } });
+
+      // tslint:disable-next-line:max-line-length
+      this.router.navigate(['/course/', course.slug, course.lesson_to_continiue.lesson.id],  { queryParams: { t: Math.floor(course.lesson_to_continiue.time_to_continiue) } });
 
     } else {
       this.router.navigate(['/course/', course.slug]);
