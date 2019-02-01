@@ -64,7 +64,12 @@ export class DashboardSkeletonComponent implements OnInit {
   }
 
   goToLesson(lesson: Lesson) {
-    this.router.navigate(['/course/', this.course.slug, lesson.id]);
+    if (lesson.progress.c_t > 0) {
+      this.router.navigate(['/course/', this.course.slug, lesson.id], { queryParams: { t: Math.floor(lesson.progress.c_t) } });
+    } else {
+      this.router.navigate(['/course/', this.course.slug, lesson.id]);
+
+    }
     this.loadLesson();
 
   }
@@ -75,26 +80,35 @@ export class DashboardSkeletonComponent implements OnInit {
 
     this.route.paramMap.subscribe((param: Params) => {
 
-      this.currentLesson = param.get('lesson');
-      if (this.course === undefined) {
+      // tslint:disable-next-line:no-unused-expression
+      console.log('get params');
 
-        this.httpService.getCourseDetail(param.get('id')).subscribe(data => {
+      this.route.queryParams.subscribe(query => {
+        const t = query.t;
+        console.log(t);
 
-          this.course = data;
+        this.currentLesson = param.get('lesson');
 
-          this.setCurrentLesson();
+        if (this.course === undefined) {
 
-        },
-          error => {
-        });
+          this.httpService.getCourseDetail(param.get('id')).subscribe(data => {
+            this.course = data;
+            this.setCurrentLesson(t);
+          },
+            error => {
+          });
 
-      } else {
-          this.setCurrentLesson();
-      }
+        } else {
+            this.setCurrentLesson(t);
+        }
+
+
+      });
     });
   }
 
-  setCurrentLesson() {
+  setCurrentLesson(time: number) {
+    console.log('odpal lekcje z ' + time);
     for (const section of this.course.sections) {
       for (const lesson of section.lessons) {
         if (lesson.id == this.currentLesson) {
@@ -106,10 +120,16 @@ export class DashboardSkeletonComponent implements OnInit {
 
     if (this.videoContainer !== undefined ) {
       this.videoContainer.emitSaveProgressEvent();
+      this.videoContainer.setTime(time);
     }
 
     this.currentLessonObj = this.getCurrentLesson();
     this.sources = [this.currentLessonObj.movie.url];
+
+    if (this.videoContainer !== undefined ) {
+      this.videoContainer.setTime(time);
+    }
+
     this.dataContainer.nativeElement.innerHTML = this.currentLessonObj.description;
     this.showMenu = true;
   }
@@ -172,6 +192,7 @@ export class DashboardSkeletonComponent implements OnInit {
       this.videoContainer.emitSaveProgressEvent();
     }
 
+    console.log('navi');
     this.router.navigate(['/course/', this.course.slug]);
 
   }

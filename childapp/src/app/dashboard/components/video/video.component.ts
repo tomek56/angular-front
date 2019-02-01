@@ -36,6 +36,10 @@ export class VideoComponent implements OnInit {
   onPlayerReady(api: VgAPI) {
     this.api = api;
 
+
+
+
+
     this.api.getDefaultMedia().subscriptions.ended.subscribe(
         () => {
 
@@ -68,5 +72,21 @@ export class VideoComponent implements OnInit {
         this.saveProgress.emit({currentTime: currentTime, lessonId: this.lesson.id});
       }
     }
+  }
+
+  setTime(newTime: number) {
+
+
+    this.api.getDefaultMedia().subscriptions.loadedData.subscribe(
+      () => {
+        console.log('loaded data' +  this.api.duration);
+
+        if ((newTime + 5) < this.api.duration) {
+          this.api.seekTime(newTime);
+        }
+      }
+    );
+
+
   }
 }
