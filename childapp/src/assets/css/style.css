@@ -4609,6 +4609,7 @@ z-index: 998;
 .tabs {
   margin-bottom: 60px;
   overflow: hidden;
+  margin-top: 20px;
 }
 .tabs ul.tab-links,
 .tabs ul.tab-links-2,
@@ -5612,7 +5613,7 @@ z-index: 998;
 }
 
 .social-btn {
-  margin-bottom: 40px;
+  margin-bottom: 15px;
   display: -webkit-flex;
   display: -moz-box;
   display: -ms-flexbox;
@@ -5758,7 +5759,7 @@ z-index: 998;
 }
 
 .title-container-course-detail{
-  height: 180px;
+  height: 160px;
 }
 
 .movie-single .movie-single-ct .movie-rate {
