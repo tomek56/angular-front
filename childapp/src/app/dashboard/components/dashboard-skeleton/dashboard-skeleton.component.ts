@@ -19,7 +19,7 @@ import { VideoComponent } from '../video/video.component';
 export class DashboardSkeletonComponent implements OnInit {
 
   private course: Course;
-  private showMenu = true;
+  showMenu = true;
   private collapsedSections: Array<number> = Array();
   private currentLesson: number;
   currentLessonObj: Lesson;

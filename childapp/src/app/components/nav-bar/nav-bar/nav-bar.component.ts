@@ -8,7 +8,7 @@ import { AuthHttpService } from 'src/app/services/auth.service';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent implements OnInit {
-  private drawerVisible = true;
+  drawerVisible = true;
 
   @Input()
   drawer: boolean = false;
